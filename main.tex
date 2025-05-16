@@ -1,0 +1,295 @@
+\documentclass[a4paper,12pt,twoside]{report}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{subcaption}
+
+% Mehr mathematische Symbole
+\usepackage{amssymb}
+
+%Braket-Notation
+\usepackage{braket}
+
+\raggedbottom{}
+
+%Griechische Buchstaben, nicht kursiv
+\usepackage{upgreek}
+%Bibliography
+\usepackage[style=numeric,sorting=none,backend=biber]{biblatex}
+\addbibresource{bibliography.bib}
+% \DefineBibliographyStrings{german}{andothers = {et\addabbrvspace{} al\adddot}}
+
+%Zeilenabstand
+\usepackage[onehalfspacing]{setspace}
+
+%Seitenränder
+\usepackage[a4paper, left=3cm, right=3cm]{geometry}
+
+%Chemie
+\usepackage[version=4]{mhchem}
+
+%Header
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\setlength{\headheight}{15pt}
+\newcommand{\myol}[2][3]{{}\mkern#1mu\overline{\mkern-#1mu#2}}
+
+%Schriftarten
+\usepackage{mathptmx}
+\usepackage[T1]{fontenc}
+\usepackage[scaled]{helvet}
+
+%Formatierung Überschriften
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+  {\normalfont\sffamily\Huge\bfseries}
+  {\chaptertitlename\ \thechapter}{10pt}{\Huge}
+\titleformat{\section}[hang]
+    {\normalfont\sffamily\Large\bfseries}
+    {\thesection}{10pt}{\Large}
+\titleformat{\subsection}[hang]
+    {\normalfont\sffamily\Large\bfseries}
+    {\thesubsection}{10pt}{\Large}
+
+%Keine Einzüge bei neuem Absatz
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 2pt minus 1pt}
+
+%Syntax Highlighting
+% \usepackage[most, minted]{tcolorbox}
+% \tcbuselibrary{minted,breakable}
+% \usepackage{xcolor}
+% \usemintedstyle{perldoc}
+% \definecolor{bg}{rgb}{0.95,0.95,0.95}
+% \renewcommand{\theFancyVerbLine}{\scriptsize {\arabic{FancyVerbLine}}}
+% \newcommand{\myminted}[1]{\tcbinputlisting{
+% colback=bg,
+% breakable,
+% listing only,
+% listing file={#1},
+% minted language=c++,
+% minted options={linenos,breaklines,numbersep=2mm,xleftmargin=2mm},
+% enhanced,
+% overlay={%
+%        \begin{tcbclipinterior}
+%            \fill[gray!25] (frame.south west) rectangle ([xshift=6mm]frame.north west);
+%        \end{tcbclipinterior}
+%    }
+% }}
+
+%Lorem Ipsum
+\usepackage{lipsum}
+
+%Flowcharts
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows,shapes.symbols}
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black]
+\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text width=4cm, text centered, draw=black]
+\tikzstyle{decision} = [signal,signal to=east and west, minimum width=3cm, minimum height=1cm, text centered, text width=3cm,draw=black]
+\tikzstyle{object} = [rectangle, minimum height=1cm, text centered, draw=black]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+\tikzstyle{line} = [thick,-,>=stealth]
+
+%Literatur-, Abbildungs- uend Tabellenverzeichnis in Inhaltsverzeichnis
+\usepackage[nottoc, numbib]{tocbibind}
+
+% Subsubsections mit Zahlen
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+%Metadaten und Verlinkungen
+\usepackage{hyperref}
+\hypersetup{
+  pdftitle={PhD Thesis},
+  pdfauthor={Niclas Fiedler},
+  breaklinks=true,
+  }
+
+%URLs mit line break
+\usepackage{xurl}
+
+%Einheiten
+\usepackage[separate-uncertainty=true,per-mode=symbol]{siunitx}
+\usepackage{physics}
+\ExplSyntaxOn{}
+\msg_redirect_name:nnn { siunitx } { physics-pkg } { none }
+\ExplSyntaxOff{}
+\DeclareSIUnit{} \clight{\text{\ensuremath{c}}}
+\DeclareSIUnit{} \u{\text{u}}
+\sisetup{per-mode=fraction}
+\DeclareSIUnit\ppm{\text{ppm}}
+\DeclareSIUnit\clight{\text{c}}
+\DeclareSIUnit\lsb{\text{LSB}}
+\DeclareSIUnit\pe{\text{PE}}
+\DeclareSIUnit\bins{\text{bins}}
+\DeclareSIUnit[]\voltpp{\text{\ensuremath{V_{\textup{pp}}}}}
+\DeclareSIUnit\atomicmassunit{u}
+\DeclareSIUnit\barn{b}
+
+%PDFs einfügen
+\usepackage{pdfpages}
+
+\usepackage{adjustbox}
+
+%Akronyme
+\usepackage[acronym, shortcuts, toc, nopostdot]{glossaries}[=v4.46]
+\usepackage{glossary-mcols}
+\glssetwidest{MTCoMPASS}
+\makeatletter
+  \newglossarystyle{mymcolalttree}{%
+    \setglossarystyle{alttree}%
+    \renewenvironment{theglossary}%
+      {%
+        \setlength{\columnsep}{23pt}
+        \begin{multicols}{2}%
+        \def\@gls@prevlevel{-1}%
+        \mbox{}\par
+        \vspace*{-1\baselineskip}
+      }%
+      {\par\end{multicols}}%
+    \renewcommand{\glossaryentryfield}[5]{%
+      \ifnum\@gls@prevlevel=0
+      \hangindent\glstreeindent{}
+      \else
+        \settowidth{\glstreeindent}{\textbf{\@glswidestname\space}}%
+        \hangindent\glstreeindent{}
+        \parindent\glstreeindent{}
+      \fi
+      \makebox[0pt][r]{\makebox[\glstreeindent][l]{%
+        \glsentryitem{##1}\textbf{\glstarget{##1}{##2}}}}%
+      \ifx\relax##4\relax
+      \else
+        (##4)\space
+      \fi
+      ##3\glspostdescription{} \space ##5\par
+      \def\@gls@prevlevel{0}%
+    }%
+  }%
+\makeatother
+  \renewcommand{\glsgroupskip}{}
+\makeglossaries{}
+\input{abbreviations.txt}
+
+%Plots
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\pgfplotsset{
+  layers/my layer set/.define layer set={
+      background,
+      main,
+      foreground
+  }{
+  },
+  set layers=my layer set,
+}
+
+% Multidigit float counters
+\usepackage{alphalph}
+\renewcommand*{\thesubfigure}{\alphalph{\value{subfigure}}}
+
+%Float barrier
+\usepackage{placeins}
+
+% Multipage Tables
+\usepackage{longtable}
+
+% Zeilenumbruch in Tabelle
+\usepackage{makecell}
+
+% Dynamic width tables
+\usepackage{ltxtable}
+
+%Mehrere Rows in Tabelle
+\usepackage{multirow}
+
+% %Deutsche Sprache
+\usepackage[ngerman, english]{babel}
+
+% %Bibliography mit Babel
+\usepackage{csquotes}
+
+%Reference auf Text
+\makeatletter
+\newcommand\newtag[2]{#1\def\@currentlabel{#1}\label{#2}}
+\makeatother
+
+%Kein Reset von Page number
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\titlepage}{\setcounter{page}\@ne}{}     {}{\PackageError{titlepage}{failed to patch \string\begin{titlepage} to not reset the page counter}{}}
+\patchcmd{\endtitlepage}{\setcounter{page}\@ne}{}  {}{\PackageError{titlepage}{failed to patch \string\end{titlepage} to not reset the page counter}{}}
+\makeatother
+
+\begin{document}
+
+\pagenumbering{roman}
+\begin{titlepage}
+   \begin{center} 
+      \vspace*{1cm}
+      \includegraphics[scale=1.2]{fig/jlu.png}
+      \vspace{1.5cm}
+
+      \textbf{\LARGE{PhD Thesis}} % 
+  
+      \vspace{1.5cm}
+  
+      {\large{PhD Thesis}}
+  
+      \vspace{1.5cm}
+  
+      PhD Thesis\\
+      \textbf{by Niclas Lars Rudolf Fiedler, M.Sc.}\\
+      from Weilmünster\\
+      
+      XX.XX.2028
+      \vfill
+      Justus Liebig University Gießen\\
+      Institute of Experimental Physics II
+      \vspace{0.8cm}
+      
+      First Examiner: Prof.\ Dr.\ Kai-Thomas Brinkmann\\
+      Second Examiner: Prof.\ Dr.\ Jens Sören Lange, AkR\\
+      Supervisor: Dr.~Dzmitry Kazlou 
+   \end{center}
+\end{titlepage}
+
+\newpage\null\thispagestyle{empty}\newpage
+
+% Auszug
+\selectlanguage{english}
+\phantomsection{}
+\addcontentsline{toc}{chapter}{Abstract}
+\begin{abstract}
+  \thispagestyle{plain}
+  
+\end{abstract}
+
+\selectlanguage{ngerman}
+\phantomsection{}
+\addcontentsline{toc}{chapter}{Zusammenfassung}
+\begin{abstract}
+  \thispagestyle{plain}
+  
+\end{abstract}
+\selectlanguage{english}
+
+\tableofcontents
+\clearpage
+\pagenumbering{arabic}
+
+\include{lightyield}
+
+
+\clearpage
+\pagenumbering{Roman}
+% Appendix
+%\input{appendix.tex}
+
+\printbibliography[heading=bibintoc]
+
+\listoffigures
+\listoftables
+\printglossary[style=mymcolalttree, type=\acronymtype,title={List of Abbreviations}, toctitle={List of Abbreviations}]
+
+\includepdf[pages=-]{Selbststaendigkeitserklaerung.pdf}
+\end{document}

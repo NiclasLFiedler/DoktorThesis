@@ -1,0 +1,11 @@
+\babel@toc {english}{}\relax 
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{Abstract}{iii}{section*.1}%
+\babel@toc {ngerman}{}\relax 
+\contentsline {chapter}{Zusammenfassung}{iv}{section*.2}%
+\babel@toc {english}{}\relax 
+\contentsline {section}{\numberline {0.1}Detector Design and Construction}{1}{section.0.1}%
+\contentsline {subsubsection}{\numberline {0.1.0.1}Light Yield Measurement}{1}{subsubsection.0.1.0.1}%
+\contentsline {chapter}{Bibliography}{I}{chapter*.7}%
+\contentsline {chapter}{List of Figures}{III}{chapter*.8}%
+\contentsline {chapter}{List of Tables}{IV}{chapter*.9}%

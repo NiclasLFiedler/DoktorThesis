@@ -1,0 +1,76 @@
+\newacronym{PCB}{PCB}{\textbf{P}rinted \textbf{C}ircuit \textbf{B}oard}
+\newacronym{EMC}{EMC}{\textbf{E}lectro\textbf{m}agnetic \textbf{C}alorimeter}
+\newacronym{PANDA}{$\mathrm{\overline{P}}$ANDA}{Anti-\textbf{P}roton \textbf{AN}nihilation at \textbf{DA}rmstadt}
+\newacronym{FAIR}{FAIR}{\textbf{F}acility for \textbf{A}ntiproton and \textbf{I}on \textbf{R}esearch}
+\newacronym{LAAPD}{LAAPD}{\textbf{L}arge-\textbf{A}rea \textbf{A}valance-\textbf{P}hoto\textbf{d}iode}
+\newacronym{EPICS}{EPICS}{\textbf{E}xperimental \textbf{P}hysics and \textbf{I}ndustrial \textbf{C}ontrol \textbf{S}ystem}
+\newacronym{SPI}{SPI}{\textbf{S}erial \textbf{P}eripheral \textbf{I}nterface}
+\newacronym{I2C}{I$^2$C}{\textbf{I}nter-\textbf{I}ntegrated \textbf{C}ircuit}
+\newacronym{ASIC}{ASIC}{\textbf{A}pplication-\textbf{S}pecific \textbf{I}ntegrated \textbf{C}ircuit}
+\newacronym{SAA}{SAA}{\textbf{S}erial\textbf{A}dapter \textbf{A}SIC}
+\newacronym{HVD}{HVD}{\textbf{H}igh \textbf{V}oltage \textbf{D}istribution Board}
+\newacronym{PV}{PV}{\textbf{P}rocess \textbf{V}ariable}
+\newacronym{CA/pvAccess}{CA/pvAccess}{\textbf{C}hannel \textbf{A}ccess/ \textbf{P}rocess \textbf{V}ariable \textbf{A}ccess}
+\newacronym{GUI}{GUI}{\textbf{g}raphical \textbf{u}ser \textbf{i}nterface}
+\newacronym{APFEL}{APFEL}{\textbf{A}SICs for \textbf{P}anda \textbf{F}ront-end \textbf{EL}ectronics}
+\newacronym{IOC}{IOC}{\textbf{I}nput/\textbf{O}utput \textbf{C}ontroller}
+\newacronym{DCS}{DCS}{\textbf{D}istributed \textbf{C}ontrol \textbf{S}ystem }
+\newacronym{SADC}{SADC}{\textbf{S}ampling-\textbf{ADC}}
+\newacronym{ADC}{ADC}{\textbf{A}nalog to \textbf{D}igital \textbf{C}onverter}
+\newacronym{ADS}{ADS}{ADS1115}
+\newacronym{DAC}{DAC}{\textbf{D}igital to \textbf{A}nalog \textbf{C}onverter}
+\newacronym{HESR}{HESR}{\textbf{H}igh \textbf{E}nergy \textbf{S}torage \textbf{R}ing}
+\newacronym{QCD}{QCD}{\textbf{Q}uantum \textbf{C}hromo\textbf{d}ynamics}
+\newacronym{GPD}{GPD}{\textbf{G}eneralized \textbf{P}arton \textbf{D}istributions}
+\newacronym{PAX}{PAX}{\textbf{P}olarized \textbf{A}ntiproton \textbf{E}xperiments}
+\newacronym{DIRC}{DIRC}{\textbf{D}etection of \textbf{I}nternally \textbf{R}eflected \textbf{C}herenkov light}
+\newacronym{ToF}{ToF}{\textbf{T}ime-\textbf{o}f-\textbf{F}light}
+\newacronym{RICH}{RICH}{\textbf{R}ing-\textbf{I}maging-\textbf{CH}erenko}
+\newacronym{SDA}{SDA}{\textbf{S}erial \textbf{D}ata line}
+\newacronym{SCL}{SCL}{\textbf{S}erial \textbf{C}lock line}
+\newacronym{SCK}{SCK}{\textbf{S}erial \textbf{C}loc\textbf{k} line}
+\newacronym{MOSI}{MOSI}{\textbf{M}aster \textbf{O}utput, \textbf{S}lave \textbf{I}nput}
+\newacronym{MISO}{MISO}{\textbf{M}aster \textbf{I}nput, \textbf{S}lave \textbf{O}utput}
+\newacronym{CS}{$\mathrm{\overline{CS}}$}{\textbf{C}hip \textbf{S}elect line}
+\newacronym{MPIO}{MPIO}{\textbf{M}ulti \textbf{P}urpose \textbf{I}nput \textbf{O}utputs}
+\newacronym{MOSFET}{MOSFET}{\textbf{M}etal–\textbf{O}xide–\textbf{S}emiconductor \textbf{F}ield-Effect \textbf{T}ransistor}
+\newacronym{MSB}{MSB}{\textbf{M}ost \textbf{S}ignificant \textbf{B}yte}
+\newacronym{LSB}{LSB}{\textbf{L}east \textbf{S}ignificant \textbf{B}yte}
+\newacronym{EEPROM}{EEPROM}{\textbf{E}lectrically \textbf{E}rasable \textbf{P}rogrammable \textbf{R}ead-\textbf{O}nly \textbf{M}emory}
+\newacronym{CWS}{CWS}{\textbf{C}lient \textbf{W}ork\textbf{S}tations}
+\newacronym{LAN}{LAN}{\textbf{L}ocal \textbf{A}rea \textbf{N}etwork}
+\newacronym{IO}{I/O}{Input/Output}
+\newacronym{DSET}{DSET}{Device Entry Table}
+\newacronym{GPIO}{GPIO}{\textbf{G}eneral \textbf{P}urpose \textbf{I}nput/\textbf{O}utput}
+\newacronym{FPGA}{FPGA}{\textbf{F}ield \textbf{P}rogrammable \textbf{G}ate \textbf{A}rray}
+\newacronym{IC}{IC}{\textbf{I}ntegrated \textbf{C}ircuit}
+\newacronym{CAS}{CAS}{\textbf{C}hemical \textbf{A}bstract \textbf{S}ervice Registry Number}
+\newacronym{MIT}{MIT}{\textbf{M}arburger \textbf{I}onen\-strahl-\textbf{T}herapiezentrum}
+\newacronym{SAPD}{SAPD}{\textbf{S}ingle-\textbf{P}hoton \textbf{A}valanche \textbf{D}iode}
+\newacronym{APD}{APD}{\textbf{A}valanche \textbf{P}hoto \textbf{D}iode}
+\newacronym{SiPM}{SiPM}{\textbf{Si}licon \textbf{P}hoto\textbf{M}ultiplier}
+\newacronym{MPV}{MPV}{\textbf{M}ost \textbf{P}robable \textbf{V}alue}
+\newacronym{CoMPASS}{CoMPASS}{\textbf{C}AEN \textbf{Multi}-\textbf{PA}rameter \textbf{S}pectroscopy \textbf{Software}}
+\newacronym{MTCROOT}{MTC-ROOT}{\textbf{M}ore \textbf{T}han \textbf{C}AEN \textbf{Multi}-\textbf{PA}rameter \textbf{S}pectroscopy \textbf{Software} \textbf{ROOT}}
+\newacronym{Geant4}{Geant4}{\textbf{Ge}ometry \textbf{an}d \textbf{T}racking \textbf{4}}
+\newacronym{CAEN}{CAEN}{\textbf{C}ostruzioni \textbf{A}pparecchiature \textbf{E}lettroniche \textbf{N}ucleari}
+\newacronym{FWHM}{FWHM}{\textbf{F}ull \textbf{W}idth at \textbf{H}alf \textbf{M}aximum}
+\newacronym{PMT}{PMT}{\textbf{P}hoto\textbf{M}ultiplier \textbf{T}ube}
+\newacronym{CFD}{CFD}{\textbf{C}onstant \textbf{F}raction \textbf{D}is\-crim\-i\-na\-tor}
+\newacronym{ECL}{ECL}{\textbf{E}mitter-\textbf{C}oupled \textbf{L}ogic}
+\newacronym{NIM}{NIM}{\textbf{N}uclear \textbf{I}nstrumentation \textbf{M}odule}
+\newacronym{DAQ}{DAQ}{\textbf{D}ata \textbf{A}c\textbf{Q}uisition}
+\newacronym{WET}{WET}{\textbf{W}ater \textbf{E}quivalent \textbf{T}hickness}
+\newacronym{CSDA}{CSDA range}{\textbf{C}ontinuous \textbf{S}lowing \textbf{D}own \textbf{A}pproximation \textbf{range}}
+\newacronym{QDC}{QDC}{Charge ($\mathbf{Q}$) to \textbf{D}igital \textbf{C}onverter}
+\newacronym{HCL}{HCL}{\textbf{H}arvard \textbf{C}yclotron \textbf{L}aboratory}
+\newacronym{TRIUMF}{TRIUMF}{\textbf{TRI}-\textbf{U}niversity \textbf{M}eson \textbf{F}acility}
+\newacronym{JLU}{JLU}{\textbf{J}ustus-\textbf{L}iebig-\textbf{U}niversität}
+\newacronym{CMS}{CMS}{\textbf{C}ompact \textbf{M}uon \textbf{S}olenoid}
+\newacronym{TDR}{TDR}{\textbf{T}echnical \textbf{D}esign \textbf{R}eport}
+\newacronym{HPGe}{HPGe}{\textbf{H}igh \textbf{P}urity \textbf{Ge}rmanium}
+\newacronym{LED}{LED}{\textbf{L}eading \textbf{E}dge \textbf{D}iscriminator}
+\newacronym{DICOM}{DICOM}{\textbf{D}igital \textbf{I}maging and \textbf{CO}mmunications in \textbf{M}edicine}
+\newacronym{ICRU}{ICRU}{\textbf{I}nternational \textbf{C}ommission on \textbf{R}adiation \textbf{U}nits and Measurements}
+\newacronym{RMS}{RMS}{\textbf{R}oot \textbf{M}ean \textbf{S}quare}
+\newacronym{CERN}{CERN}{\textbf{C}onseil \textbf{E}uropéen pour la \textbf{R}echerche \textbf{N}ucléaire}
