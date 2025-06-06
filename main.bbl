@@ -19,154 +19,6 @@
 
 \refsection{0}
   \datalist[entry]{none/global//global/global}
-    \entry{cms:tdr}{book}{}
-      \list{location}{1}{%
-        {Geneva}%
-      }
-      \list{publisher}{1}{%
-        {CERN}%
-      }
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labeltitlesource}{title}
-      \field{series}{Technical design report. CMS}
-      \field{title}{{The CMS electromagnetic calorimeter project: Technical Design Report}}
-      \field{year}{1997}
-      \verb{urlraw}
-      \verb https://cds.cern.ch/record/349375
-      \endverb
-      \verb{url}
-      \verb https://cds.cern.ch/record/349375
-      \endverb
-    \endentry
-    \entry{NESSITEDALDI1998266}{article}{}
-      \name{author}{1}{}{%
-        {{hash=b79f8430bb058dbdbf4829f56386142b}{%
-           family={Nessi-Tedaldi},
-           familyi={N\bibinithyphendelim T\bibinitperiod},
-           given={F},
-           giveni={F\bibinitperiod}}}%
-      }
-      \strng{namehash}{b79f8430bb058dbdbf4829f56386142b}
-      \strng{fullhash}{b79f8430bb058dbdbf4829f56386142b}
-      \strng{bibnamehash}{b79f8430bb058dbdbf4829f56386142b}
-      \strng{authorbibnamehash}{b79f8430bb058dbdbf4829f56386142b}
-      \strng{authornamehash}{b79f8430bb058dbdbf4829f56386142b}
-      \strng{authorfullhash}{b79f8430bb058dbdbf4829f56386142b}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Nuclear Instruments and Methods in Physics Research Section A: Accelerators, Spectrometers, Detectors and Associated Equipment}
-      \field{title}{Overview of PbWO4 calorimeter in CMS}
-      \field{year}{1998}
-      \verb{doi}
-      \verb https://doi.org/10.1016/S0168-9002(98)00321-0
-      \endverb
-    \endentry
-    \entry{valera}{misc}{}
-      \name{author}{1}{}{%
-        {{hash=5a7df36eed4d36513b0e42acb2988f0e}{%
-           family={Dr.\bibnamedelimi V.\bibnamedelimi Dormenev},
-           familyi={D\bibinitperiod\bibinitdelim V\bibinitperiod\bibinitdelim D\bibinitperiod},
-           given={JLU\bibnamedelima Giessen},
-           giveni={J\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
-      }
-      \strng{namehash}{5a7df36eed4d36513b0e42acb2988f0e}
-      \strng{fullhash}{5a7df36eed4d36513b0e42acb2988f0e}
-      \strng{bibnamehash}{5a7df36eed4d36513b0e42acb2988f0e}
-      \strng{authorbibnamehash}{5a7df36eed4d36513b0e42acb2988f0e}
-      \strng{authornamehash}{5a7df36eed4d36513b0e42acb2988f0e}
-      \strng{authorfullhash}{5a7df36eed4d36513b0e42acb2988f0e}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Personal communication}
-      \field{year}{2024}
-    \endentry
-    \entry{SCHNEEGANS19973}{article}{}
-      \name{author}{1}{}{%
-        {{hash=80a300f1ca503d60d20bebe674d8237b}{%
-           family={Schneegans},
-           familyi={S\bibinitperiod},
-           given={M.},
-           giveni={M\bibinitperiod}}}%
-      }
-      \strng{namehash}{80a300f1ca503d60d20bebe674d8237b}
-      \strng{fullhash}{80a300f1ca503d60d20bebe674d8237b}
-      \strng{bibnamehash}{80a300f1ca503d60d20bebe674d8237b}
-      \strng{authorbibnamehash}{80a300f1ca503d60d20bebe674d8237b}
-      \strng{authornamehash}{80a300f1ca503d60d20bebe674d8237b}
-      \strng{authorfullhash}{80a300f1ca503d60d20bebe674d8237b}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Nuclear Physics B - Proceedings Supplements}
-      \field{number}{3}
-      \field{title}{Status of the lead tungstate crystal calorimeter of CMS}
-      \field{volume}{54}
-      \field{year}{1997}
-      \field{pages}{3\bibrangedash 13}
-      \range{pages}{11}
-      \verb{doi}
-      \verb https://doi.org/10.1016/S0920-5632(97)00086-8
-      \endverb
-    \endentry
-    \entry{pandacollaboration2008technicaldesignreportpanda}{misc}{}
-      \name{author}{1}{}{%
-        {{hash=69f06ea9037a5fe5f0c208729b799145}{%
-           family={Collaboration},
-           familyi={C\bibinitperiod},
-           given={PANDA},
-           giveni={P\bibinitperiod}}}%
-      }
-      \strng{namehash}{69f06ea9037a5fe5f0c208729b799145}
-      \strng{fullhash}{69f06ea9037a5fe5f0c208729b799145}
-      \strng{bibnamehash}{69f06ea9037a5fe5f0c208729b799145}
-      \strng{authorbibnamehash}{69f06ea9037a5fe5f0c208729b799145}
-      \strng{authornamehash}{69f06ea9037a5fe5f0c208729b799145}
-      \strng{authorfullhash}{69f06ea9037a5fe5f0c208729b799145}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{eprintclass}{physics.ins-det}
-      \field{eprinttype}{arXiv}
-      \field{title}{Technical Design Report for PANDA Electromagnetic Cal\-o\-rim\-e\-ter (EMC)}
-      \field{year}{2008}
-      \verb{eprint}
-      \verb 0810.1216
-      \endverb
-      \verb{urlraw}
-      \verb https://arxiv.org/abs/0810.1216
-      \endverb
-      \verb{url}
-      \verb https://arxiv.org/abs/0810.1216
-      \endverb
-    \endentry
-    \entry{rene}{misc}{}
-      \name{author}{1}{}{%
-        {{hash=a8feb7b76f9252c2e20abebb2bcef777}{%
-           family={R.\bibnamedelimi Schubert},
-           familyi={R\bibinitperiod\bibinitdelim S\bibinitperiod},
-           given={JLU\bibnamedelima Giessen},
-           giveni={J\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
-      }
-      \strng{namehash}{a8feb7b76f9252c2e20abebb2bcef777}
-      \strng{fullhash}{a8feb7b76f9252c2e20abebb2bcef777}
-      \strng{bibnamehash}{a8feb7b76f9252c2e20abebb2bcef777}
-      \strng{authorbibnamehash}{a8feb7b76f9252c2e20abebb2bcef777}
-      \strng{authornamehash}{a8feb7b76f9252c2e20abebb2bcef777}
-      \strng{authorfullhash}{a8feb7b76f9252c2e20abebb2bcef777}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Personal communication}
-      \field{year}{2024}
-    \endentry
     \entry{datasheet:hamamatsu_R2059}{manual}{}
       \name{author}{1}{}{%
         {{hash=27689ac49d3b3aad34970107c918b8a2}{%
@@ -198,6 +50,26 @@
       \verb https://www.hamamatsu.com/content/dam/hamamatsu-photonics/sites/documents/99%5C_SALES%5C_LIBRARY/etd/R1828-01%5C_R2059%5C_TPMH1259E.pdf
       \endverb
     \endentry
+    \entry{cms:tdr}{book}{}
+      \list{location}{1}{%
+        {Geneva}%
+      }
+      \list{publisher}{1}{%
+        {CERN}%
+      }
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{series}{Technical design report. CMS}
+      \field{title}{{The CMS electromagnetic calorimeter project: Technical Design Report}}
+      \field{year}{1997}
+      \verb{urlraw}
+      \verb https://cds.cern.ch/record/349375
+      \endverb
+      \verb{url}
+      \verb https://cds.cern.ch/record/349375
+      \endverb
+    \endentry
     \entry{bayer:baysilone}{misc}{}
       \name{author}{1}{}{%
         {{hash=482d311fcdf12d556e39662ce9635262}{%
@@ -210,8 +82,8 @@
       \strng{authorbibnamehash}{482d311fcdf12d556e39662ce9635262}
       \strng{authornamehash}{482d311fcdf12d556e39662ce9635262}
       \strng{authorfullhash}{482d311fcdf12d556e39662ce9635262}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: 2024-10-30}
@@ -241,8 +113,8 @@
       \strng{authorbibnamehash}{d716d2891fb3a2d0b755cf6045db39ec}
       \strng{authornamehash}{d716d2891fb3a2d0b755cf6045db39ec}
       \strng{authorfullhash}{d716d2891fb3a2d0b755cf6045db39ec}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{J. Opt. Soc. Am.}

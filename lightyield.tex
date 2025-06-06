@@ -1,53 +1,72 @@
-\section{Detector Design and Construction}\label{section:setup}
+\chapter{Detector Design and Construction}\label{chapter:setup}
+Two different scintillation-based detector-concepts were developed to measure the depth dose distribution of protons in real-time.
+Both detectors consist of scintillator-layers measuring the energy deposition.
 
-\subsubsection{Light Yield Measurement}\label{section:pwo:lightyield} 
-The light yield of all \ce{PbWO4} scintillator crystals and of one EJ200 scintillator sample was measured to estimate the amount of incident photons on an SiPM.
+The first detector concept uses \ce{PbWO4} sheets with two thicknesses \SI{2}{\mm} and \SI{3}{\mm}.
+Here the thicker \SI{3}{\mm} are used in the front to provide more stopping power and the thinner \SI{2}{\mm} are used in the Bragg-Peak region to give the optimal spatial resolution whilst still only utilizing 32 channels.
+The thicknesses were chosen to fully cover the \SI{66}{\mm} range of \SI{220}{\mega\electronvolt} protons in \ce{PbWO4}, yet still being thick enough not to break as \ce{PbWO4} is a very fragile material.
 
+The second detector concept uses EJ-212 plastic scintillators with a thickness of \SI{4}{\mm} allowing for a better spatial resolution.
+However, since the 32 available channels with \SI{4}{\mm} Ej-212 only cover $\approx \SI{12.8}{\centi\meter}$ of the \SI{30.4}{\centi\meter} proton range, a passive absorber has to be included to fully stopp the protons inside the detector.
+This \SI{20}{\centi\meter} passive absorber consists of PMMA resulting in enough stopping power to stop the beam inside the detector.
+The passive absorber is placed between the first and second plastic scintillator such that the first works as a trigger channel which is used for the normalization in the analysis.
+
+\section{Readout}\label{section:readout}
+The scintillators of both designs are read out via SiPMs.
+Light yield measurements were conducted, to decide which SiPM types are suitable.
+With these the amount of incident photons can be estimated and compared with the number of pixel.
+From this, a balance can be struck between high resolution and a large enough dynamic range.
+ 
+\subsection{Light Yield Measurement}
 The measurements were conducted using the process described in Section~\ref{section:lightyield} and the setup shown in Figure~\ref{fig:lightyield:setup}.
-The PMT used is an R2059 from Hamamatsu (serial number BA3200) with a quantum efficiency of \SI{23.16}{\percent}~\cite{datasheet:hamamatsu_R2059} (cf. Appendix~\ref{appendix:spectral}) for the luminescence peak of \SI{420}{\nano\meter} of \ce{PbWO4}~\cite{cms:tdr} and \ce{EJ200}.
+The PMT used is an R2059 from Hamamatsu (serial number BA3200) with a quantum efficiency of \SI{23.16}{\percent}~\cite{datasheet:hamamatsu_R2059} (cf. Appendix~\ref{appendix:spectral}) at the luminescence peak of \SI{420}{\nano\meter} of \ce{PbWO4}~\cite{cms:tdr} and EJ212.
 
-All \ce{PbWO4} crystals were measured in a flat and vertical position, where all non PMT-facing scintillator sides were enveloped in highly reflective PTFE foil in order to not lose any photons.
-Two additional measurements were performed, where one \SI{3}{\milli\meter}- and \SI{2}{\milli\meter} crystal were fully wrapped with an SiPM sized window cutout in the center of a side.
-The \ce{PbWO4} crystals were optimounted onto the PMT's optical window next to a \ce{^{22}Na} $\gamma$-source inside a climate chamber and optically coupled using glycerin, as shown in Figure~\ref{fig:pwo:lightyield:open}.
-Glycerin which used as a substitute for the commonly used Baysilone\textsuperscript{{\textregistered}} Fluid~M optical grease, due to its less-adhesive characteristic.
-The Baysilone\textsuperscript{{\textregistered}} Fluid~M with its high adhesion might have lead to damaging the fragile crystals during the removal process.
-
-
-The optical grease used is Baysilone\textsuperscript{{\textregistered}} Fluid~M with a viscosity of \SI{300000}{\milli\meter^2\per\second} at \SI{20}{\celsius} and refractive index $n_{og}\approx1.404$~\cite{bayer:baysilone}.
+\subsubsection{Light Yield: \ce{PbWO4}}
+The \ce{PbWO4} measurement were done in a flat and vertical position as shown in Figure~\ref{fig:detector:lightyield:pwo}, where all non PMT-facing scintillator sides were enveloped in highly reflective PTFE foil in order to not lose any photons.
+Two additional measurements were performed, where one \SI{3}{\milli\meter}- and \SI{2}{\milli\meter} crystal were fully wrapped with an SiPM sized window cutout in the center of one side  as shown in Figure~\ref{fig:detector:crystal:pwo:wrap}.
+The \ce{PbWO4} crystals were mounted onto the PMT's optical window next to a \ce{^{22}Na} $\gamma$-source inside a climate chamber.
+The optical coupling was done using glycerol ($n=1.4722$), as shown in Figure~\ref{fig:pwo:lightyield:open}.
+Glycerin was used as a substitute for the commonly used Baysilone\textsuperscript{{\textregistered}} Fluid~M optical grease ($n\approx 1.404,~\eta=\SI{300000}{\milli\meter^2\per\second}$~\cite{bayer:baysilone}), due to its less-adhesive characteristic.
+The Baysilone\textsuperscript{{\textregistered}} Fluid~M with its high adhesion might have lead to damaging the fragile crystals during removal.
 The refractive index of \ce{PbWO4} and the \ce{SiO2} glass window of the \gls{PMT} are $n_{\ce{PbWO4}}\approx2.3$~\cite{cms:tdr} and $n_{\ce{SiO2}}\approx1.459$~\cite{Malitson:65}, respectively.
-Additionally to the climate chamber's light-tightness, the setup is enclosed, ensuring perfect light tightness, as shown in Figure~\ref{fig:pwo:lightyield:closed}.
+Additionally to the climate chamber's light-tightness, the setup is enclosed in PTFE foil, ensuring perfect light tightness, as shown in Figure~\ref{fig:detector:lightyield:setup:closed}.
 
 \begin{figure}[h!]
     \centering
     \begin{minipage}[t]{.5\textwidth}
         \centering
         \captionsetup{width=.9\linewidth}
-        \includegraphics[width=.8\linewidth]{braggsampler/fig/lightyield/lightyield_setup_open.jpg}
-        \captionof{figure}{Open light yield measurement setup for \ce{PbWO4} crystals using a \ce{^{137}Cs} $\gamma$-source.}\label{fig:pwo:lightyield:open}
+        %\includegraphics[width=.8\linewidth]{}
+        \captionof{figure}{Open light yield measurement setup for \ce{PbWO4} crystals using a \ce{^{22}Na} $\gamma$-source.}\label{fig:pwo:lightyield:open}
     \end{minipage}%
     \begin{minipage}[t]{.5\textwidth}
         \centering
         \captionsetup{width=.9\linewidth}
-        \includegraphics[width=.8\linewidth]{braggsampler/fig/lightyield/lightyield_setup_closed.jpg}
-        \captionof{figure}{Encased light yield measurement setup for \ce{PbWO4} crystals using a \ce{^{137}Cs} $\gamma$-source.}\label{fig:pwo:lightyield:closed}
+        %\includegraphics[width=.8\linewidth]{}
+        \captionof{figure}{Encased light yield measurement setup for \ce{PbWO4} crystals using a \ce{^{22}Na} $\gamma$-source.}\label{fig:pwo:lightyield:closed}
     \end{minipage}
 \end{figure}
 
-\SI{5}{\minute} measurements per crystal were taken at \SI{20}{\celsius} after an acclimation time of \SI{1}{\hour} each.
-An exemplary light yield measurement of crystal number~0 is shown in Figure~\ref{fig:pwo:lightyield:measurement}.
-The measured light yields for all crystals are tabulated in the Appendix Table~\ref{tab:appendix:lightyield} and plotted in Figure~\ref{fig:pwo:lightyield:plot}.
-The average light yield of the \ce{PbWO4} crystals is $\approx$\SI{64.83}{ph\per\mega\electronvolt}, with a relatively high standard deviation of $\approx$\SI{30.99}{ph\per\mega\electronvolt}.
-The high standard deviation is expected due to the defects in the crystals and the relatively high measurement temperature of \SI{20}{\celsius}.
-Nevertheless, all the crystals exhibit a sufficient light yield suitable for the detector use.
+The measurements were conducted at \SI{20}{\celsius} for \SI{5}{\minute} after an acclimation time of \SI{5}{\minute} each.
+The acclimation time was chosen small because the crystals were keept inside the climate chamber for \SI{24}{\hour} before the measurements were startet, thereby only the short time frame inbetween measuements, where the chamber was opened, had to be accounted for.
+An exemplary light yield measurement of crystal number~0 in the flat position is shown in Figure~\ref{fig:detector:lightyield:pwo:measurement:flat:0}.
+The measured light yield values of all crystals for the different setups are shown in Figure~\ref{}.
+The \SI{3}{\milli\meter} thick crystals average approximately \SI{164.73}{ph\per\mega\electronvolt} and \SI{129.44}{ph\per\mega\electronvolt} in the flat and vertical positions, respectively.
+The \SI{2}{\milli\meter} thick crystals average approximately \SI{131.00}{ph\per\mega\electronvolt} and \SI{94.32}{ph\per\mega\electronvolt} in the flat and vertical positions, respectively.
+With the SiPM-sized window cutout the light yield of a \SI{3}{\milli\meter} and \SI{2}{\milli\meter} crystal was \SI{75.25\pm 33.09}{ph\per\mega\electronvolt} and \SI{59.7\pm 19.22}{ph\per\mega\electronvolt}, respectively.
 
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.55\linewidth]{braggsampler/fig/lightyield/lightyieldmeasurement_ch0.pdf}
-    \caption{Exemplary light yield measurement of crystal number 0 with Gaus fitted \ce{^{137}Cs} source peak.}\label{fig:pwo:lightyield:measurement}
-\end{figure}
+\subsubsection{Light Yield: \ce{EJ-200}}
+The light yield of a $50 \times 50 \times 10 \si{\milli\meter\cubed}$ EJ-200 sample was measured to estimate the amount of incident photons on an SiPM by a plastic scintillator to decide which SiPM type is needed for the readout.
 
-\begin{figure}
-    \centering
-    \includegraphics[width=0.55\linewidth]{braggsampler/fig/lightyield/lightyield_plot.pdf}
-    \caption{Plotted light yield measurements of the Braggpeak Sampler's crystals.}\label{fig:pwo:lightyield:plot}
-\end{figure}
+  
+% \begin{figure}[h!]
+%     \centering
+%     \includegraphics[width=0.55\linewidth]{braggsampler/fig/lightyield/lightyieldmeasurement_ch0.pdf}
+%     \caption{Exemplary light yield measurement of crystal number 0 with Gaus fitted \ce{^{137}Cs} source peak.}\label{fig:pwo:lightyield:measurement}
+% \end{figure}
+
+% \begin{figure}
+%     \centering
+%     \includegraphics[width=0.55\linewidth]{braggsampler/fig/lightyield/lightyield_plot.pdf}
+%     \caption{Plotted light yield measurements of the Braggpeak Sampler's crystals.}\label{fig:pwo:lightyield:plot}
+% \end{figure}

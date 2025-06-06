@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.19)  16 MAY 2025 16:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.19)  6 JUN 2025 16:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1295,7 +1295,7 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'english'.
- (./main.aux)
+ (./main.aux (./lightyield.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 223.
@@ -1411,10 +1411,11 @@ Package biblatex Info: Reference segment=0 on input line 223.
 Package chemgreek Info: Activating mapping `upgreek' on line 223.
 
 Package hyperref Info: Link coloring OFF on input line 223.
+(./main.out) (./main.out)
 \@outlinefile=\write8
 \openout8 = `main.out'.
 
-(/usr/share/texlive/texmf-dist/tex/latex/translations/translations-basic-dictionary-english.trsl
+ (/usr/share/texlive/texmf-dist/tex/latex/translations/translations-basic-dictionary-english.trsl
 File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 223.
@@ -1433,7 +1434,7 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ))
 Package pgfplots notification 'compat/show suggested version=true': document has been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
-<fig/jlu.png, id=7, 142.25145pt x 51.43214pt>
+<fig/jlu.png, id=47, 142.25145pt x 51.43214pt>
 File: fig/jlu.png Graphic file (type png)
 <use fig/jlu.png>
 Package pdftex.def Info: fig/jlu.png  used on input line 229.
@@ -1453,153 +1454,98 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 23.63593pt on input line 276.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 23.63593pt on input line 276.
-
-No file main.toc.
+ (./main.toc
+LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line 8.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
+File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
+)
+LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line 8.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlztmcm.fd
+File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
+)
+LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line 8.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsztmcm.fd
+File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
+)
+LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line 8.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxztmcm.fd
+File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
+)
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 8.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 8.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 8.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 8.
+)
 \tf@toc=\write9
 \openout9 = `main.toc'.
 
-[5
+ [5
 
 ]
 \openout2 = `lightyield.aux'.
 
  (./lightyield.tex
+Chapter 1.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 16.41594pt on input line 1.
+(Font)              scaled to size 16.41594pt on input line 14.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 16.41594pt on input line 1.
+(Font)              scaled to size 16.41594pt on input line 14.
+[1
 
 
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 3.
 
-LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line 4.
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
-File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
-)
-LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line 4.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlztmcm.fd
-File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
-)
-LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line 4.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsztmcm.fd
-File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
-)
-LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line 4.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxztmcm.fd
-File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
-)
-LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 4.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
-File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
-)
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 4.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 4.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 4.
+]
+
+LaTeX Warning: Reference `section:lightyield' on page 2 undefined on input line 21.
 
 
-LaTeX Warning: Reference `section:lightyield' on page 1 undefined on input line 6.
+LaTeX Warning: Reference `fig:lightyield:setup' on page 2 undefined on input line 21.
 
 
-LaTeX Warning: Reference `fig:lightyield:setup' on page 1 undefined on input line 6.
+LaTeX Warning: Reference `appendix:spectral' on page 2 undefined on input line 22.
 
 
-LaTeX Warning: Reference `appendix:spectral' on page 1 undefined on input line 7.
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mhchem@cee' on input line 24.
 
 
-LaTeX Warning: Reference `fig:pwo:lightyield:open' on page 1 undefined on input line 11.
+LaTeX Warning: Reference `fig:detector:lightyield:pwo' on page 2 undefined on input line 25.
 
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 12.
+
+LaTeX Warning: Reference `fig:detector:crystal:pwo:wrap' on page 2 undefined on input line 26.
+
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 29.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
 
-LaTeX Warning: Reference `fig:pwo:lightyield:closed' on page 1 undefined on input line 18.
-
-
-LaTeX Warning: File `braggsampler/fig/lightyield/lightyield_setup_open.jpg' not found on input line 25.
-
-
-./lightyield.tex:25: Package pdftex.def Error: File `braggsampler/fig/lightyield/lightyield_setup_open.jpg' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.25 .../fig/lightyield/lightyield_setup_open.jpg}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 25.
-(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
-)
-
-LaTeX Warning: File `braggsampler/fig/lightyield/lightyield_setup_closed.jpg' not found on input line 31.
-
-
-./lightyield.tex:31: Package pdftex.def Error: File `braggsampler/fig/lightyield/lightyield_setup_closed.jpg' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.31 ...ig/lightyield/lightyield_setup_closed.jpg}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+LaTeX Warning: Reference `fig:detector:lightyield:setup:closed' on page 2 undefined on input line 32.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-LaTeX Warning: Reference `fig:pwo:lightyield:measurement' on page 1 undefined on input line 37.
+LaTeX Warning: Reference `fig:detector:lightyield:pwo:measurement:flat:0' on page 2 undefined on input line 52.
 
 
-LaTeX Warning: Reference `tab:appendix:lightyield' on page 1 undefined on input line 38.
+LaTeX Warning: Reference `' on page 2 undefined on input line 53.
 
+[2]
 
-LaTeX Warning: Reference `fig:pwo:lightyield:plot' on page 1 undefined on input line 38.
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mhchem@cee' on input line 58.
 
-
-LaTeX Warning: File `braggsampler/fig/lightyield/lightyieldmeasurement_ch0.pdf' not found on input line 45.
-
-
-./lightyield.tex:45: Package pdftex.def Error: File `braggsampler/fig/lightyield/lightyieldmeasurement_ch0.pdf' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.45 .../lightyield/lightyieldmeasurement_ch0.pdf}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[1
-
-
-]
-
-LaTeX Warning: File `braggsampler/fig/lightyield/lightyield_plot.pdf' not found on input line 51.
-
-
-./lightyield.tex:51: Package pdftex.def Error: File `braggsampler/fig/lightyield/lightyield_plot.pdf' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.51 ...ampler/fig/lightyield/lightyield_plot.pdf}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-) [2{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}] [3]
+) [3]
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 288.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+)
 Overfull \hbox (8.56561pt too wide) in paragraph at lines 288--288
 []\T1/ptm/m/n/12 Hamamatsu Pho-ton-ics. \T1/ptm/m/it/12 R1828-01, R2059 Pho-to-mul-ti-plier Tubes Datasheet\T1/ptm/m/n/12 . Ac-cessed:
  []
@@ -1609,20 +1555,19 @@ Overfull \hbox (8.56561pt too wide) in paragraph at lines 288--288
 
 
 
-] [2]
-No file main.lof.
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}] (./main.lof)
 \tf@lof=\write10
 \openout10 = `main.lof'.
 
-[3
+ [2
 
-]
-No file main.lot.
+] (./main.lot)
 \tf@lot=\write11
 \openout11 = `main.lot'.
 
+
 No file main.acr.
-<Selbststaendigkeitserklaerung.pdf, id=105, 597.55246pt x 845.07718pt>
+<Selbststaendigkeitserklaerung.pdf, id=137, 597.55246pt x 845.07718pt>
 File: Selbststaendigkeitserklaerung.pdf Graphic file (type pdf)
 <use Selbststaendigkeitserklaerung.pdf>
 Package pdftex.def Info: Selbststaendigkeitserklaerung.pdf  used on input line 294.
@@ -1631,7 +1576,7 @@ File: Selbststaendigkeitserklaerung.pdf Graphic file (type pdf)
 <use Selbststaendigkeitserklaerung.pdf>
 Package pdftex.def Info: Selbststaendigkeitserklaerung.pdf  used on input line 294.
 (pdftex.def)             Requested size: 597.551pt x 845.07512pt.
-<Selbststaendigkeitserklaerung.pdf, id=108, page=1, 597.55246pt x 845.07718pt>
+<Selbststaendigkeitserklaerung.pdf, id=140, page=1, 597.55246pt x 845.07718pt>
 File: Selbststaendigkeitserklaerung.pdf Graphic file (type pdf)
 <use Selbststaendigkeitserklaerung.pdf, page 1>
 Package pdftex.def Info: Selbststaendigkeitserklaerung.pdf , page1 used on input line 294.
@@ -1640,7 +1585,7 @@ File: Selbststaendigkeitserklaerung.pdf Graphic file (type pdf)
 <use Selbststaendigkeitserklaerung.pdf, page 1>
 Package pdftex.def Info: Selbststaendigkeitserklaerung.pdf , page1 used on input line 294.
 (pdftex.def)             Requested size: 597.57834pt x 845.1138pt.
-[4
+[3
 
 ]
 File: Selbststaendigkeitserklaerung.pdf Graphic file (type pdf)
@@ -1655,7 +1600,7 @@ File: Selbststaendigkeitserklaerung.pdf Graphic file (type pdf)
 <use Selbststaendigkeitserklaerung.pdf, page 1>
 Package pdftex.def Info: Selbststaendigkeitserklaerung.pdf , page1 used on input line 294.
 (pdftex.def)             Requested size: 597.57834pt x 845.1138pt.
- [5
+ [4
 
  <./Selbststaendigkeitserklaerung.pdf>] (./main.aux (./lightyield.aux))
  ***********
@@ -1666,42 +1611,28 @@ L3 programming layer <2024-01-22>
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  A524A08035BA03A2EEDC3F4F0DC3ADB4;963.
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                main
-(biblatex)                and rerun LaTeX afterwards.
-
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: D9DB2953C622F78B9E3605BAF9B4EE39;1375.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 58008 strings out of 474222
- 1292834 string characters out of 5748733
- 2299210 words of memory out of 5000000
- 79297 multiletter control sequences out of 15000+600000
- 614581 words of font info for 108 fonts, out of 8000000 for 9000
+ 57901 strings out of 474222
+ 1284856 string characters out of 5748733
+ 2299382 words of memory out of 5000000
+ 79184 multiletter control sequences out of 15000+600000
+ 618352 words of font info for 109 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  97i,22n,98p,2571b,2461s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{glo:PMT} has been referenced but does not exist, replaced by a fixed one
 
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1200.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (13 pages, 421330 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1200.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (12 pages, 431659 bytes).
 PDF statistics:
- 184 PDF objects out of 1000 (max. 8388607)
- 142 compressed objects within 2 object streams
- 35 named destinations out of 1000 (max. 500000)
- 38 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 218 PDF objects out of 1000 (max. 8388607)
+ 175 compressed objects within 2 object streams
+ 30 named destinations out of 1000 (max. 500000)
+ 118 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -4,8 +4,11 @@
 \babel@toc {ngerman}{}\relax 
 \contentsline {chapter}{Zusammenfassung}{iv}{section*.2}%
 \babel@toc {english}{}\relax 
-\contentsline {section}{\numberline {0.1}Detector Design and Construction}{1}{section.0.1}%
-\contentsline {subsubsection}{\numberline {0.1.0.1}Light Yield Measurement}{1}{subsubsection.0.1.0.1}%
-\contentsline {chapter}{Bibliography}{I}{chapter*.7}%
-\contentsline {chapter}{List of Figures}{III}{chapter*.8}%
-\contentsline {chapter}{List of Tables}{IV}{chapter*.9}%
+\contentsline {chapter}{\numberline {1}Detector Design and Construction}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Readout}{2}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Light Yield Measurement}{2}{subsection.1.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1.1}Light Yield: \ce {PbWO4}}{2}{subsubsection.1.1.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1.2}Light Yield: \ce {EJ-200}}{3}{subsubsection.1.1.1.2}%
+\contentsline {chapter}{Bibliography}{I}{chapter*.5}%
+\contentsline {chapter}{List of Figures}{II}{chapter*.6}%
+\contentsline {chapter}{List of Tables}{III}{chapter*.7}%

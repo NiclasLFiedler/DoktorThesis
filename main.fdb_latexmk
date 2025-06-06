@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 0 "main.bcf" "main.bbl" "main" 0 -1
+["biber main"] 0 "main.bcf" "main.bbl" "main" 1749220472.25803 -1
   "bibliography.bib" 1747403253.78275 18578 6eb3379b3d0c5ae14d544c228f0984fd ""
-  "main.bcf" 1747405307.53198 107239 8071c0c781631b4e5d56fb2761e85722 "pdflatex"
+  "main.bcf" 1749220472.17263 107239 8071c0c781631b4e5d56fb2761e85722 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1747405306.13365 "/home/niclas/DoktorThesis/main.tex" "main.pdf" "main" 1747405307.6479 2
+["pdflatex"] 1749220470.39971 "/home/niclas/DoktorThesis/main.tex" "main.pdf" "main" 1749220472.25825 0
   "/etc/texmf/web2c/texmf.cnf" 1739972125.5655 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/niclas/DoktorThesis/main.tex" 1747403735.08336 7391 a77f02508141bec4a3aa09102c790d0e ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -44,6 +44,7 @@
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm" 1136768653 1124 6c73e740cf17375f03eec0ee63599741 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm" 1229303445 688 37338d6ab346c2f1466b29e195316aa4 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1248133631 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb" 1136849748 35941 f27169cc74234d5bd5e4cca5abafaabb ""
   "/usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb" 1136849748 33709 b09d2e140b7e807d3a97058263ab6693 ""
@@ -356,21 +357,18 @@
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1739972157 8214701 8643c613c40f865e8caf7b216282d270 ""
   "Selbststaendigkeitserklaerung.pdf" 1747403506.4809 214396 38c49561d7e1a6e0a517257cc2c4d9f7 ""
   "abbreviations.txt" 1747403232.51904 6395 2afefff8b42095d6d664362fab9c6924 ""
-  "braggsampler/fig/lightyield/lightyield_plot.pdf" 0 -1 0 ""
-  "braggsampler/fig/lightyield/lightyield_setup_closed.jpg" 0 -1 0 ""
-  "braggsampler/fig/lightyield/lightyield_setup_open.jpg" 0 -1 0 ""
-  "braggsampler/fig/lightyield/lightyieldmeasurement_ch0.pdf" 0 -1 0 ""
   "fig/jlu.png" 1747403420.88027 77730 2558ddf8310c176c5ffc1e3352f6826b ""
-  "lightyield.aux" 1747405307.47998 6140 dbf598e29a2d3c65e93439d781c508a7 "pdflatex"
-  "lightyield.tex" 1747405304.28703 4438 9e2457beda77c2e04523f427d20339e8 ""
+  "lightyield.aux" 1749220472.04763 5857 ae12168833cc36eaddcaceaadb599ebd "pdflatex"
+  "lightyield.tex" 1749220470.22866 6684 9808a2ef086efaf610bd4d37ec6f3e24 ""
   "main.acr" 0 -1 0 ""
-  "main.aux" 1747405307.52798 2220 2c5b413420cc1c75eeb152d48a9a35bd "pdflatex"
-  "main.bbl" 1747403816.72313 10507 abcc61bab18bd0c6c8a173cfea604961 "biber main"
-  "main.lof" 1747405307.53298 802 fa224097e00506f0c0085d8353b1fdcd "pdflatex"
-  "main.lot" 1747405307.53298 120 c2266d5b2f20c5e50111df8a6472ff13 "pdflatex"
-  "main.out" 1747405307.53098 963 a524a08035ba03a2eedc3f4f0dc3adb4 "pdflatex"
+  "main.aux" 1749220472.16763 1831 0d9981716f5b4f605ba4f78840b84d60 "pdflatex"
+  "main.bbl" 1749204843.69146 4980 a14a64adea64f20c43db17ec412258f1 "biber main"
+  "main.lof" 1749220472.17263 501 6421ee782e14fd40d8b5a9f3a8a64285 "pdflatex"
+  "main.lot" 1749220472.17263 140 a4877c7407c1350c047eb9b022fd0807 "pdflatex"
+  "main.out" 1749220472.17063 1375 d9db2953c622f78b9e3605baf9b4ee39 "pdflatex"
+  "main.run.xml" 1749220472.17263 2368 571a03cfb4df0a66d4603062ea2bb0dc "pdflatex"
   "main.tex" 1747403735.08336 7391 a77f02508141bec4a3aa09102c790d0e ""
-  "main.toc" 1747405307.53298 595 a81db06663123a62f95543f277216f46 "pdflatex"
+  "main.toc" 1749220472.17263 857 6560118ff5b4f8e4b051304bb3cddcb5 "pdflatex"
   (generated)
   "lightyield.aux"
   "main.acn"
