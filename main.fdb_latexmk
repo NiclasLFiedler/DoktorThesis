@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 0 "main.bcf" "main.bbl" "main" 1749220472.25803 -1
+["biber main"] 0 "main.bcf" "main.bbl" "main" 1749735030.87294 -1
   "bibliography.bib" 1747403253.78275 18578 6eb3379b3d0c5ae14d544c228f0984fd ""
-  "main.bcf" 1749220472.17263 107239 8071c0c781631b4e5d56fb2761e85722 "pdflatex"
+  "main.bcf" 1749735030.78302 107309 c8abcb58d638976cb09e8569e1cc387c "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1749220470.39971 "/home/niclas/DoktorThesis/main.tex" "main.pdf" "main" 1749220472.25825 0
+["pdflatex"] 1749735029.13173 "/home/niclas/DoktorThesis/main.tex" "main.pdf" "main" 1749735030.87315 0
   "/etc/texmf/web2c/texmf.cnf" 1739972125.5655 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/niclas/DoktorThesis/main.tex" 1747403735.08336 7391 a77f02508141bec4a3aa09102c790d0e ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -358,17 +358,26 @@
   "Selbststaendigkeitserklaerung.pdf" 1747403506.4809 214396 38c49561d7e1a6e0a517257cc2c4d9f7 ""
   "abbreviations.txt" 1747403232.51904 6395 2afefff8b42095d6d664362fab9c6924 ""
   "fig/jlu.png" 1747403420.88027 77730 2558ddf8310c176c5ffc1e3352f6826b ""
-  "lightyield.aux" 1749220472.04763 5857 ae12168833cc36eaddcaceaadb599ebd "pdflatex"
-  "lightyield.tex" 1749220470.22866 6684 9808a2ef086efaf610bd4d37ec6f3e24 ""
+  "fig/lightyield/ej200/bps_ej200.pdf" 1749732187.55384 49133 c6aff45d82c9d65a0b5958ec2d6b7ccc ""
+  "fig/lightyield/ej200/bps_ej200_flat.pdf" 1749732187.55384 52238 267bb440055b43d3167885bc5b1fe945 ""
+  "fig/lightyield/ej200/bps_ej200_side.pdf" 1749732187.55484 51420 b5b93515b88ee172d09a6bb3794104ec ""
+  "fig/lightyield/ej200/bps_ej200_window.pdf" 1749732187.55484 45286 e006d0f53241c6ce8e4b721d8b96e3f6 ""
+  "fig/lightyield/ej200/bps_ej200_window_side.pdf" 1749732187.55484 44745 66439f4f567bd9b8de63d6514a75b8f4 ""
+  "fig/lightyield/ej200/ly_ej200_flat.jpg" 1749631927.7047 5178111 72e618294dbbb565abce08e29a3d0d42 ""
+  "fig/lightyield/ej200/ly_ej200_vertical.jpg" 1749631962.73938 4586812 ca4ddbe21d9b9d3f50dfa89b5daadf9a ""
+  "fig/lightyield/pwo/ly_pwo_flat.jpg" 1749647963.14292 4055815 897c1d65be9f2a3d7d6b886ccb5365b3 ""
+  "fig/lightyield/pwo/ly_pwo_vertical.jpg" 1749647973.88483 4859648 600886b5df1406652c2284f8b37469e7 ""
+  "lightyield.aux" 1749735030.69502 10029 2eebaebdba4e66a26eaa692f19e1f49c "pdflatex"
+  "lightyield.tex" 1749735028.92804 11538 cf42ea7167ee54a73967f6e4ff81b329 ""
   "main.acr" 0 -1 0 ""
-  "main.aux" 1749220472.16763 1831 0d9981716f5b4f605ba4f78840b84d60 "pdflatex"
-  "main.bbl" 1749204843.69146 4980 a14a64adea64f20c43db17ec412258f1 "biber main"
-  "main.lof" 1749220472.17263 501 6421ee782e14fd40d8b5a9f3a8a64285 "pdflatex"
-  "main.lot" 1749220472.17263 140 a4877c7407c1350c047eb9b022fd0807 "pdflatex"
-  "main.out" 1749220472.17063 1375 d9db2953c622f78b9e3605baf9b4ee39 "pdflatex"
-  "main.run.xml" 1749220472.17263 2368 571a03cfb4df0a66d4603062ea2bb0dc "pdflatex"
+  "main.aux" 1749735030.77802 1903 c52c8efd4e9871c3c097d774d30061a5 "pdflatex"
+  "main.bbl" 1749632754.90586 4980 a14a64adea64f20c43db17ec412258f1 "biber main"
+  "main.lof" 1749735030.78402 1255 4f2ffc3f4546f102d802e55f35bc6b01 "pdflatex"
+  "main.lot" 1749735030.78402 337 07c6bb3c648875f9b92bfb3bfeeb732d "pdflatex"
+  "main.out" 1749735030.78102 1376 af34eb7ecdb6b4f7ad25daca6362decb "pdflatex"
+  "main.run.xml" 1749735030.78402 2368 571a03cfb4df0a66d4603062ea2bb0dc "pdflatex"
   "main.tex" 1747403735.08336 7391 a77f02508141bec4a3aa09102c790d0e ""
-  "main.toc" 1749220472.17263 857 6560118ff5b4f8e4b051304bb3cddcb5 "pdflatex"
+  "main.toc" 1749735030.78402 858 be17262fac153ae66adfa0fa7d53e228 "pdflatex"
   (generated)
   "lightyield.aux"
   "main.acn"

@@ -29,23 +29,18 @@ The optical coupling was done using glycerol ($n=1.4722$), as shown in Figure~\r
 Glycerin was used as a substitute for the commonly used Baysilone\textsuperscript{{\textregistered}} Fluid~M optical grease ($n\approx 1.404,~\eta=\SI{300000}{\milli\meter^2\per\second}$~\cite{bayer:baysilone}), due to its less-adhesive characteristic.
 The Baysilone\textsuperscript{{\textregistered}} Fluid~M with its high adhesion might have lead to damaging the fragile crystals during removal.
 The refractive index of \ce{PbWO4} and the \ce{SiO2} glass window of the \gls{PMT} are $n_{\ce{PbWO4}}\approx2.3$~\cite{cms:tdr} and $n_{\ce{SiO2}}\approx1.459$~\cite{Malitson:65}, respectively.
-Additionally to the climate chamber's light-tightness, the setup is enclosed in PTFE foil, ensuring perfect light tightness, as shown in Figure~\ref{fig:detector:lightyield:setup:closed}.
+Additionally to the climate chamber's light-tightness, the setup is enclosed in PTFE foil, ensuring perfect light tightness.
 
-\begin{figure}[h!]
-    \centering
-    \begin{minipage}[t]{.5\textwidth}
-        \centering
-        \captionsetup{width=.9\linewidth}
-        %\includegraphics[width=.8\linewidth]{}
-        \captionof{figure}{Open light yield measurement setup for \ce{PbWO4} crystals using a \ce{^{22}Na} $\gamma$-source.}\label{fig:pwo:lightyield:open}
-    \end{minipage}%
-    \begin{minipage}[t]{.5\textwidth}
-        \centering
-        \captionsetup{width=.9\linewidth}
-        %\includegraphics[width=.8\linewidth]{}
-        \captionof{figure}{Encased light yield measurement setup for \ce{PbWO4} crystals using a \ce{^{22}Na} $\gamma$-source.}\label{fig:pwo:lightyield:closed}
-    \end{minipage}
+\begin{figure}[h]
+    \centering        
+    \subfloat[Flat position.\label{fig:lightyield:pwo:setup:f}]
+        {\includegraphics[width = 0.45\textwidth]{fig/lightyield/pwo/ly_pwo_flat.jpg}}
+    \hspace{0.02\textwidth}
+    \subfloat[Vertical position.\label{fig:lightyield:pwo:setup:v}]
+        {\includegraphics[width = 0.45\textwidth]{fig/lightyield/pwo/ly_pwo_vertical.jpg}}\\ 
+    \caption{Measurement positions of the \ce{PbWO4} scintillators on the \gls{PMT} for the light yield measurements using a \ce{^{22}Na} source.}\label{fig:lightyield:pwo:setup}
 \end{figure}
+
 
 The measurements were conducted at \SI{20}{\celsius} for \SI{5}{\minute} after an acclimation time of \SI{5}{\minute} each.
 The acclimation time was chosen small because the crystals were keept inside the climate chamber for \SI{24}{\hour} before the measurements were startet, thereby only the short time frame inbetween measuements, where the chamber was opened, had to be accounted for.
@@ -56,17 +51,83 @@ The \SI{2}{\milli\meter} thick crystals average approximately \SI{131.00}{ph\per
 With the SiPM-sized window cutout the light yield of a \SI{3}{\milli\meter} and \SI{2}{\milli\meter} crystal was \SI{75.25\pm 33.09}{ph\per\mega\electronvolt} and \SI{59.7\pm 19.22}{ph\per\mega\electronvolt}, respectively.
 
 \subsubsection{Light Yield: \ce{EJ-200}}
-The light yield of a $50 \times 50 \times 10 \si{\milli\meter\cubed}$ EJ-200 sample was measured to estimate the amount of incident photons on an SiPM by a plastic scintillator to decide which SiPM type is needed for the readout.
+The light yield of a $50 \times 50 \times 10~ \si{\milli\meter\cubed}$ EJ-200 sample was measured to estimate the amount of incident photons on an SiPM optically coupled to an EJ-212 scintillator, which has similar properties to EJ-200, to decide which SiPM type is needed for the readout.
 
-  
-% \begin{figure}[h!]
-%     \centering
-%     \includegraphics[width=0.55\linewidth]{braggsampler/fig/lightyield/lightyieldmeasurement_ch0.pdf}
-%     \caption{Exemplary light yield measurement of crystal number 0 with Gaus fitted \ce{^{137}Cs} source peak.}\label{fig:pwo:lightyield:measurement}
-% \end{figure}
+The measurements were done in a flat and vertical position, with two source positions for the vertical setup, as shown in Figure~\ref{fig:pwo:lightyield:ej200:setup}.
+In the vertical position two wrappings for the scintillator were used.
+First the whole PMT facing side was left open and secondly only an \gls{SiPM}-sized window cutout was left open.
+The scintillator was mounted onto the PMT's optical window inside a climate chamber and optically coupled using Baysilone\textsuperscript{{\textregistered}} Fluid~M optical grease~\cite{bayer:baysilone}.
+The setups were fully enclosed in PTFE foil to ensure light-tightness.
+The source positions were on the side and on top of the scintillator.
+A \ce{^{241}Am} source was chosen due to the high light yield of EJ200 as \ce{^{241}Am} has a prominent low-energy gamma line at \SI{59.6}{\electronvolt}.
 
-% \begin{figure}
-%     \centering
-%     \includegraphics[width=0.55\linewidth]{braggsampler/fig/lightyield/lightyield_plot.pdf}
-%     \caption{Plotted light yield measurements of the Braggpeak Sampler's crystals.}\label{fig:pwo:lightyield:plot}
-% \end{figure}
+\begin{figure}[!b]
+    \centering        
+    \subfloat[Flat position.\label{fig:lightyield:ej200:setup:f}]
+        {\includegraphics[width = 0.45\textwidth]{fig/lightyield/ej200/ly_ej200_flat.jpg}}
+    \hspace{0.02\textwidth}
+    \subfloat[Vertical position.\label{fig:lightyield:ej200:setup:v}]
+        {\includegraphics[width = 0.45\textwidth]{fig/lightyield/ej200/ly_ej200_vertical.jpg}}\\ 
+    \caption{Measurement positions of the EJ-200 scintillator on the \gls{PMT} for the light yield measurements using a \ce{^{241}Am} source.}\label{fig:lightyield:ej200:setup}
+\end{figure}
+
+The measurements were conducted at \SI{20}{\celsius} for \SI{20}{\minute} after an acclimation time of \SI{24}{\hour}.
+The measurements and Gaussian fits of the \SI{59.6}{\electronvolt} peak are shown in Figure~\ref{fig:lightyield:ej200:measurement}.
+
+\begin{figure}[hp]
+    \centering
+    % Top row
+    \makebox[\textwidth][c]{%
+    \begin{subfigure}[t]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{fig/lightyield/ej200/bps_ej200_flat.pdf}
+        \caption{Flat scintillator position.}\label{fig:lightyield:ej200:measurement:0}
+    \end{subfigure}
+    }
+    \vspace{0.5cm}
+    % Bottom row (2 images, centered)
+    \begin{subfigure}[t]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{fig/lightyield/ej200/bps_ej200.pdf}
+        \caption{Vertical position with open side and source on top.}\label{fig:lightyield:ej200:measurement:1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{fig/lightyield/ej200/bps_ej200_side.pdf}
+        \caption{Vertical position with open side and source on the side.}\label{fig:lightyield:ej200:measurement:2}
+    \end{subfigure}
+
+    \vspace{0.5cm}
+
+     % Bottom row (2 images, centered)
+
+     \begin{subfigure}[b]{0.48\textwidth}
+        \includegraphics[width=\linewidth]{fig/lightyield/ej200/bps_ej200_window.pdf}
+        \caption{Vertical position with \gls{SiPM}-sized window cutout and source on top.}\label{fig:lightyield:ej200:measurement:3}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \includegraphics[width=\linewidth]{fig/lightyield/ej200/bps_ej200_window_side.pdf}
+        \caption{Vertical position with \gls{SiPM}-sized window cutout and source on the side.}\label{fig:lightyield:ej200:measurement:4}
+    \end{subfigure}
+
+    \caption{Light yield measurements of the $50 \times 50 \times 10 \si{\milli\meter\cubed}$ EJ-200 scintillator sample. Shown are the measurements of the scintillator in a flat position with a completly open side (\ref{fig:lightyield:ej200:measurement:0}), in a vertical position with open side and the source on top (\ref{fig:lightyield:ej200:measurement:1}) and on the side (\ref{fig:lightyield:ej200:measurement:2}), and in a vertical position with an \gls{SiPM}-sized window cutout with the source on top~(\ref{fig:lightyield:ej200:measurement:3}) and on the side (\ref{fig:lightyield:ej200:measurement:4}).}\label{fig:lightyield:ej200:measurement}
+\end{figure}
+
+The light yield results are shown in Table~\ref{tab:lightyield:ej200}.
+The light yield for the flat position with is in good aggreement with the value provided by the manufacturer of \SI{10000}{ph\per\mega\electronvolt}, taking into account aging-related degradation of the PMT (from 2012), which reduce the quantum efficiency.
+For both vertical positions, the light yield is only slightly affected by the source position.
+This is due to the high attenuation length of optical photons in the scintillator of \SI{380}{\centi\meter}.
+When photons are collected from one side, approximately \SI{30}{\percent} of the total light is lost and when using an \gls{SiPM}-sized window cut-out the light yield is reduced by \SI{70}{\percent}.
+
+\begin{table}[]
+    \centering
+    \begin{tabular}{l|c|c|c}
+        Measurement & Peak position / ADC & Light yield / $\frac{\text{p.e.}}{\si{\mega\electronvolt}}$ & Light yield / $\frac{\text{ph}}{\si{\mega\electronvolt}}$ \\
+        \hline 
+        Flat & $3065.69 \pm 450.48$  & $1996.24 \pm 301.74$  & $8619.36 \pm 1302.84$ \\
+        Vertical, Top & $2110.67 \pm 330.26$  & $1356.56 \pm 221.21$  & $5857.33 \pm 955.15$ \\
+        Vertical, Side & $2196.13 \pm 362.80$  & $1413.80 \pm 243.01$  & $6104.49 \pm 1049.26$ \\
+        Vertical, Window, Top & $948.9 \pm 210.69$  & $578.39 \pm 141.12$  & $2497.35 \pm 609.34$ \\
+        Vertical, Window, Side & $975.01 \pm 241.14$  & $595.87 \pm 161.52$  & $2572.86 \pm 697.41$ \\
+    \end{tabular}
+    \caption{Light yield measurement results of the $50 \times 50 \times 10 \si{\milli\meter\cubed}$ EJ-200 scintillator sample.}\label{tab:lightyield:ej200}
+\end{table}

@@ -9,6 +9,6 @@
 \contentsline {subsection}{\numberline {1.1.1}Light Yield Measurement}{2}{subsection.1.1.1}%
 \contentsline {subsubsection}{\numberline {1.1.1.1}Light Yield: \ce {PbWO4}}{2}{subsubsection.1.1.1.1}%
 \contentsline {subsubsection}{\numberline {1.1.1.2}Light Yield: \ce {EJ-200}}{3}{subsubsection.1.1.1.2}%
-\contentsline {chapter}{Bibliography}{I}{chapter*.5}%
-\contentsline {chapter}{List of Figures}{II}{chapter*.6}%
-\contentsline {chapter}{List of Tables}{III}{chapter*.7}%
+\contentsline {chapter}{Bibliography}{I}{chapter*.8}%
+\contentsline {chapter}{List of Figures}{II}{chapter*.9}%
+\contentsline {chapter}{List of Tables}{III}{chapter*.10}%
