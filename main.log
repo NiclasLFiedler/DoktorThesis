@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.19)  12 JUN 2025 15:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.11.6)  16 JUN 2025 11:52
 entering extended mode
- restricted \write18 enabled.
+ \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/home/niclas/DoktorThesis/main.tex
-(/home/niclas/DoktorThesis/main.tex
+**/home/user/DoktorThesis/main.tex
+(/home/user/DoktorThesis/main.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
 (/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
@@ -1265,9 +1265,9 @@ Language: english 2017/06/06 v3.3r English support from the babel system
 Package babel Info: Hyphen rules for 'canadian' set to \l@english
 (babel)             (\language0). Reported on input line 102.
 Package babel Info: Hyphen rules for 'australian' set to \l@ukenglish
-(babel)             (\language29). Reported on input line 105.
+(babel)             (\language87). Reported on input line 105.
 Package babel Info: Hyphen rules for 'newzealand' set to \l@ukenglish
-(babel)             (\language29). Reported on input line 108.
+(babel)             (\language87). Reported on input line 108.
 )) (/usr/share/texlive/texmf-dist/tex/generic/babel/locale/en/babel-english.tex
 Package babel Info: Importing font and identification data for english
 (babel)             from babel-en.ini. Reported on input line 11.
@@ -1550,57 +1550,55 @@ LaTeX Warning: Reference `' on page 2 undefined on input line 48.
 [2]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mhchem@cee' on input line 53.
+(hyperref)                removing `\mhchem@cee' on input line 57.
 
 [3 <./fig/lightyield/pwo/ly_pwo_flat.jpg> <./fig/lightyield/pwo/ly_pwo_vertical.jpg>]
-
-LaTeX Warning: Reference `fig:pwo:lightyield:ej200:setup' on page 4 undefined on input line 56.
-
-<fig/lightyield/ej200/ly_ej200_flat.jpg, id=120, 3019.28pt x 4015.0pt>
+<fig/lightyield/ej200/ly_ej200_flat.jpg, id=122, 3019.28pt x 4015.0pt>
 File: fig/lightyield/ej200/ly_ej200_flat.jpg Graphic file (type jpg)
 <use fig/lightyield/ej200/ly_ej200_flat.jpg>
-Package pdftex.def Info: fig/lightyield/ej200/ly_ej200_flat.jpg  used on input line 67.
+Package pdftex.def Info: fig/lightyield/ej200/ly_ej200_flat.jpg  used on input line 71.
 (pdftex.def)             Requested size: 192.0548pt x 255.34789pt.
-<fig/lightyield/ej200/ly_ej200_vertical.jpg, id=121, 3019.28pt x 4015.0pt>
+<fig/lightyield/ej200/ly_ej200_vertical.jpg, id=123, 3019.28pt x 4015.0pt>
 File: fig/lightyield/ej200/ly_ej200_vertical.jpg Graphic file (type jpg)
 <use fig/lightyield/ej200/ly_ej200_vertical.jpg>
-Package pdftex.def Info: fig/lightyield/ej200/ly_ej200_vertical.jpg  used on input line 70.
+Package pdftex.def Info: fig/lightyield/ej200/ly_ej200_vertical.jpg  used on input line 74.
 (pdftex.def)             Requested size: 192.0548pt x 255.34789pt.
-<fig/lightyield/ej200/bps_ej200_flat.pdf, id=125, 1084.05pt x 722.7pt>
+<fig/lightyield/ej200/bps_ej200_flat.pdf, id=127, 1084.05pt x 722.7pt>
 File: fig/lightyield/ej200/bps_ej200_flat.pdf Graphic file (type pdf)
 <use fig/lightyield/ej200/bps_ej200_flat.pdf>
-Package pdftex.def Info: fig/lightyield/ej200/bps_ej200_flat.pdf  used on input line 85.
+Package pdftex.def Info: fig/lightyield/ej200/bps_ej200_flat.pdf  used on input line 89.
 (pdftex.def)             Requested size: 204.85802pt x 136.56454pt.
-<fig/lightyield/ej200/bps_ej200.pdf, id=126, 1084.05pt x 722.7pt>
+<fig/lightyield/ej200/bps_ej200.pdf, id=128, 1084.05pt x 722.7pt>
 File: fig/lightyield/ej200/bps_ej200.pdf Graphic file (type pdf)
 <use fig/lightyield/ej200/bps_ej200.pdf>
-Package pdftex.def Info: fig/lightyield/ej200/bps_ej200.pdf  used on input line 89.
+Package pdftex.def Info: fig/lightyield/ej200/bps_ej200.pdf  used on input line 93.
 (pdftex.def)             Requested size: 204.85802pt x 136.56454pt.
-<fig/lightyield/ej200/bps_ej200_side.pdf, id=127, 1084.05pt x 722.7pt>
+<fig/lightyield/ej200/bps_ej200_side.pdf, id=129, 1084.05pt x 722.7pt>
 File: fig/lightyield/ej200/bps_ej200_side.pdf Graphic file (type pdf)
 <use fig/lightyield/ej200/bps_ej200_side.pdf>
-Package pdftex.def Info: fig/lightyield/ej200/bps_ej200_side.pdf  used on input line 94.
+Package pdftex.def Info: fig/lightyield/ej200/bps_ej200_side.pdf  used on input line 98.
 (pdftex.def)             Requested size: 204.85802pt x 136.56454pt.
-<fig/lightyield/ej200/bps_ej200_window.pdf, id=128, 1084.05pt x 722.7pt>
+<fig/lightyield/ej200/bps_ej200_window.pdf, id=130, 1084.05pt x 722.7pt>
 File: fig/lightyield/ej200/bps_ej200_window.pdf Graphic file (type pdf)
 <use fig/lightyield/ej200/bps_ej200_window.pdf>
-Package pdftex.def Info: fig/lightyield/ej200/bps_ej200_window.pdf  used on input line 103.
+Package pdftex.def Info: fig/lightyield/ej200/bps_ej200_window.pdf  used on input line 107.
 (pdftex.def)             Requested size: 204.85802pt x 136.56454pt.
-<fig/lightyield/ej200/bps_ej200_window_side.pdf, id=131, 1084.05pt x 722.7pt>
+<fig/lightyield/ej200/bps_ej200_window_side.pdf, id=133, 1084.05pt x 722.7pt>
 File: fig/lightyield/ej200/bps_ej200_window_side.pdf Graphic file (type pdf)
 <use fig/lightyield/ej200/bps_ej200_window_side.pdf>
-Package pdftex.def Info: fig/lightyield/ej200/bps_ej200_window_side.pdf  used on input line 108.
+Package pdftex.def Info: fig/lightyield/ej200/bps_ej200_window_side.pdf  used on input line 112.
 (pdftex.def)             Requested size: 204.85802pt x 136.56454pt.
 
-LaTeX Warning: Float too large for page by 17.34299pt on input line 113.
+
+LaTeX Warning: Float too large for page by 17.34299pt on input line 117.
 
 [4 <./fig/lightyield/ej200/ly_ej200_flat.jpg> <./fig/lightyield/ej200/ly_ej200_vertical.jpg>] [5 <./fig/lightyield/ej200/bps_ej200_flat.pdf> <./fig/lightyield/ej200/bps_ej200.pdf> <./fig/lightyield/ej200/bps_ej200_side.pdf> <./fig/lightyield/ej200/bps_ej200_window.pdf> <./fig/lightyield/ej200/bps_ej200_window_side.pdf>]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 121.
+               Default added (so using `tbp') on input line 125.
 
 
-Overfull \hbox (9.11246pt too wide) in paragraph at lines 123--132
+Overfull \hbox (9.11246pt too wide) in paragraph at lines 127--136
  [][] 
  []
 
@@ -1630,7 +1628,7 @@ Overfull \hbox (8.56561pt too wide) in paragraph at lines 288--288
 
 
 No file main.acr.
-<Selbststaendigkeitserklaerung.pdf, id=398, 597.55246pt x 845.07718pt>
+<Selbststaendigkeitserklaerung.pdf, id=400, 597.55246pt x 845.07718pt>
 File: Selbststaendigkeitserklaerung.pdf Graphic file (type pdf)
 <use Selbststaendigkeitserklaerung.pdf>
 Package pdftex.def Info: Selbststaendigkeitserklaerung.pdf  used on input line 294.
@@ -1639,7 +1637,7 @@ File: Selbststaendigkeitserklaerung.pdf Graphic file (type pdf)
 <use Selbststaendigkeitserklaerung.pdf>
 Package pdftex.def Info: Selbststaendigkeitserklaerung.pdf  used on input line 294.
 (pdftex.def)             Requested size: 597.551pt x 845.07512pt.
-<Selbststaendigkeitserklaerung.pdf, id=401, page=1, 597.55246pt x 845.07718pt>
+<Selbststaendigkeitserklaerung.pdf, id=403, page=1, 597.55246pt x 845.07718pt>
 File: Selbststaendigkeitserklaerung.pdf Graphic file (type pdf)
 <use Selbststaendigkeitserklaerung.pdf, page 1>
 Package pdftex.def Info: Selbststaendigkeitserklaerung.pdf , page1 used on input line 294.
@@ -1675,19 +1673,19 @@ L3 programming layer <2024-01-22>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: AF34EB7ECDB6B4F7AD25DACA6362DECB;1376.
+(rerunfilecheck)             Checksum: 9EB4AB26F886179D1FA1155DD65909E0;1377.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
  58007 strings out of 474222
- 1288959 string characters out of 5748733
- 2301400 words of memory out of 5000000
- 79282 multiletter control sequences out of 15000+600000
+ 1288939 string characters out of 5748733
+ 2301396 words of memory out of 5000000
+ 79281 multiletter control sequences out of 15000+600000
  621074 words of font info for 111 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 97i,20n,98p,2571b,2461s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 97i,20n,98p,2569b,2461s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{glo:SiPM} has been referenced but does not exist, replaced by a fixed one
 
@@ -1695,10 +1693,10 @@ pdfTeX warning (dest): name{glo:SiPM} has been referenced but does not exist, re
 pdfTeX warning (dest): name{glo:PMT} has been referenced but does not exist, replaced by a fixed one
 
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1200.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (15 pages, 19347080 bytes).
+Output written on main.pdf (15 pages, 19347128 bytes).
 PDF statistics:
- 484 PDF objects out of 1000 (max. 8388607)
- 248 compressed objects within 3 object streams
- 37 named destinations out of 1000 (max. 500000)
+ 486 PDF objects out of 1000 (max. 8388607)
+ 250 compressed objects within 3 object streams
+ 38 named destinations out of 1000 (max. 500000)
  163 words of extra memory for PDF output out of 10000 (max. 10000000)
 
