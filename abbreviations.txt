@@ -74,3 +74,4 @@
 \newacronym{ICRU}{ICRU}{\textbf{I}nternational \textbf{C}ommission on \textbf{R}adiation \textbf{U}nits and Measurements}
 \newacronym{RMS}{RMS}{\textbf{R}oot \textbf{M}ean \textbf{S}quare}
 \newacronym{CERN}{CERN}{\textbf{C}onseil \textbf{E}uropéen pour la \textbf{R}echerche \textbf{N}ucléaire}
+\newacronym{PDE}{PDE}{\textbf{P}hoto-\textbf{D}etection \textbf{E}fficiency}

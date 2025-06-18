@@ -1,12 +1,20 @@
 \chapter{Detector Design and Construction}\label{chapter:setup}
+
+\section{Introduction \& Motivation}
+
+\section{Detector Concept \& Scintillator Selection}\label{section:detector:concept}
 Two different scintillation-based detector-concepts were developed to measure the depth dose distribution of protons in real-time.
-Both detectors consist of scintillator-layers measuring the energy deposition.
+Both detectors consist of 32 scintillator-layers read-out via \glspl{SiPM} and two 16-channel CAEN digitizer that are linked together.
 
-The first detector concept uses \ce{PbWO4} sheets with two thicknesses \SI{2}{\mm} and \SI{3}{\mm}.
-Here the thicker \SI{3}{\mm} are used in the front to provide more stopping power and the thinner \SI{2}{\mm} are used in the Bragg-Peak region to give the optimal spatial resolution whilst still only utilizing 32 channels.
-The thicknesses were chosen to fully cover the \SI{66}{\mm} range of \SI{220}{\mega\electronvolt} protons in \ce{PbWO4}, yet still being thick enough not to break as \ce{PbWO4} is a very fragile material.
+The first detector concept is, as the first prototype \ce{PbWO4}-based,  [citemaster], but improves on the layer geometry by using sheets instead of bars whilst also reducing layer thickness.
+For this two crystal sizes were chosen with $30\times30\times3~\text{mm}^3$ and $30\times30\times2~\text{mm}^3$, which were provided and cut by Crytur, allowing full coverage of the \SI{220}{\mega\electronvolt} proton range of $\approx \SI{66}{\mm}$.
+The lateral sheet sizes with \SI{30}{\mm} were the largest providable, because the sheets were cut from a single ingot and the thicknesses are the smallest resonable due to \ce{PbWO4} being very fragile.
+The \SI{3}{\mm} thick sheets are used in the front or shallow beam depths to provide more stopping power and the thinner \SI{2}{\mm} sheets are used in the Bragg-Peak region to give an optimal spatial resolution.
 
-The second detector concept uses EJ-212 plastic scintillators with a thickness of \SI{4}{\mm} allowing for a better spatial resolution.
+To further increase the spatial resolution in the Bragg-Peak region a second  detector concept using plastic scintillators was developed.
+Plastic scintillators have a much lower density and thereby stopping power than \ce{PbWO4}, allowing the use of thicker scintillators whilst increasing the spatial resolution.
+  
+with a thicknes s of \SI{4}{\mm} allowing for a better spatial resolution.
 However, since the 32 available channels with \SI{4}{\mm} Ej-212 only cover $\approx \SI{12.8}{\centi\meter}$ of the \SI{30.4}{\centi\meter} proton range, a passive absorber has to be included to fully stopp the protons inside the detector.
 This \SI{20}{\centi\meter} passive absorber consists of PMMA resulting in enough stopping power to stop the beam inside the detector.
 The passive absorber is placed between the first and second plastic scintillator such that the first works as a trigger channel which is used for the normalization in the analysis.
@@ -44,17 +52,25 @@ Additionally to the climate chamber's light-tightness, the setup is enclosed in 
 
 The measurements were conducted at \SI{20}{\celsius} for \SI{5}{\minute} after an acclimation time of \SI{5}{\minute} each.
 The acclimation time was chosen small because the crystals were keept inside the climate chamber for \SI{24}{\hour} before the measurements were startet, thereby only the short time frame inbetween measuements, where the chamber was opened, had to be accounted for.
-An exemplary light yield measurement of crystal number~0 in the flat position is shown in Figure~\ref{fig:detector:lightyield:pwo:measurement:flat:0}.
-The measured light yield values of all crystals for the different setups are shown in Figure~\ref{}.
+An exemplary light yield measurement of crystal number~0 in the flat position is shown in Figure~\ref{fig:lightyield:pwo:measurement:0}.
+The measured light yield values of all crystals and their averages for the different setups are shown in Figure~\ref{fig:lightyield:pwo:measurement:all}.
 The \SI{3}{\milli\meter} thick crystals average approximately \SI{164.73}{ph\per\mega\electronvolt} and \SI{129.44}{ph\per\mega\electronvolt} in the flat and vertical positions, respectively.
 The \SI{2}{\milli\meter} thick crystals average approximately \SI{131.00}{ph\per\mega\electronvolt} and \SI{94.32}{ph\per\mega\electronvolt} in the flat and vertical positions, respectively.
 With the SiPM-sized window cutout the light yield of a \SI{3}{\milli\meter} and \SI{2}{\milli\meter} crystal was \SI{75.25\pm 33.09}{ph\per\mega\electronvolt} and \SI{59.7\pm 19.22}{ph\per\mega\electronvolt}, respectively.
 
-\begin{figure}
-    
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\linewidth]{fig/lightyield/pwo/bps_na_flat.pdf}
+    \caption{Example light yield measurement of the \SI{3}{\milli\meter} thick \ce{PbWO4}-crystal number 0 in flat position on the \gls{PMT} using a \ce{^{22}Na} source.}\label{fig:lightyield:pwo:measurement:0}
 \end{figure}
 
-\subsubsection{Light Yield: \ce{EJ-200}}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\linewidth]{fig/lightyield/pwo/bps_na22_all.pdf}
+    \caption{Light yield measurements of \ce{PbWO4}-crystals in flat and vertical positions including two window cut-out measuremetns using a \ce{^{22}Na} source.}\label{fig:lightyield:pwo:measurement:all}
+\end{figure}
+
+\subsubsection{Light Yield: EJ-200}
 The light yield of a $50 \times 50 \times 10~ \si{\milli\meter\cubed}$ EJ-200 sample was measured to estimate the amount of incident photons on an SiPM optically coupled to an EJ-212 scintillator, which has similar properties to EJ-200, to decide which SiPM type is needed for the readout.
 
 The measurements were done in a flat and vertical position, with two source positions for the vertical setup, as shown in Figure~\ref{fig:lightyield:ej200:setup}.
@@ -65,7 +81,7 @@ The setups were fully enclosed in PTFE foil to ensure light-tightness.
 The source positions were on the side and on top of the scintillator.
 A \ce{^{241}Am} source was chosen due to the high light yield of EJ200 as \ce{^{241}Am} has a prominent low-energy gamma line at \SI{59.6}{\electronvolt}.
 
-\begin{figure}[!b]
+\begin{figure}[h]
     \centering        
     \subfloat[Flat position.\label{fig:lightyield:ej200:setup:f}]
         {\includegraphics[width = 0.45\textwidth]{fig/lightyield/ej200/ly_ej200_flat.jpg}}
@@ -122,7 +138,7 @@ For both vertical positions, the light yield is only slightly affected by the so
 This is due to the high attenuation length of optical photons in the scintillator of \SI{380}{\centi\meter}.
 When photons are collected from one side, approximately \SI{30}{\percent} of the total light is lost and when using an \gls{SiPM}-sized window cut-out the light yield is reduced by \SI{70}{\percent}.
 
-\begin{table}[]
+\begin{table}[h]
     \centering
     \begin{tabular}{l|c|c|c}
         Measurement & Peak position / ADC & Light yield / $\frac{\text{p.e.}}{\si{\mega\electronvolt}}$ & Light yield / $\frac{\text{ph}}{\si{\mega\electronvolt}}$ \\
@@ -135,3 +151,42 @@ When photons are collected from one side, approximately \SI{30}{\percent} of the
     \end{tabular}
     \caption{Light yield measurement results of the $50 \times 50 \times 10 \si{\milli\meter\cubed}$ EJ-200 scintillator sample.}\label{tab:lightyield:ej200}
 \end{table}
+
+\section{Photon Readout and SiPM Selection}\label{section:sipm:selection}
+An optimal \gls{SiPM}-type for measuring the proton depth-dose distribution for the given scintillators needs to balance a high resolution with a high dynamic range to accurately measure the low energies in the shallow depths and the high energies in the Bragg-Peak region.
+To ensure a linear \gls{SiPM} signal, the number of impinging photons needs to be less or equal to approximately \SI{10}{\percent} of the number of pixels divided by the \gls{PDE}. 
+
+
+\subsection{SiPM for \ce{PbWO4}}
+The light yield measurements of the teflon-wrapped \ce{PbWO4} crystals with an \gls{SiPM}-sized window cutout resulted in \SI{75.25\pm 33.09}{ph\per\mega\electronvolt} and \SI{59.7\pm 19.22}{ph\per\mega\electronvolt} for the \SI{3}{\milli\meter} and \SI{2}{\milli\meter} thick crystal, respectively.
+The \gls{SiPM}-type chosen, was the already available Broadcom AFBR-S4N44P014M, with an active area of $3.72 \times 3.62~\si{\milli\meter\squared}$, a micro cell pitch of \SI{40}{\micro\meter}, $8334$ microcells and a maximum \gls{PDE} of \SI{63}{\percent} at \SI{420}{\nano\meter} coinciding with the luminescence maximum of \ce{PbWO4}.
+The upper limit of the expected number of triggered pixels can be calculated using the highest simulated energy loss in the Bragg-Peak region, which is approximately \SI{40}{\mega\electronvolt}, as shown in Figure~\ref{}.
+Accounting for the covered active area of the \gls{SiPM} by the \SI{2}{\milli\meter} thick crystal gives:
+
+\begin{align}
+    \frac{N(E)}{N(A)} &= E  \cdot \frac{L \cdot PDE}{N_0 \frac{A_{cov}}{A_{\gls{SiPM}}}}\\
+    \frac{N(E_{max}=\SI{40}{\mega\electronvolt})}{N(A)} &=  \SI{40}{\mega\electronvolt} \cdot \frac{\SI{59.7}{ph\per\mega\electronvolt} \cdot 0.63 \frac{\text{1}}{\text{ph}}}{N_0 \cdot \frac{2\cdot3.72~\si{\milli\meter\squared}}{3.62\cdot3.72~\si{\milli\meter\squared}}} \\
+    &= 0.327
+\end{align}
+
+\subsection{SiPM for EJ-212}
+Since EJ-200 and EJ-212 are very similar the \gls{SiPM}-type for the EJ-212 scintillators was chosen based on the measurements of EJ-200.
+The measured light yield for the teflon-wrapped EJ-200 scintillator with an \gls{SiPM}-sized cut-out with a center positioned source is \SI{2572.86}, as shown in Table~\ref{tab:lightyield:ej200}.
+Due to the high light yield an \gls{SiPM}, the Hamamatsu S14160-3010PS was chosen.
+This \gls{SiPM} has an active area of $3\times 3 \si{\mm\squared}$, a micro cell pitch of \SI{10}{\micro\meter}, $89984$ microcells and a maximum \gls{PDE} of \SI{18}{\percent} at \SI{460}{\nano\meter}, which is close to the luminescence maximum of \ce{EJ212} at \SI{423}{\nano\meter}.
+The upper limit of the expected number of triggered pixels is again calculated using the highest simulated energy loss in the Bragg-Peak region, which is approximately \SI{20}{\mega\electronvolt}, as shown in Figure~\ref{}.
+Accounting for the fully covered active area of the \gls{SiPM} this gives:
+
+\begin{align}
+    \frac{N(E)}{N_0} &= E  \cdot \frac{L \cdot PDE}{N_0}\\
+    \frac{N(E_{max}=\SI{20}{\mega\electronvolt})}{N(A)} 
+    &=  \SI{20}{\mega\electronvolt} \cdot \frac{\SI{2572.86}{ph\per\mega\electronvolt} \cdot 0.18 \frac{\text{1}}{\text{ph}}}{N_0} \\
+    &= 0.103
+\end{align}
+
+\section{Detector Assembly and Construction}
+\section{Experimental Setup}
+\section{Data Analysis}
+\section{Results}
+\section{Discussion}
+\section{Outlook}

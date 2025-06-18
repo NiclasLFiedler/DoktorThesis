@@ -5,10 +5,21 @@
 \contentsline {chapter}{Zusammenfassung}{iv}{section*.2}%
 \babel@toc {english}{}\relax 
 \contentsline {chapter}{\numberline {1}Detector Design and Construction}{1}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Readout}{2}{section.1.1}%
-\contentsline {subsection}{\numberline {1.1.1}Light Yield Measurement}{2}{subsection.1.1.1}%
-\contentsline {subsubsection}{\numberline {1.1.1.1}Light Yield: \ce {PbWO4}}{2}{subsubsection.1.1.1.1}%
-\contentsline {subsubsection}{\numberline {1.1.1.2}Light Yield: \ce {EJ-200}}{3}{subsubsection.1.1.1.2}%
-\contentsline {chapter}{Bibliography}{I}{chapter*.9}%
-\contentsline {chapter}{List of Figures}{II}{chapter*.10}%
-\contentsline {chapter}{List of Tables}{III}{chapter*.11}%
+\contentsline {section}{\numberline {1.1}Introduction \& Motivation}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Detector Concept \& Scintillator Selection}{1}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Readout}{2}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Light Yield Measurement}{2}{subsection.1.3.1}%
+\contentsline {subsubsection}{\numberline {1.3.1.1}Light Yield: \ce {PbWO4}}{2}{subsubsection.1.3.1.1}%
+\contentsline {subsubsection}{\numberline {1.3.1.2}Light Yield: EJ-200}{4}{subsubsection.1.3.1.2}%
+\contentsline {section}{\numberline {1.4}Photon Readout and SiPM Selection}{5}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}SiPM for \ce {PbWO4}}{6}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.4.2}SiPM for EJ-212}{8}{subsection.1.4.2}%
+\contentsline {section}{\numberline {1.5}Detector Assembly and Construction}{9}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Experimental Setup}{9}{section.1.6}%
+\contentsline {section}{\numberline {1.7}Data Analysis}{9}{section.1.7}%
+\contentsline {section}{\numberline {1.8}Results}{9}{section.1.8}%
+\contentsline {section}{\numberline {1.9}Discussion}{9}{section.1.9}%
+\contentsline {section}{\numberline {1.10}Outlook}{9}{section.1.10}%
+\contentsline {chapter}{Bibliography}{I}{chapter*.10}%
+\contentsline {chapter}{List of Figures}{II}{chapter*.11}%
+\contentsline {chapter}{List of Tables}{III}{chapter*.12}%
