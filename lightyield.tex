@@ -6,16 +6,21 @@
 Two different scintillation-based detector-concepts were developed to measure the depth dose distribution of protons in real-time.
 Both detectors consist of 32 scintillator-layers read-out via \glspl{SiPM} and two 16-channel CAEN digitizer that are linked together.
 
-The first detector concept is, as the first prototype \ce{PbWO4}-based,  [citemaster], but improves on the layer geometry by using sheets instead of bars whilst also reducing layer thickness.
+The first detector concept is \ce{PbWO4}-based, as the first prototype,  [citemaster], but improves on the layer geometry by using sheets instead of bars whilst also reducing layer thickness.
 For this two crystal sizes were chosen with $30\times30\times3~\text{mm}^3$ and $30\times30\times2~\text{mm}^3$, which were provided and cut by Crytur, allowing full coverage of the \SI{220}{\mega\electronvolt} proton range of $\approx \SI{66}{\mm}$.
 The lateral sheet sizes with \SI{30}{\mm} were the largest providable, because the sheets were cut from a single ingot and the thicknesses are the smallest resonable due to \ce{PbWO4} being very fragile.
 The \SI{3}{\mm} thick sheets are used in the front or shallow beam depths to provide more stopping power and the thinner \SI{2}{\mm} sheets are used in the Bragg-Peak region to give an optimal spatial resolution.
 
-To further increase the spatial resolution in the Bragg-Peak region a second  detector concept using plastic scintillators was developed.
-Plastic scintillators have a much lower density and thereby stopping power than \ce{PbWO4}, allowing the use of thicker scintillators whilst increasing the spatial resolution.
-  
-with a thicknes s of \SI{4}{\mm} allowing for a better spatial resolution.
-However, since the 32 available channels with \SI{4}{\mm} Ej-212 only cover $\approx \SI{12.8}{\centi\meter}$ of the \SI{30.4}{\centi\meter} proton range, a passive absorber has to be included to fully stopp the protons inside the detector.
+A second  detector concept using plastic scintillators was developed to further increase the spatial resolution in the Bragg-Peak region at the cost of dynamic range in the shallow depths. 
+Plastic scintillators were chosen because they have a much lower density and thereby stopping power than \ce{PbWO4} and a high light yield giving a good energy resolution.
+However, to achieve a high spatial resolution whilst using only 32 channels, that the individual channls need a low radiological thickness resulting in not fully covering the proton range.
+To still stop the proton beam a passive absober with known stopping power i.e. radiological thickness is incorperated between the first and second scintillator layers.
+To strike a good balance between active and passive volume a Geant4 simulations were run, giving detector performances insights.
+The active material inside the simulation is a PVT-based scintillator, similar to general purpose plastic scintillators like EJ-200 or BC-408.
+The concret implementation  
+
+with a thickness of \SI{4}{\mm} allowing for a better spatial resolution.
+However, since the 32 available channels with \SI{4}{\mm} EJ-212 only cover $\approx \SI{12.8}{\centi\meter}$ of the \SI{30.4}{\centi\meter} proton range, a passive absorber has to be included to fully stopp the protons inside the detector.
 This \SI{20}{\centi\meter} passive absorber consists of PMMA resulting in enough stopping power to stop the beam inside the detector.
 The passive absorber is placed between the first and second plastic scintillator such that the first works as a trigger channel which is used for the normalization in the analysis.
 

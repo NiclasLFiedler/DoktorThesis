@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 1750239804.43883 "main.bcf" "main.bbl" "main" 1750252566.06532 0
+["biber main"] 1750239804.43883 "main.bcf" "main.bbl" "main" 1750416299.70829 0
   "bibliography.bib" 1747403253.78275 18578 6eb3379b3d0c5ae14d544c228f0984fd ""
-  "main.bcf" 1750252565.96483 107309 c8abcb58d638976cb09e8569e1cc387c "pdflatex"
+  "main.bcf" 1750416299.61039 107309 c8abcb58d638976cb09e8569e1cc387c "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1750252563.98323 "/home/niclas/DoktorThesis/main.tex" "main.pdf" "main" 1750252566.06554 0
+["pdflatex"] 1750416297.68943 "/home/niclas/DoktorThesis/main.tex" "main.pdf" "main" 1750416299.7085 0
   "/etc/texmf/web2c/texmf.cnf" 1739972125.5655 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/niclas/DoktorThesis/main.tex" 1747403735.08336 7391 a77f02508141bec4a3aa09102c790d0e ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -369,17 +369,17 @@
   "fig/lightyield/pwo/bps_na_flat.pdf" 1750149383.35589 37493 828b8f8c663548f03218a3147d2b7208 ""
   "fig/lightyield/pwo/ly_pwo_flat.jpg" 1749647963.14292 4055815 897c1d65be9f2a3d7d6b886ccb5365b3 ""
   "fig/lightyield/pwo/ly_pwo_vertical.jpg" 1749647973.88483 4859648 600886b5df1406652c2284f8b37469e7 ""
-  "lightyield.aux" 1750252565.81084 12603 56425d268752bcfa3ef9f5673bed36fa "pdflatex"
-  "lightyield.tex" 1750252561.6659 16417 ec6e6e1f9ce517980ea7718f3fadafda ""
+  "lightyield.aux" 1750416299.45939 12603 5446bd6af3755f25f11402f6d7469061 "pdflatex"
+  "lightyield.tex" 1750416297.49341 17120 04970201925e552d669dba726f86ba82 ""
   "main.acr" 0 -1 0 ""
-  "main.aux" 1750252565.95883 1905 c259c07b4efb3e602c23eff5aa8d005e "pdflatex"
+  "main.aux" 1750416299.60439 1905 c259c07b4efb3e602c23eff5aa8d005e "pdflatex"
   "main.bbl" 1750239804.88527 4980 a14a64adea64f20c43db17ec412258f1 "biber main"
-  "main.lof" 1750252565.96583 1728 215f19116c15bc41a6713aec03d9dc12 "pdflatex"
-  "main.lot" 1750252565.96583 337 cebab493bf90ee7768f0d08786b19697 "pdflatex"
-  "main.out" 1750252565.96283 3146 7851046069ae1a5ba0594cac8559ed81 "pdflatex"
-  "main.run.xml" 1750252565.96583 2368 571a03cfb4df0a66d4603062ea2bb0dc "pdflatex"
+  "main.lof" 1750416299.61239 1728 1033ced6ae24ee76f08394dfd4f98e88 "pdflatex"
+  "main.lot" 1750416299.61239 337 c91691f2b4b25ae7c6bda577800eb122 "pdflatex"
+  "main.out" 1750416299.60839 3146 7851046069ae1a5ba0594cac8559ed81 "pdflatex"
+  "main.run.xml" 1750416299.61239 2368 571a03cfb4df0a66d4603062ea2bb0dc "pdflatex"
   "main.tex" 1747403735.08336 7391 a77f02508141bec4a3aa09102c790d0e ""
-  "main.toc" 1750252565.96583 1761 93571edea19a4f766195408b8de02fda "pdflatex"
+  "main.toc" 1750416299.61239 1761 50165e767f48989a6dd58e2657d240bb "pdflatex"
   (generated)
   "lightyield.aux"
   "main.acn"
