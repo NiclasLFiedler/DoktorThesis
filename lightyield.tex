@@ -11,13 +11,14 @@ For this two crystal sizes were chosen with $30\times30\times3~\text{mm}^3$ and 
 The lateral sheet sizes with \SI{30}{\mm} were the largest providable, because the sheets were cut from a single ingot and the thicknesses are the smallest resonable due to \ce{PbWO4} being very fragile.
 The \SI{3}{\mm} thick sheets are used in the front or shallow beam depths to provide more stopping power and the thinner \SI{2}{\mm} sheets are used in the Bragg-Peak region to give an optimal spatial resolution.
 
-A second  detector concept using plastic scintillators was developed to further increase the spatial resolution in the Bragg-Peak region at the cost of dynamic range in the shallow depths. 
+A second detector concept using plastic scintillators was developed to further increase the spatial resolution in the Bragg-Peak region at the cost of dynamic range in the shallow depths. 
 Plastic scintillators were chosen because they have a much lower density and thereby stopping power than \ce{PbWO4} and a high light yield giving a good energy resolution.
 However, to achieve a high spatial resolution whilst using only 32 channels, that the individual channls need a low radiological thickness resulting in not fully covering the proton range.
 To still stop the proton beam a passive absober with known stopping power i.e. radiological thickness is incorperated between the first and second scintillator layers.
-To strike a good balance between active and passive volume a Geant4 simulations were run, giving detector performances insights.
+Geant4 simulations were implemented to test the detector performances and give insights to strike a good balance between active and passive volume
 The active material inside the simulation is a PVT-based scintillator, similar to general purpose plastic scintillators like EJ-200 or BC-408.
-The concret implementation  
+Here, the material is composed out of hydrogen and carbon with the mass fractions of \SI{8.5}{\percent} and \SI{91.5}{\percent}, respectively.
+The passive material is PMMA and is composed of hydrogen, carbon and oxygen and modeled after its molecular formula of the repeating unit  \ce{C5H8O2}. 
 
 with a thickness of \SI{4}{\mm} allowing for a better spatial resolution.
 However, since the 32 available channels with \SI{4}{\mm} EJ-212 only cover $\approx \SI{12.8}{\centi\meter}$ of the \SI{30.4}{\centi\meter} proton range, a passive absorber has to be included to fully stopp the protons inside the detector.
@@ -35,7 +36,7 @@ The measurements were conducted using the process described in Section~\ref{sect
 The PMT used is an R2059 from Hamamatsu (serial number BA3200) with a quantum efficiency of \SI{23.16}{\percent}~\cite{datasheet:hamamatsu_R2059} (cf. Appendix~\ref{appendix:spectral}) at the luminescence peak of \SI{420}{\nano\meter} of \ce{PbWO4}~\cite{cms:tdr} and EJ212.
 
 \subsubsection{Light Yield: \ce{PbWO4}}
-The \ce{PbWO4} measurement were done in a flat and vertical position as shown in Figure~\ref{fig:detector:lightyield:pwo}, where all non PMT-facing scintillator sides were enveloped in highly reflective PTFE foil in order to not lose any photons.
+The \ce{PbWO4} measurement were done in a flat and vertical position as shown in Figure~\ref{fig:lightyield:pwo:setup}, where all non PMT-facing scintillator sides were enveloped in highly reflective PTFE foil in order to not lose any photons.
 Two additional measurements were performed, where one \SI{3}{\milli\meter}- and \SI{2}{\milli\meter} crystal were fully wrapped with an SiPM sized window cutout in the center of one side  as shown in Figure~\ref{fig:detector:crystal:pwo:wrap}.
 The \ce{PbWO4} crystals were mounted onto the PMT's optical window next to a \ce{^{22}Na} $\gamma$-source inside a climate chamber.
 The optical coupling was done using glycerol ($n=1.4722$), as shown in Figure~\ref{fig:pwo:lightyield:open}.
