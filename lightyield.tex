@@ -4,26 +4,48 @@
 
 \section{Detector Concept \& Scintillator Selection}\label{section:detector:concept}
 Two different scintillation-based detector-concepts were developed to measure the depth dose distribution of protons in real-time.
-Both detectors consist of 32 scintillator-layers read-out via \glspl{SiPM} and two 16-channel CAEN digitizer that are linked together.
+Both detectors consist of 32 scintillator-layers read-out via \glspl{SiPM} and two linked-together 16-channel CAEN digitizer.
 
 The first detector concept is \ce{PbWO4}-based, as the first prototype,  [citemaster], but improves on the layer geometry by using sheets instead of bars whilst also reducing layer thickness.
 For this two crystal sizes were chosen with $30\times30\times3~\text{mm}^3$ and $30\times30\times2~\text{mm}^3$, which were provided and cut by Crytur, allowing full coverage of the \SI{220}{\mega\electronvolt} proton range of $\approx \SI{66}{\mm}$.
 The lateral sheet sizes with \SI{30}{\mm} were the largest providable, because the sheets were cut from a single ingot and the thicknesses are the smallest resonable due to \ce{PbWO4} being very fragile.
 The \SI{3}{\mm} thick sheets are used in the front or shallow beam depths to provide more stopping power and the thinner \SI{2}{\mm} sheets are used in the Bragg-Peak region to give an optimal spatial resolution.
 
-A second detector concept using plastic scintillators was developed to further increase the spatial resolution in the Bragg-Peak region at the cost of dynamic range in the shallow depths. 
-Plastic scintillators were chosen because they have a much lower density and thereby stopping power than \ce{PbWO4} and a high light yield giving a good energy resolution.
-However, to achieve a high spatial resolution whilst using only 32 channels, that the individual channls need a low radiological thickness resulting in not fully covering the proton range.
-To still stop the proton beam a passive absober with known stopping power i.e. radiological thickness is incorperated between the first and second scintillator layers.
-Geant4 simulations were implemented to test the detector performances and give insights to strike a good balance between active and passive volume
-The active material inside the simulation is a PVT-based scintillator, similar to general purpose plastic scintillators like EJ-200 or BC-408.
-Here, the material is composed out of hydrogen and carbon with the mass fractions of \SI{8.5}{\percent} and \SI{91.5}{\percent}, respectively.
-The passive material is PMMA and is composed of hydrogen, carbon and oxygen and modeled after its molecular formula of the repeating unit  \ce{C5H8O2}. 
+The second detector concept using plastic scintillators was developed to further increase the spatial resolution in the Bragg-Peak region at the cost of dynamic range in the shallow depths. 
+Plastic scintillators were chosen because they have a much lower density and thereby stopping power than \ce{PbWO4} and a high light yield also giving a better energy resolution.
+However, to achieve a high spatial resolution whilst using only 32 channels, individual channls need a low radiological thickness resulting in not fully covering the proton range.
+To still stop the proton beam, a passive absober with a known stopping power i.e. radiological thickness is incorperated between the first and second scintillator layers.
+This allows the first to work as a trigger channel which is used for the normalization in the analysis.
 
-with a thickness of \SI{4}{\mm} allowing for a better spatial resolution.
-However, since the 32 available channels with \SI{4}{\mm} EJ-212 only cover $\approx \SI{12.8}{\centi\meter}$ of the \SI{30.4}{\centi\meter} proton range, a passive absorber has to be included to fully stopp the protons inside the detector.
-This \SI{20}{\centi\meter} passive absorber consists of PMMA resulting in enough stopping power to stop the beam inside the detector.
-The passive absorber is placed between the first and second plastic scintillator such that the first works as a trigger channel which is used for the normalization in the analysis.
+\section{Detector Simulation}
+Geant4 simulations of both detector designs were implemented to give insights into their respective performances and to strike a good balance between active and passive volume for the plastic based detector.
+
+\subsection{Detector Implementation}
+The \ce{PbWO4} based detector was implemented as 32 \ce{PbWO4} sheets 
+The scintillators are wrapped in \SI{0.5}{\mm} PTFE-foil and \SI{20}{\um} aluminum foil.
+Here PTFE is modeled after its molecular formula of the repeating unit \ce{C2F4} with a density of $\rho_{\text{PFTE}}=\SI{2.2}{\gram\per\cm\cubed}$ and a mean exictiation energy of $I_{\text{PTFE}} = \SI{99.1}{\electronvolt}$  [citationneeded] and the aluminum foil (\SI{99.9}{\percent}) is approximated by aluminum. 
+
+The plastic based detector was implemented using an active and passive material.
+The active material was modeled after a PVT-based scintillator, similar to general purpose plastic scintillators like EJ-200 or BC-408.
+Here, the material is composed out of hydrogen and carbon with the mass fractions of \SI{8.5}{\percent} and \SI{91.5}{\percent}, respectively [citeEJ].
+The passive material is PMMA and modeled after its molecular formula of the repeating unit \ce{C5H8O2} with a density of $\rho_{\text{PMMA}}=\SI{1.9}{\gram\per\cm\cubed}$ and a mean exictiation energy of $I_{\text{PMMA}} = \SI{74}{\electronvolt}$ [citationneeded]. 
+Here, the scintillators are again wrapped in PTFE and aluminum foil.
+
+From Equation~\ref{} follows that a \SI{220}{\mega\electronvolt} proton beam has a range of \SI{30.45}{\cm} in water.
+Considering that plastic scintillators have a very similar stopping power and that the Bragg-Peak region is about 1/3 of the depth-dose distribution this leads to a scintillator thickness of $\approx\SI{4}{\mm}$.
+For the 32 available channels this gives a coverage of $\approx \SI{12.8}{\centi\meter}$ of the \SI{30.45}{\centi\meter} proton range, resulting in a $\approx\SI{20}{\cm}$ passive absorber.
+To chose the right thickness of the PMMA absorber, its water equivalent radiological thickness after the first scintillator layer has to be calculated.
+This is done using the total energy deposition inside the absorber by integrating Equation~\ref{}(range energy), as shown in Equation~\ref{eq:detector:absorber:thickness}.
+
+\begin{align}
+    \label{eq:detector:absorber:thickness}
+    \Delta E_{\ce{H2O}} &= \Delta E_{PMMA} \\
+    \int_{z_0}^{z_1} \left(\frac{\text{d}E}{\text{d}z}\right)_{\ce{H2O}}\text{d}z &= \int_{z_0'}^{z_1'} \left(\frac{\text{d}E}{\text{d}z}\right)_{\text{PMMA}}\text{d}z \\
+    \int_{z_0}^{z_1} \frac{1}{\alpha_{\ce{H2O}} p_{\ce{H2O}}} \left(E^{p_{\ce{H2O}}-1}(z)\right)_{\ce{H2O}}\text{d}z &= \int_{z_0'}^{z_1'} \frac{1}{\alpha_{\text{PMMA}} p_{\text{PMMA}}} \left(E^{p_{\text{PMMA}}-1}(z)\right)_{\text{PMMA}}\text{d}z \\
+    \int_{z_0-z_1}^{0} \frac{1}{\alpha_{\ce{H2O}} p_{\ce{H2O}}} \left(E^{p_{\ce{H2O}}-1}(z)\right)_{\ce{H2O}}\text{d}z &= \int_{z_0'}^{z_1'} \frac{1}{\alpha_{\text{PMMA}} p_{\text{PMMA}}} \left(E^{p_{\text{PMMA}}-1}(z)\right)_{\text{PMMA}}\text{d}z \\
+    z_0=^{!}z_0'\rightarrow \sqrt[p_{\ce{H2O}}]{\frac{R_{0, \ce{H2O}}-z_1}{\alpha_{\ce{H2O}}}}-\sqrt[p_{\ce{H2O}}]{\frac{R_{0, \ce{H2O}}-z_0}{\alpha_{\ce{H2O}}}} &= \sqrt[p_{\text{PMMA}}]{\frac{R_{0, \text{PMMA}}-z_1'}{\alpha_{\text{PMMA}}}} - \sqrt[p_{\text{PMMA}}]{\frac{R_{0, \text{PMMA}}-z_0}{\alpha_{\text{PMMA}}}} \\
+\end{align}
+
 
 \section{Readout}\label{section:readout}
 The scintillators of both designs are read out via SiPMs.
