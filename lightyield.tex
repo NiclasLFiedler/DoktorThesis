@@ -39,13 +39,15 @@ This is done using the total energy deposition inside the absorber by integratin
 
 \begin{align}
     \label{eq:detector:absorber:thickness}
-    \Delta E_{\ce{H2O}} &= \Delta E_{PMMA} \\
-    \int_{z_0}^{z_1} \left(\frac{\text{d}E}{\text{d}z}\right)_{\ce{H2O}}\text{d}z &= \int_{z_0'}^{z_1'} \left(\frac{\text{d}E}{\text{d}z}\right)_{\text{PMMA}}\text{d}z \\
-    \int_{z_0}^{z_1} \frac{1}{\alpha_{\ce{H2O}} p_{\ce{H2O}}} \left(E^{p_{\ce{H2O}}-1}(z)\right)_{\ce{H2O}}\text{d}z &= \int_{z_0'}^{z_1'} \frac{1}{\alpha_{\text{PMMA}} p_{\text{PMMA}}} \left(E^{p_{\text{PMMA}}-1}(z)\right)_{\text{PMMA}}\text{d}z \\
-    \int_{z_0-z_1}^{0} \frac{1}{\alpha_{\ce{H2O}} p_{\ce{H2O}}} \left(E^{p_{\ce{H2O}}-1}(z)\right)_{\ce{H2O}}\text{d}z &= \int_{z_0'}^{z_1'} \frac{1}{\alpha_{\text{PMMA}} p_{\text{PMMA}}} \left(E^{p_{\text{PMMA}}-1}(z)\right)_{\text{PMMA}}\text{d}z \\
-    z_0=^{!}z_0'\rightarrow \sqrt[p_{\ce{H2O}}]{\frac{R_{0, \ce{H2O}}-z_1}{\alpha_{\ce{H2O}}}}-\sqrt[p_{\ce{H2O}}]{\frac{R_{0, \ce{H2O}}-z_0}{\alpha_{\ce{H2O}}}} &= \sqrt[p_{\text{PMMA}}]{\frac{R_{0, \text{PMMA}}-z_1'}{\alpha_{\text{PMMA}}}} - \sqrt[p_{\text{PMMA}}]{\frac{R_{0, \text{PMMA}}-z_0}{\alpha_{\text{PMMA}}}} \\
+    \Delta E_{\ce{H2O}} &= \Delta E_{mat} \\
+    \int_{z_n}^{z_{n+1}} S_{\ce{H2O}}\text{d}z &= \int_{x_n}^{x_{n+1}} S_\text{mat}\text{d}x \\
+    E(z_{n+1})_{\ce{H2O}}-E(z_n)_{\ce{H2O}}&= E(x_{n+1})_{\text{mat}}-E(x_n)_{\text{mat}}\\
+    E(z_n)_{\ce{H2O}} = E(x_n)_{\text{mat}} \rightarrow E(z_{n+1})_{\ce{H2O}} &= E(x_{n+1})_{\text{mat}} \\
+    x_{n+1} = x_n + \Delta x \rightarrow \left(\frac{z_{n+1}}{\alpha_{\ce{H2O}}}\right)^{\frac{1}{p_{\ce{H2O}}}} &= \left(\frac{x_{n}+\Delta x}{\alpha_{\text{mat}}}\right)^{\frac{1}{p_{\text{mat}}}} \\
+    x_{n} = \alpha_{\text{mat}} \left(\frac{z_n}{\alpha_{\ce{H2O}}}\right)^{\frac{p_{\text{mat}}}{p_{\ce{H2O}}}} \rightarrow z_{n+1} &= \alpha_{\ce{H2O}} \left(\left(\frac{z_n}{\alpha_{\ce{H2O}}}\right)^{\frac{p_{\text{mat}}}{p_{\ce{H2O}}}} + \frac{\Delta x}{\alpha_{\text{mat}}}\right)^{\frac{p_{\ce{H2O}}}{p_{\text{mat}}}}
 \end{align}
 
+The water equivalent thickness 
 
 \section{Readout}\label{section:readout}
 The scintillators of both designs are read out via SiPMs.

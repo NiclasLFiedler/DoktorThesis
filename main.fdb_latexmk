@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 0 "main.bcf" "main.bbl" "main" 1750934282.56228 -1
+["biber main"] 0 "main.bcf" "main.bbl" "main" 1752057123.77259 -1
   "bibliography.bib" 1747403253.78275 18578 6eb3379b3d0c5ae14d544c228f0984fd ""
-  "main.bcf" 1750934282.46909 107309 c8abcb58d638976cb09e8569e1cc387c "pdflatex"
+  "main.bcf" 1752057123.67797 107309 c8abcb58d638976cb09e8569e1cc387c "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1750934279.77065 "/home/niclas/DoktorThesis/main.tex" "main.pdf" "main" 1750934282.5625 0
+["pdflatex"] 1752057121.29595 "/home/niclas/DoktorThesis/main.tex" "main.pdf" "main" 1752057123.77281 0
   "/etc/texmf/web2c/texmf.cnf" 1739972125.5655 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/niclas/DoktorThesis/main.tex" 1750756454.84655 7391 a77f02508141bec4a3aa09102c790d0e ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -372,17 +372,17 @@
   "fig/lightyield/pwo/bps_na_flat.pdf" 1750149383.35589 37493 828b8f8c663548f03218a3147d2b7208 ""
   "fig/lightyield/pwo/ly_pwo_flat.jpg" 1749647963.14292 4055815 897c1d65be9f2a3d7d6b886ccb5365b3 ""
   "fig/lightyield/pwo/ly_pwo_vertical.jpg" 1749647973.88483 4859648 600886b5df1406652c2284f8b37469e7 ""
-  "lightyield.aux" 1750934282.3241 12963 917c8f5cd1b00fefd9c553e2c8da4e8e "pdflatex"
-  "lightyield.tex" 1750934276.07615 19702 23b8543838fdf5bf12dc6c4d43e959e5 ""
+  "lightyield.aux" 1752057123.53097 12962 9399c45fff913a1eb4796511fbb15a0c "pdflatex"
+  "lightyield.tex" 1752057118.54903 19560 5cbd2c0a285c51c5eb688051cf55a11e ""
   "main.acr" 0 -1 0 ""
-  "main.aux" 1750934282.46309 1905 bbd84d892e7b7fc45c9f1dea08ad232e "pdflatex"
+  "main.aux" 1752057123.67297 1905 bbd84d892e7b7fc45c9f1dea08ad232e "pdflatex"
   "main.bbl" 1750239804.88527 4980 a14a64adea64f20c43db17ec412258f1 "biber main"
-  "main.lof" 1750934282.46909 1728 b0c93b7d330d8cbcb928401895659886 "pdflatex"
-  "main.lot" 1750934282.46909 338 b3c5f2164aac1202e54dcabad34619fe "pdflatex"
-  "main.out" 1750934282.46709 3480 a60e185ccdf948a822bd85ff70f35ae9 "pdflatex"
-  "main.run.xml" 1750934282.46909 2368 571a03cfb4df0a66d4603062ea2bb0dc "pdflatex"
+  "main.lof" 1752057123.67897 1728 b0c93b7d330d8cbcb928401895659886 "pdflatex"
+  "main.lot" 1752057123.67897 337 5cd1cf8b9371c78fe8f1742449a3f51c "pdflatex"
+  "main.out" 1752057123.67597 3480 a60e185ccdf948a822bd85ff70f35ae9 "pdflatex"
+  "main.run.xml" 1752057123.67897 2368 571a03cfb4df0a66d4603062ea2bb0dc "pdflatex"
   "main.tex" 1750756454.84655 7391 a77f02508141bec4a3aa09102c790d0e ""
-  "main.toc" 1750934282.46909 1941 f1263c9c71dce8bc8db7578408b226d5 "pdflatex"
+  "main.toc" 1752057123.67897 1942 72ef048014b18fed0480bf023712acb0 "pdflatex"
   (generated)
   "lightyield.aux"
   "main.acn"
