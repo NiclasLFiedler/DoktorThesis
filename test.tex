@@ -1,0 +1,680 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{subcaption}
+
+% Mehr mathematische Symbole
+\usepackage{amssymb}
+
+%Braket-Notation
+\usepackage{braket}
+
+\raggedbottom{}
+
+%Griechische Buchstaben, nicht kursiv
+\usepackage{upgreek}
+%Bibliography
+\usepackage[style=numeric,sorting=none,backend=biber]{biblatex}
+\addbibresource{braggsampler.bib}
+% \DefineBibliographyStrings{german}{andothers = {et\addabbrvspace{} al\adddot}}
+
+%Zeilenabstand
+\usepackage[onehalfspacing]{setspace}
+
+%Seitenränder
+\usepackage[a4paper, left=3cm, right=3cm]{geometry}
+
+%Chemie
+\usepackage[version=4]{mhchem}
+
+%Header
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\setlength{\headheight}{15pt}
+\newcommand{\myol}[2][3]{{}\mkern#1mu\overline{\mkern-#1mu#2}}
+
+%Schriftarten
+\usepackage{mathptmx}
+\usepackage[T1]{fontenc}
+\usepackage[scaled]{helvet}
+
+%Formatierung Überschriften
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+  {\normalfont\sffamily\Huge\bfseries}
+  {\chaptertitlename\ \thechapter}{10pt}{\Huge}
+\titleformat{\section}[hang]
+    {\normalfont\sffamily\Large\bfseries}
+    {\thesection}{10pt}{\Large}
+\titleformat{\subsection}[hang]
+    {\normalfont\sffamily\Large\bfseries}
+    {\thesubsection}{10pt}{\Large}
+
+%Keine Einzüge bei neuem Absatz
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 2pt minus 1pt}
+
+%Syntax Highlighting
+% \usepackage[most, minted]{tcolorbox}
+% \tcbuselibrary{minted,breakable}
+% \usepackage{xcolor}
+% \usemintedstyle{perldoc}
+% \definecolor{bg}{rgb}{0.95,0.95,0.95}
+% \renewcommand{\theFancyVerbLine}{\scriptsize {\arabic{FancyVerbLine}}}
+% \newcommand{\myminted}[1]{\tcbinputlisting{
+% colback=bg,
+% breakable,
+% listing only,
+% listing file={#1},
+% minted language=c++,
+% minted options={linenos,breaklines,numbersep=2mm,xleftmargin=2mm},
+% enhanced,
+% overlay={%
+%        \begin{tcbclipinterior}
+%            \fill[gray!25] (frame.south west) rectangle ([xshift=6mm]frame.north west);
+%        \end{tcbclipinterior}
+%    }
+% }}
+
+%Lorem Ipsum
+\usepackage{lipsum}
+
+%Flowcharts
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows,shapes.symbols}
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black]
+\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text width=4cm, text centered, draw=black]
+\tikzstyle{decision} = [signal,signal to=east and west, minimum width=3cm, minimum height=1cm, text centered, text width=3cm,draw=black]
+\tikzstyle{object} = [rectangle, minimum height=1cm, text centered, draw=black]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+\tikzstyle{line} = [thick,-,>=stealth]
+
+%Literatur-, Abbildungs- uend Tabellenverzeichnis in Inhaltsverzeichnis
+\usepackage[nottoc, numbib]{tocbibind}
+
+% Subsubsections mit Zahlen
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+%Metadaten und Verlinkungen
+\usepackage{hyperref}
+\hypersetup{
+  pdftitle={Modulation Power by Stopping Power Ratio},
+  pdfauthor={Niclas Fiedler},
+  breaklinks=true,
+  }
+
+%URLs mit line break
+\usepackage{xurl}
+
+%Einheiten
+\usepackage[separate-uncertainty=true,per-mode=symbol]{siunitx}
+\usepackage{physics}
+\ExplSyntaxOn{}
+\msg_redirect_name:nnn { siunitx } { physics-pkg } { none }
+\ExplSyntaxOff{}
+\DeclareSIUnit{} \clight{\text{\ensuremath{c}}}
+\DeclareSIUnit{} \u{\text{u}}
+\sisetup{per-mode=fraction}
+\DeclareSIUnit\ppm{\text{ppm}}
+\DeclareSIUnit\clight{\text{c}}
+\DeclareSIUnit\lsb{\text{LSB}}
+\DeclareSIUnit\pe{\text{PE}}
+\DeclareSIUnit\bins{\text{bins}}
+\DeclareSIUnit[]\voltpp{\text{\ensuremath{V_{\textup{pp}}}}}
+\DeclareSIUnit\atomicmassunit{u}
+\DeclareSIUnit\barn{b}
+
+%PDFs einfügen
+\usepackage{pdfpages}
+
+\begin{document}
+
+\section{Prerequisites}
+The probability that the material lung tissue is assigned to a voxel is $p_l$. A particle traversing
+this voxelised geometry will cross $n_z$ voxels. The probability $F(k)$ that $k$ voxels consist of lung
+tissue is given by the Bernoulli distribution:
+
+\begin{equation}
+    F(k) = \binom{n_z}{k} \cdot p_l^k \cdot (1-p_l)^{n_z-k}
+\end{equation}
+
+Following the Moivre–Laplace central limit theorem this distribution can for large $n_z$ be
+approximated to a sufficient degree of accuracy by a normal distribution:
+
+\begin{equation}
+    F(k) = \frac{1}{\sqrt{2\pi \sigma_{nl}^2}} \cdot \text{exp}\left( -\frac{(k-\mu_{nl})^2}{2\sigma_{nl}^2} \right)
+\end{equation}
+where the expectation value $\mu_{nl}$ and the width $\sigma_{nl}$ are given by:
+
+\begin{equation}
+\label{bin}
+    \mu_{nl} = n_z \cdot p_l \qquad  \sigma_{nl} = \sqrt{n_z\cdot p_l\cdot (1-p_l)}
+\end{equation}
+
+Hence, a particle traversing the voxelised geometry at one of $n_x \times n_y$ possible paths will cross
+on average $\mu_{nl}$ voxels of lung tissue with a standard deviation of $\sigma_{nl}$ voxels.
+From this distribution the function $F(t'|t, \sigma_{t})$ can be derived giving the probability that the path a particle takes through the voxelised geometry has the water-equivalent thickness $t'$:
+
+\begin{equation}
+    F(t'|t, \sigma_{t}) = \frac{1}{\sqrt{2\pi \sigma_{t}^2}} \cdot \text{exp}\left( -\frac{(t'-t)^2}{2\sigma_{t}^2} \right)
+\end{equation}
+
+with $t$ being the mean water-equivalent thickness. [1]
+
+
+\section{Stopping Power by Range-Energy Relationship}
+Definition of the Stopping Power:
+\begin{equation}
+    \label{S}
+    S = -\frac{\text{d}E}{\text{d}x}
+\end{equation}
+
+Energy-range relationship (Bragg-Kleeman rule):
+
+\begin{equation}
+    \label{bk}
+    (R_0-z)=\alpha E(z)^p
+\end{equation}
+
+$p$ parameter has very slight energy dependence, but will be approximated as a constant.
+
+The water equivalent thickness of a voxalized heterogeneous target is calculated using the ratio of the mean Stopping Power of water and of the targets constituents, using $\overline{S}_m$ for a given material and $\overline{S}_a$ for another material (usually air): 
+
+\begin{equation}
+    \label{t}
+    t_{\ce{H2O}}=D\cdot \frac{\overline{S}_{mean}}{\overline{S}_{\ce{H2O}}}
+\end{equation}
+
+The mean of the mean stopping power $\overline{S}_{mean}$, here defined as the mean stopping power of lung $\overline{S}_l$, can be calculated by using a linear combination of its constituents (Eq.~\ref{lin}) [2] and by assuming the density ratio of lung ($\rho_{mean}=\SI{0.26}{\gram\per\centi\meter\cubed}$) and water ($\rho_{\ce{H2O}}=\SI{1}{\gram\per\centi\meter\cubed}$ is equal to their mean stopping power ratio.
+
+\begin{equation}
+    \label{lin}
+    \overline{S}_{mean} = p_m \overline{S}_m+(1-p_m) \overline{S}_a
+\end{equation}
+
+\begin{equation}
+    \label{densfrac}
+    \frac{\rho_{mean}}{ \rho_{\ce{H2O}}} = \frac{\overline{S}_{mean}}{\overline{S}_{\ce{H2O}}} \rightarrow{} \overline{S}_{mean} = \frac{\rho_{mean}}{\rho_{\ce{H2O}}}\overline{S}_{\ce{H2O}}
+\end{equation}
+
+The fill probability $p_m$ follows from inserting Equation~\ref{densfrac} into~\ref{lin}:
+
+\begin{align}
+    \frac{\rho_{mean}}{\rho_{\ce{H2O}}}\overline{S}_{\ce{H2O}} &= p_m \overline{S}_m+(1-p_m) \overline{S}_a\\
+    \rightarrow{} p_m &= \frac{\frac{\rho_{mean}}{\rho_{\ce{H2O}}}\overline{S}_{\ce{H2O}} - \overline{S}_a}{\overline{S}_m - \overline{S}_a}
+\end{align}
+
+Mean Stopping power definition and inserting Equation~\ref{bk} and \ref{S}, assuming a thick target [3]:
+
+\begin{align}
+    \label{meanS}
+    \overline{S} &= \frac{\int^{E_f}_{E_i}S\text{d}E}{\int^{E_f}_{E_i}\text{d}E} \\
+    &= \frac{\int^{E_f}_{E_i} (E^{1-p} (\alpha \cdot p)^{-1}) \text{d}E}{\int^{E_f}_{E_i}\text{d}E} \\
+    &= \frac{\frac{1}{2-p}(\alpha \cdot p)^{-1}\cdot (E_f^{2-p}-E_i^{2-p})}{E_f-E_i} \\
+    &= \frac{(E_f^{2-p}-E_i^{2-p})}{(2-p)(\alpha \cdot p)(E_f-E_i)}
+\end{align}
+
+$E_f$ after traversing a target of size $D$ out of material $mat$ is calculated using Equation~\ref{bk}:
+
+\begin{equation}
+\label{ef}
+    E_{f,m} = E_m(D) = \left(\frac{R_{0,m}-D}{\alpha_m}\right)^{\frac{1}{p_m}} = \left(\frac{\alpha_m E_i^{p_m}-D}{\alpha_m}\right)^{\frac{1}{p_m}}
+\end{equation}
+
+Inserting the mean stopping power assumption of Equation~\ref{densfrac} into Equation~\ref{t} yields:
+
+\begin{align}
+    t_{\ce{H2O}} &= D \frac{\rho_{mean}}{\rho_{\ce{H2O}}}
+\end{align}
+
+The WET variance is calculated by subtracting the variance for air from lung and using Equation~\ref{bin} for the standard deviation of the binomial distribution:
+\begin{align}
+\label{sig}
+    %\sigma_{nt}^2 &= \sigma_{nm}^2-\sigma_{na}^2\\
+    \sigma_{t}^2&= \left(\sigma_{nm} \cdot d \frac{\overline{S}_m}{\overline{S}_{\ce{H2O}}}-\sigma_{na} \cdot d \frac{\overline{S}_a}{\overline{S}_{\ce{H2O}}}\right)^2\\
+    \text{binomial dist
+    .: } \sigma_{nm} = \sigma_{na} \rightarrow{} &=   (d\cdot \sigma_{nm})^2 \frac{(\overline{S}_m-\overline{S}_a)^2}{\overline{S}_{\ce{H2O}}^2} \\
+    &=   d^2 \cdot n_z \cdot p_m \cdot (1-p_m) \cdot \frac{(\overline{S}_m-\overline{S}_a)^2}{\overline{S}_{\ce{H2O}}^2} \\
+    &=   \frac{D}{d} \cdot p_m\cdot (1-p_m)\cdot d^2\cdot \frac{(\overline{S}_m-\overline{S}_a)^2}{\overline{S}_{\ce{H2O}}^2} \qquad \text{cf. Eq. (6) of [1]}
+\end{align}
+
+The modulation power follows from Equation~\ref{t} and \ref{sig}:
+
+\begin{align}
+    P_{\text{mod}} &:= \frac{\sigma_t^2}{t} = \frac{\rho_{\ce{H2O}}}{\rho_{mean}} \cdot d \cdot p_m\cdot (1-p_m)\cdot \frac{(\overline{S}_m-\overline{S}_a)^2}{\overline{S}_{\ce{H2O}}^2}\\
+    \text{inserting}~p_m \rightarrow{} &= \frac{\rho_{\ce{H2O}}}{\rho_{mean}} \cdot d \cdot \frac{\frac{\rho_{mean}}{\rho_{\ce{H2O}}}\overline{S}_{\ce{H2O}} - \overline{S}_a}{\overline{S}_m - \overline{S}_a} \cdot \left(1-\frac{\frac{\rho_{mean}}{\rho_{\ce{H2O}}}\overline{S}_{\ce{H2O}} - \overline{S}_a}{\overline{S}_m - \overline{S}_a}\right)\cdot \frac{(\overline{S}_m-\overline{S}_a)^2}{\overline{S}_{\ce{H2O}}^2}  \\
+    \text{approximation }\overline{S}_a \approx 0 \rightarrow{}&\approx  d \cdot \left(1-\frac{\frac{\rho_{mean}}{\rho_{\ce{H2O}}}\overline{S}_{\ce{H2O}}}{\overline{S}_m}\right)\cdot \frac{\overline{S}_m}{\overline{S}_{\ce{H2O}}} \\
+    &\approx d \cdot \left(\frac{\overline{S}_m}{\overline{S}_{\ce{H2O}}}-\frac{\rho_{mean}}{\rho_{\ce{H2O}}}\right) \qquad \text{cf. Eq. (8) of [1] with }\left(p_l\approx\frac{\rho_{mean}}{\rho_l}\right) \\
+    \text{inserting Eq. \ref{meanS}}~ \rightarrow{} &\approx d \cdot \left(\frac{(E_{f,m}^{2-p_m}-E_i^{2-p_m})}{(E_{f,\ce{H2O}}^{2-p_{\ce{H2O}}}-E_i^{2-p_{\ce{H2O}}})}\cdot \frac{(2-p_{\ce{H2O}})(\alpha_{\ce{H2O}} \cdot p_{\ce{H2O}})(E_{f,\ce{H2O}}-E_i)}{(2-p_m)(\alpha_m \cdot p_m)(E_{f,m}-E_i)}-\frac{\rho_{mean}}{\rho_{\ce{H2O}}}\right)\\
+    \text{inserting Eq. \ref{ef}} \rightarrow{} &\approx d \cdot \left(\frac{\left(\left(\frac{\alpha_m E_i^{p_m}-D}{\alpha_m}\right)^{\frac{2}{p_m}-1}-E_i^{2-p_m}\right)}{\left(\left(\frac{\alpha_{\ce{H20}} E_i^{p_{\ce{H20}}}-D}{\alpha_{\ce{H20}}}\right)^{\frac{2}{p_{\ce{H20}}}-1}-E_i^{2-p_{\ce{H2O}}}\right)}\right.\\
+    &\left.\cdot \frac{(2-p_{\ce{H2O}})(\alpha_{\ce{H2O}} \cdot p_{\ce{H2O}})\left(\left(\frac{\alpha_{\ce{H2O}} E_i^{p_{\ce{H2O}}}-D}{\alpha_{\ce{H2O}}}\right)^{\frac{1}{p_{\ce{H2O}}}}-E_i\right)}{(2-p_m)(\alpha_m \cdot p_m)\left(\left(\frac{\alpha_m E_i^{p_m}-D}{\alpha_m}\right)^{\frac{1}{p_m}}-E_i\right)}-\frac{\rho_{mean}}{\rho_{\ce{H2O}}}\right) 
+\end{align}
+
+The given modulation power is depended on the initial Energy of a particle or beam $E_i$, the structure constant $d$ and the targets thickness $D$. 
+Moreover, material parameters of the rang-energy relationship are used as well as the density ratio of the modulated heterogeneous target (in this case lung).
+The Equation holds for approximating targets with low Z, such that the stopping power ratio between the target and water can be approximated by their density ratio.
+It should also be noted that the used mean stopping power approximates the whole target, resulting in a linear dependence between depth and stopping power, even though the stopping power is energy depended and thus does not scale linearly with depth.
+Hence, the stopping power is always overestimated but never underestimated. 
+However, for high-energy particles the total energy loss in the target is relatively small, thereby resulting only in a small overestimation. 
+
+\pagebreak
+
+\section{Approximate Stopping Power Ratio Model}
+Bethe-Bloch Equation of the mass stopping power:
+
+\begin{equation}
+    \hat{S} = -\frac{1}{\rho}\frac{\text{d}E}{\text{d}x} = Kz^2\frac{Z}{A}\frac{1}{\beta^2}\left(\frac{1}{2}\text{ln}\left(\frac{2m_ec^2\beta^2\gamma^2W_{\text{max}}}{I^2}\right)-\beta^2-\frac{\delta(\beta\gamma)}{2}) \right),
+\end{equation}
+where $W_{\text{max}}$ is the maximum energy transfer to an electron in a single collision as
+
+\begin{equation}
+    W_{\text{max}} = \frac{2m_e c^2\beta^2\gamma^2}{1+2\gamma \frac{m_e}{M}+(\frac{m_e}{{M}})^2}.
+\end{equation}
+
+A summary of all variables is shown in Table~\ref{table:bethe:variables}.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{c|c|c}
+         Symbol & Definition & Value or units\\
+         \hline
+         $m_ec^2$ & electron energy & 0.510998950 MeV\\
+         $M$ & incident particle mass & \si{\mega\electronvolt\per\clight\squared} (proton: \SI{938.272}{\mega\electronvolt\per\clight\squared}) \\
+         $z$ &charge number of incident particle & \\
+         $Z$ & atomic number of absorber & \\
+         $A$ & atomic mass of absorber & \si{\gram\per\mol}\\
+         $K$ & Coefficient $4\pi N_A r_e^2m_ec^2$ & \SI{0.307075}{\mega\electronvolt\centi\meter\squared\per\mol} \\
+         $r_e$ & classical electron radius $\frac{e^2}{4\pi \epsilon_0 m_e c^2}$ & \SI{2.817940}{\femto\meter} \\
+         $I$ & mean excitation energy & \si{\electronvolt}\\
+         $\delta(\beta\gamma)$ & density effect correction to ionization energy loss & \\
+         $T$ & kinetic particle energy & \si{\mega\electronvolt\per\clight\squared}
+    \end{tabular}
+    \caption{Summary of variables used in Bethe-Bloch equation.}
+    \label{table:bethe:variables}
+\end{table}
+
+$\gamma$ and $\beta$ from particles kinetic energy:
+\begin{equation}
+    \gamma = \frac{m_0c^2+T}{m_0c^2}
+\end{equation}
+\begin{equation}
+    \beta = \sqrt{1-\frac{1}{\gamma^2}}
+\end{equation}
+
+The density effect correction term for nonconducters is given as
+\begin{equation}
+    \delta(\beta\gamma) =
+    \begin{cases} & 2\ln(10)x-\overline{C}, \text{ if } x \geq x_1\\
+        &2\ln(10)x-\overline{C} + a(x_1-x)^k, \text{ if } x_0 \leq x < x_1\\
+        & 0, \text{ if } x \leq x_0
+    \end{cases}
+\end{equation}
+
+Here $x = \log_{10}(\beta\gamma)$ and $x_0, x_1, a, k, \overline{C} $ are the Sternheimer parameters, which are tabulated for the elements of interest in Table~\ref{table:densitycorrection}. 
+No parameters for deflated lung tissue are available, \ce{H2O}'s parameters are chosen as a substitute.
+Since the density effect correction only starts contributing at around \SI{400}{\mega\electronvolt} of kinetic energy ($\beta\gamma\approx1\rightarrow{x=0<x_0}$), this has no impact as it vanishes for the energy region of interest ($<\SI{250}{\mega\electronvolt}$).
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{c|c|c|c|c|c|c|c|c|c|c}
+        Material & $a$ & $k$ & $X_0$ & $X_1$ & $I$ & $\rho_0$ & $h\nu_p$ & $A$ & $B$ & $\overline{C}$ \\
+        \hline
+        PMMA & 0.3996 & 0.2606 & 0.1824 & 2.2 & 74.0 & 1.190 & 23.09 & 0.08281 & 18.352 & 3.330 \\
+        Air & 0.2466 & 2.879 & 1.742 & 4.0 & 85.7 & $1.205*10^{-3}$ & 0.7067 & 0.07664 & 18.058 & 10.595 \\
+        \ce{H2O} & 0.2065 & 3.007 & 0.2400 & 2.5 & 75.0 & $1.000$ & 21.47 & 0.08523 & 18.325 & 3.502 \\
+    \end{tabular}
+    \caption{Density effect correction and Sternheimer parameters.}
+    \label{table:densitycorrection}
+\end{table}
+
+The mass stopping power ($\hat{S}$) of a mixture is given by the linear combination of its constituents with their mass fraction as the weighting factor $w_i$ (Bragg's additivity rule [2]),.
+To simulate inflated lung tissue by any two material combination, their mixed mass stopping power has to be equal to that of inflated lung tissue.
+From this follows:
+
+\begin{align}
+    \hat{S}_{L,\text{model}}  &= w_m \hat{S}_m+(1-w_m)\hat{S}_{air} \\
+    \rightarrow{} w_m &=\frac{\hat{S}_{L,\text{model}}-\hat{S}_{air}}{\hat{S}_m-\hat{S}_{air}} = \frac{\frac{\hat{S}_{L,\text{model}}}{\hat{S}_{air}}-1}{\frac{\hat{S}_m}{\hat{S}_{air}}-1},
+\end{align}
+where the mass stopping power of the inflated lung model is equated with the mass stopping power of lung tissue ($\hat{S}_{L,\text{model}}=\hat{S}_L$) given by Bragg's additivity rule using the constituents of lung tissue:
+
+\begin{align}
+    \hat{S}_L &= w_{L, def.} \hat{S}_{L, def}+(1-w_{L, def.})\hat{S}_{air}\\
+    \rightarrow{}w_m &= w_{L, def.} \frac{\frac{\hat{S}_{L,\text{def.}}}{\hat{S}_{air}}-1}{\frac{\hat{S}_m}{\hat{S}_{air}}-1}
+\end{align}
+The mass fraction of lung tissue to air for inflated lung tissue is approximated by the density ratio $w_{L, def.} \approx \frac{\rho_L}{\rho_{{L, def.}}} = \frac{\SI{0.26}{\gram\per\centi\meter\cubed}}{\SI{1.05}{\gram\per\centi\meter\cubed}} = 0.248$.
+
+The mass stopping power of deflated lung and air can be calculated by Bragg's additivity rule for ($Z/A$) using the mass fractions tabulated in Table~\ref{table:stopping:lung}:
+
+\begin{align}
+    \hat{S}_{L, def} &= Kz^2 \left(\sum_{i \in \{H, C, N ...\}} w_i\frac{Z_i}{A_i}\right) \frac{1}{\beta^2}\left(\frac{1}{2}\text{ln}\left(\frac{2m_ec^2\beta^2\gamma^2W_{\text{max}}}{I^2}\right)-\beta^2-\frac{\delta (\beta\gamma)}{2}) \right)\\
+    \hat{S}_{\text{air}} &= Kz^2 \left(\sum_{i \in \{C, N, O, Ar\}} w_i\frac{Z_i}{A_i}\right) \frac{1}{\beta^2}\left(\frac{1}{2}\text{ln}\left(\frac{2m_ec^2\beta^2\gamma^2W_{\text{max}}}{I^2}\right)-\beta^2-\frac{\delta (\beta\gamma)}{2}) \right)
+\end{align}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{c|c|c|c|c}
+        Mixture & Constituents & Mass fraction $w_i$ & $Z_i/A_i$ & $\sum_i w_i(Z_i/A_i)$ \\
+        \hline
+        Lung & H & 0.101278 & 0.9923 & 0.5496 \\ 
+             & C & 0.102310 & 0.4995 & \\
+             & N & 0.02865 & 0.4998 & \\
+             & O & 0.757072 & 0.5000 & \\
+             & Na & 0.001840 & 0.4785 & \\
+             & Mg & 0.000730 & 0.4937 & \\
+             & P & 0.0008 & 0.4843 & \\
+             & S & 0.002250 & 0.4990 & \\
+             & Cl & 0.002660 & 0.4795 & \\
+             & K & 0.001940 & 0.4860 & \\
+             & Ca & 0.000090 & 0.4990 & \\
+             & Fe & 0.000370 & 0.4656 & \\
+             & Zn & 0.000010 & 0.4589 & \\
+        \hline
+        Air & C & 0.000124 & 0.4995 & 0.4992 \\ 
+            & N & 0.755267 & 0.4998 & \\
+            & O & 0.231781 & 0.5000 & \\
+            & Ar & 0.012827 & 0.4506 & \\
+            
+    \end{tabular}
+    \caption{Mass fractions used for Stopping power calculation of deflated lung with $\rho_{L, def.} = \SI{1.05}{\gram\per\centi\meter\cubed}$, $I_{L, def.} = \SI{75.3}{\electronvolt}$ and dry air (near sea level) $\rho_{air} = \SI{1.20479}{\kilo\gram\per\meter\cubed}$, $I_{air} = \SI{85.7}{\electronvolt}$.}
+    \label{table:stopping:lung}
+\end{table}
+
+
+The modulation power can be calculated using the water equivalent thickness of Equation~\ref{t}.
+\begin{align}
+    P_{\text{mod}} := \frac{\sigma_t^2}{t} &= \frac{S_{\ce{H2O}}}{S_{L}} \cdot d \cdot w_m\cdot (1-w_m)\cdot \frac{(S_m-S_{air})^2}{S_{\ce{H2O}}^2} \\
+    &= d \cdot w_m\cdot (1-w_m)\cdot \frac{(S_m-S_{air})^2}{S_{L}\cdot S_{\ce{H2O}}} \\
+    &\approx d \cdot \frac{\frac{\hat{S}_L}{\hat{S}_a}-1}{\frac{\hat{S}_m}{\hat{S}_a}-1}\cdot \left(1-\frac{\frac{\hat{S}_L}{\hat{S}_a}-1}{\frac{\hat{S}_m}{\hat{S}_a}-1}\right)\cdot \frac{S_m^2}{S_{L}\cdot S_{\ce{H2O}}} \qquad|~S_{air}\rightarrow{0} \\
+    &= d \cdot \left(\frac{(\frac{\hat{S}_L}{\hat{S}_a}-1)(\frac{\hat{S}_m}{\hat{S}_a}-\frac{\hat{S}_L}{\hat{S}_a})}{(\frac{\hat{S}_m}{\hat{S}_a}-1)^2} \right)\cdot \frac{S_m^2}{S_{L}\cdot S_{\ce{H2O}}} \\
+    &= d \cdot \left(\frac{(\frac{\hat{S}_L}{\hat{S}_a}-1)(\frac{\hat{S}_m}{\hat{S}_a}-\frac{\hat{S}_L}{\hat{S}_a})}{(\frac{\hat{S}_m}{\hat{S}_a}-1)^2} \right)\cdot \frac{S_m^2}{S_{L}\cdot S_{\ce{H2O}}} \label{eq:mod:ratio}
+\end{align}
+
+To calculate the general stopping power ratio $\frac{S_i}{S_j}$, it is assumed that the density effect corrections vanish (i.e. approximately $\beta\gamma < 1~\hat{=}~T < \SI{400}{\mega\electronvolt}$ for most materials).
+From this follows:
+
+\begin{align}
+    \frac{S_i}{S_j} &= \frac{\rho_i Kz^2\frac{Z_i}{A_i}\frac{1}{\beta^2}\left(\frac{1}{2}\text{ln}\left(\frac{2m_ec^2\beta^2\gamma^2W_{\text{max}}}{I_i^2}\right)-\beta^2-\frac{\delta_i (\beta\gamma)}{2} \right)}{\rho_j Kz^2\frac{Z_j}{A_j}\frac{1}{\beta^2}\left(\frac{1}{2}\text{ln}\left(\frac{2m_ec^2\beta^2\gamma^2W_{\text{max}}}{I_j^2}\right)-\beta^2-\frac{\delta_j(\beta\gamma)}{2} \right)} \\
+    \delta_{i,j}(\beta\gamma)\rightarrow{}0\quad &= \frac{\rho_i}{\rho_j} \cdot \frac{\frac{Z_i}{A_i}\left(\text{ln}\left(\frac{2m_ec^2\beta^2\gamma^2W_{\text{max}}}{I_{i}^2}\right)-2\beta^2\right)}{\frac{Z_j}{A_j}\left(\text{ln}\left(\frac{2m_ec^2\beta^2\gamma^2W_{\text{max}}}{I_j^2}\right)-2\beta^2\right)}
+\end{align}
+
+Furthermore for protons the maximal energy transfer to an electron can be approximated by Equation~\ref{eq:energytransferapprox}.
+This is valid for $2\gamma m_e \ll M$[4], which holds for low-energy protons.
+
+\begin{equation*}
+    \label{eq:energytransferapprox}
+    W_{\text{max}} = 2m_e c^2\beta^2\gamma^2
+\end{equation*}
+
+Hence, the stopping power ratio can be expressed as:
+\begin{align}
+    \label{eq:stoppratio}
+    \frac{S_i}{S_j} &= \frac{\rho_i}{\rho_{j}}\frac{\frac{Z_i}{A_i}\left(\text{ln}\left(\frac{4m_e^2c^4\beta^4\gamma^4}{I_{i}^2}\right)-2\beta^2\right)}{\frac{Z_{j}}{A_j}\left(\text{ln}\left(\frac{4m_e^2c^4\beta^4\gamma^4}{I_{j}^2}\right)-2\beta^2\right)} \\
+    &= \frac{\frac{Z_i}{A_i}\left(\text{ln}\left(\frac{2m_ec^2\beta^2\gamma^2}{I_{i}}\right)-\beta^2\right)}{\frac{Z_j}{A_j}\left(\text{ln}\left(\frac{2m_ec^2\beta^2\gamma^2}{I_j}\right)-\beta^2\right)} \\
+    &= \frac{\frac{Z_i}{A_i}\left(\text{ln}\left(\frac{2m_ec^2}{I_{i}}\right)+\text{ln}(\frac{\beta^2}{1-\beta^2})-\beta^2\right)}{\frac{Z_j}{A_j}\left(\text{ln}\left(\frac{2m_ec^2}{I_j}\right)+\text{ln}(\frac{\beta^2}{1-\beta^2})-\beta^2\right)} \label{eq:stoppratio:2}
+\end{align}
+
+The energy dependence can be approximated by considering a first order Taylor Expansion of $\frac{A+x}{B+x}$ around 0, meaning at the 0 crossing of $\ln(\frac{\beta^2}{1-\beta^2})-\beta^2$:
+\begin{align}
+    \frac{A+x}{B+x}  &= \frac{A+x}{B+x}|_{x=0} + (\frac{1}{B+x}-\frac{x+A}{(B+x)^2})|_{x=0}\cdot x + \text{O}(x^2)\\
+    &\approx \frac{A}{B} \left(1+x\left(\frac{1}{A}-\frac{1}{B}\right)\right)\label{eq:bruchapprox}
+\end{align}
+
+Approximating Equation~\ref{eq:stoppratio} with Equation~\ref{eq:bruchapprox} yields:
+
+\begin{align}
+    \label{eq:energydepen}
+    \frac{S_i}{S_j} &= \frac{\rho_i}{\rho_j}\frac{Z_i}{A_i}\left(\frac{Z_j}{A_j}\right)^{-1}\frac{\text{ln}\left(\frac{2m_ec^2}{I_i}\right)}{\text{ln}\left(\frac{2m_ec^2}{I_j}\right)}\left(1+\left(\text{ln}(\frac{\beta^2}{1-\beta^2})-\beta^2\right)\left(\frac{1}{\text{ln}\left(\frac{2m_ec^2}{I_{i}}\right)}-\frac{1}{\text{ln}\left(\frac{2m_ec^2}{I_j}\right)}\right)\right)
+\end{align}
+
+The energy dependent term on the right side of Equation~\ref{eq:energydepen} has a negligible contribution to the stopping power ratio for approximately $0.05<\beta< 0.95$ at similar mean excitation energies (cf. Figure~\ref{fig:approx:pmma}).
+This also corresponds to the 0th order Taylor Expansion.
+From this follows the energy independent stopping power ratio, shown in Equation~\ref{ratioapprox}.
+In Figures~\ref{fig:approx:pmma} and~\ref{fig:approx:pwo}  the density ratios deviate significantly from the stopping power ratios, even for PMMA which is usually considered similar to water regarding the mass stopping power.
+
+\begin{align}
+\label{ratioapprox}
+    \frac{S_i}{S_j} &=\frac{\rho_i}{\rho_j}\frac{Z_i}{A_i}\left(\frac{Z_j}{A_j}\right)^{-1}\frac{\ln\left(\frac{2m_ec^2}{I_i}\right)}{\ln\left(\frac{2m_ec^2}{I_j}\right)} = \frac{\rho_i}{\rho_j}\frac{\hat{S}_i}{\hat{S}_j}
+\end{align}
+
+
+\begin{figure}[ht]
+    \centering
+    \begin{subfigure}[t]{0.43\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{fig/jlu.png}
+        \caption{Stopping power ratio for \ce{H2O} and PMMA.}
+        \label{fig:approx:pmma:1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.43\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{fig/jlu.png}
+        \caption{Zoom of stopping power ratio.}
+        \label{fig:approx:pmma:2}
+    \end{subfigure}
+    \caption{Comparision of stopping power ratio between \ce{H2O}/PMMA, where $I_{\ce{H2O}}=\SI{75}{\electronvolt}$ and $I_{PMMA}=\SI{74}{\electronvolt}$. The approximation of Equation~\ref{ratioapprox} holds for materials with a similar excitation energy. Here, Green represents Equation~\ref{eq:stoppratio:2}, orange is Equation~\ref{eq:energydepen}, red is Equation~\ref{ratioapprox}, black is the density ratio and blue is the stopping power ratio using the database provided by PSTAR, which contains data from the ICRU.}
+    \label{fig:approx:pmma}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[t]{0.43\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{fig/jlu.png}
+        \caption{Stopping power ratio for \ce{H2O} and and \ce{PbWO4}.}
+        \label{fig:approx:pwo:1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.43\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{fig/jlu.png}
+        \caption{Zoom of stopping power ratio.}
+        \label{fig:approx:pwo:2}
+    \end{subfigure}
+    \caption{Comparision of stopping power ratio between \ce{H2O}/PMMA and \ce{H2O}/\ce{PbWO4}, where $I_{\ce{H2O}}=\SI{75}{\electronvolt}$ and $I_{\ce{PbWO4}}=\SI{600.7}{\electronvolt}$. Here, Green represents Equation~\ref{eq:stoppratio:2}, orange is Equation~\ref{eq:energydepen}, red is Equation~\ref{ratioapprox}, black is the density ratio and blue is the stopping power ratio using the database provided by PSTAR and Geant4. A comparison mass stopping powers of Geant4 and PStar is shown in Appendix Figure~\ref{fig:stoppcompare}, showing Geant4 gives accurate estimates.  }
+    \label{fig:approx:pwo}
+\end{figure}
+
+From inserting Equation~\ref{ratioapprox} into Equation~\ref{eq:mod:ratio} follows the energy independent modulation power:
+\begin{align}
+    P_{\text{mod}}   &= d \cdot \left(\frac{(\frac{\hat{S}_L}{\hat{S}_a}-1)(\frac{\hat{S}_m}{\hat{S}_a}-\frac{\hat{S}_L}{\hat{S}_a})}{(\frac{\hat{S}_m}{\hat{S}_a}-1)^2} \right)\cdot \frac{S_m^2}{S_{L}\cdot S_{\ce{H2O}}} \\
+    &= d \cdot \frac{\rho_m^2}{\rho_L \cdot \rho_{\ce{H2O}}} \cdot \left(\frac{Z_m}{A_m}\right)^2\left(\frac{Z_L}{A_L}\right)^{-1}\left(\frac{Z_{\ce{H2O}}}{A_{\ce{H2O}}}\right)^{-1}\frac{\ln\left(\frac{2m_ec^2}{I_m}\right)^2}{\ln\left(\frac{2m_ec^2}{I_L}\right)\cdot \ln\left(\frac{2m_ec^2}{I_{\ce{H2O}}}\right)} \\
+    &\qquad \cdot \left(\frac{\left(\frac{Z_L}{A_L}\left(\frac{Z_a}{A_a}\right)^{-1}\frac{\ln\left(\frac{2m_ec^2}{I_L}\right)}{\ln\left(\frac{2m_ec^2}{I_a}\right)}-1\right)\left(\frac{Z_m}{A_m}\left(\frac{Z_a}{A_a}\right)^{-1}\frac{\ln\left(\frac{2m_ec^2}{I_m}\right)}{\ln\left(\frac{2m_ec^2}{I_a}\right)}-\frac{Z_L}{A_L}\left(\frac{Z_a}{A_a}\right)^{-1}\frac{\ln\left(\frac{2m_ec^2}{I_L}\right)}{\ln\left(\frac{2m_ec^2}{I_a}\right)}\right)}{\left(\frac{Z_m}{A_m}\left(\frac{Z_a}{A_a}\right)^{-1}\frac{\ln\left(\frac{2m_ec^2}{I_m}\right)}{\ln\left(\frac{2m_ec^2}{I_a}\right)}-1\right)^2} \right) \label{eq:final}
+\end{align}
+
+To compare this model to the density ratio model, a simulation is run with a heterogeneous target based on the models.
+The modulation power can then be extracted from the simulations using the resulting depth-dose distributions by using a Gaus convolution with a depth-dose distribution without a target.
+In this comparison the heterogeneous target is modeled via \ce{H2O} and air, resulting in Equation~\ref{eq:final} simplifying to:
+
+\begin{align}
+    P_{\text{mod}} &= d \cdot \frac{\rho_{\ce{H2O}}}{\rho_L} \cdot \left(\frac{Z_L}{A_L}\right)^{-1}\left(\frac{Z_{\ce{H2O}}}{A_{\ce{H2O}}}\right)\frac{\ln\left(\frac{2m_ec^2}{I_{\ce{H2O}}}\right)}{\ln\left(\frac{2m_ec^2}{I_L}\right)} \\
+    &\qquad \cdot \left(\frac{\left(\frac{Z_L}{A_L}\left(\frac{Z_a}{A_a}\right)^{-1}\frac{\ln\left(\frac{2m_ec^2}{I_L}\right)}{\ln\left(\frac{2m_ec^2}{I_a}\right)}-1\right)\left(\frac{Z_{\ce{H2O}}}{A_{\ce{H2O}}}\left(\frac{Z_a}{A_a}\right)^{-1}\frac{\ln\left(\frac{2m_ec^2}{I_{\ce{H2O}}}\right)}{\ln\left(\frac{2m_ec^2}{I_a}\right)}-\frac{Z_L}{A_L}\left(\frac{Z_a}{A_a}\right)^{-1}\frac{\ln\left(\frac{2m_ec^2}{I_L}\right)}{\ln\left(\frac{2m_ec^2}{I_a}\right)}\right)}{\left(\frac{Z_{\ce{H2O}}}{A_{\ce{H2O}}}\left(\frac{Z_a}{A_a}\right)^{-1}\frac{\ln\left(\frac{2m_ec^2}{I_{\ce{H2O}}}\right)}{\ln\left(\frac{2m_ec^2}{I_a}\right)}-1\right)^2} \right)
+\end{align}
+
+The calculated parameters of both models are shown in Table~\ref{tab:params}.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{c|c|c}
+         Parameter & Density ratio & Stopping power ratio \\
+         \hline
+         Fill probability / \% & $0.2476$ & $0.2251$ \\
+         Structure Constant / m & $\frac{P_{\text{mod}}}{0.7900}$ & $\frac{P_{\text{mod}}}{0.7355}$ \\
+    \end{tabular}
+    \caption{Heterogeneous target model parameters.}
+    \label{tab:params}
+\end{table}
+
+\pagebreak
+
+The depth-dose distributions of both simulations are shown in Figure~\ref{fig:sim}.
+The determined parameters are shown in Tables~\ref{tab:finalparams:dr} and ~\ref{tab:finalparams:aspr}, showing an overall smaller relative and absolute deviation from the theoretical modulation power for the ASPR-model, while the density ratio model only sometimes gave better results.
+
+It should be noted that this model only applies to materials with a higher or equal mass stopping power than lung tissue, because otherwise the mass stopping power of lung can not be calculated using Braggs additivity rule.
+For example \ce{PbWO4} has a lower mass stopping power than lung tissue and air, even though it has a higher stopping power, resulting in a negative fill probability.
+
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{fig/jlu.png}
+        \caption{Depth dose distributions of simulations using the density ratio model of \ce{H2O} and lung.}
+        \label{fig:sim1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{fig/jlu.png}
+        \caption{Depth dose distributions of simulations using the approximated stopping power ratio model of \ce{H2O} and lung.}
+        \label{fig:sim2}
+    \end{subfigure}
+    \caption{Geant4 simulations of the depth dose distribution of protons in water using heterogeneous targets with different modulation powers and thicknesses. }
+    \label{fig:sim}
+\end{figure}
+
+\pagebreak
+
+\begin{table}[hp]
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{l|l|l|l|l|l}
+        & & \multicolumn{3}{c|}{Denstiy Ratio model} \\ % & \multicolumn{3}{c}{ASPR model} \\
+        \hline
+        $P_{\text{mod, theo.}}$ / \si{\micro\meter} & Thickness / \si{\milli\meter} & $t$ / \si{\centi\meter} & $\sigma_t$ / \si{\centi\meter} & $P_{\text{mod}} / \si{\micro\meter}$ & $\Delta \%$ \\
+        \hline
+        100 & 50 & $1.244\pm 6.75\times 10^{-5}$ & $0.091\pm3.70\times 10^{-4}$ & $66.190\pm5.40\times 10^{-1}$ & $-33.81 \pm 0.540$ \\
+         & 100 & $2.492\pm 5.28\times 10^{-5}$ & $0.144\pm1.42\times 10^{-4}$ & $83.693\pm1.65\times 10^{-1}$ & $-16.31 \pm 0.165$ \\
+         & 150 & $3.737\pm 4.92\times 10^{-5}$ & $0.180\pm1.11\times 10^{-4}$ & $87.177\pm1.07\times 10^{-1}$ & $-12.82 \pm 0.107$ \\
+         & 200 & $4.966\pm 1.34\times 10^{-4}$ & $0.211\pm2.70\times 10^{-4}$ & $89.549\pm2.29\times 10^{-1}$ & $-10.45 \pm 0.229$ \\
+         \hline
+        200 & 50 & $1.241\pm 7.22\times 10^{-5}$ & $0.144\pm1.96\times 10^{-4}$ & $167.161\pm4.54\times 10^{-1}$ & $-16.42 \pm 0.227$ \\
+        & 100 & $2.487\pm 6.01\times 10^{-5}$ & $0.210\pm1.21\times 10^{-4}$ & $177.627\pm2.04\times 10^{-1}$ & $-11.19 \pm 0.102$ \\
+         & 150 & $3.743\pm 6.70\times 10^{-5}$ & $0.259\pm1.17\times 10^{-4}$ & $179.444\pm1.62\times 10^{-1}$ & $-10.28 \pm 0.081$ \\
+         & 200 & $4.978\pm 1.11\times 10^{-4}$ & $0.304\pm1.76\times 10^{-4}$ & $186.073\pm2.16\times 10^{-1}$ & $-6.96 \pm 0.108$ \\
+         \hline
+        300 & 50 & $1.243\pm 6.33\times 10^{-5}$ & $0.179\pm1.43\times 10^{-4}$ & $256.466\pm4.12\times 10^{-1}$ & $-14.51 \pm 0.137$ \\
+        & 100 & $2.479\pm 6.93\times 10^{-5}$ & $0.260\pm1.21\times 10^{-4}$ & $272.731\pm2.54\times 10^{-1}$ & $-9.09 \pm 0.085$ \\
+         & 150 & $3.729\pm 7.48\times 10^{-5}$ & $0.317\pm1.17\times 10^{-4}$ & $270.147\pm1.99\times 10^{-1}$ & $-9.95 \pm 0.066$ \\
+         & 200 & $4.966\pm 1.13\times 10^{-4}$ & $0.372\pm1.64\times 10^{-4}$ & $278.178\pm2.46\times 10^{-1}$ & $-7.27 \pm 0.082$ \\
+         \hline
+        400 & 50 & $1.253\pm 5.33\times 10^{-5}$ & $0.210\pm1.07\times 10^{-4}$ & $350.773\pm3.59\times 10^{-1}$ & $-12.31 \pm 0.090$ \\
+        & 100 & $2.481\pm 1.08\times 10^{-4}$ & $0.301\pm1.74\times 10^{-4}$ & $364.335\pm4.21\times 10^{-1}$ & $-8.92 \pm 0.105$ \\
+         & 150 & $3.714\pm 1.18\times 10^{-4}$ & $0.369\pm1.71\times 10^{-4}$ & $367.287\pm3.40\times 10^{-1}$ & $-8.18 \pm 0.085$ \\
+         & 200 & $4.968\pm 1.08\times 10^{-4}$ & $0.428\pm1.47\times 10^{-4}$ & $368.260\pm2.53\times 10^{-1}$ & $-7.94 \pm 0.063$ \\
+         \hline
+        500 & 50 & $1.247\pm 1.09\times 10^{-4}$ & $0.234\pm2.03\times 10^{-4}$ & $441.028\pm7.64\times 10^{-1}$ & $-11.79 \pm 0.153$ \\
+        & 100 & $2.483\pm 1.35\times 10^{-4}$ & $0.337\pm2.05\times 10^{-4}$ & $458.325\pm5.56\times 10^{-1}$ & $-8.34 \pm 0.111$ \\
+         & 150 & $3.720\pm 1.02\times 10^{-4}$ & $0.410\pm1.42\times 10^{-4}$ & $452.922\pm3.13\times 10^{-1}$ & $-9.42 \pm 0.063$ \\
+         & 200 & $4.962\pm 1.14\times 10^{-4}$ & $0.481\pm1.50\times 10^{-4}$ & $465.994\pm2.91\times 10^{-1}$ & $-6.80 \pm 0.058$ \\
+         \hline
+        600 & 50 & $1.260\pm 9.39\times 10^{-5}$ & $0.256\pm1.65\times 10^{-4}$ & $521.752\pm6.73\times 10^{-1}$ & $-13.04 \pm 0.112$ \\
+         & 100 & $2.485\pm 1.49\times 10^{-4}$ & $0.366\pm2.17\times 10^{-4}$ & $539.547\pm6.39\times 10^{-1}$ & $-10.08 \pm 0.107$ \\
+         & 150 & $3.718\pm 1.53\times 10^{-4}$ & $0.453\pm2.04\times 10^{-4}$ & $551.018\pm4.98\times 10^{-1}$ & $-8.16 \pm 0.083$ \\
+         & 200 & $4.952\pm 1.37\times 10^{-4}$ & $0.525\pm1.75\times 10^{-4}$ & $557.469\pm3.72\times 10^{-1}$ & $-7.09 \pm 0.062$ \\
+         \hline
+        700 & 50 & $1.240\pm 1.78\times 10^{-4}$ & $0.283\pm2.95\times 10^{-4}$ & $644.925\pm1.35$ & $-7.87 \pm 0.192$ \\
+        & 100 & $2.490\pm 1.93\times 10^{-4}$ & $0.401\pm2.70\times 10^{-4}$ & $645.249\pm8.71\times 10^{-1}$ & $-7.82 \pm 0.124$ \\
+         & 150 & $3.710\pm 2.40\times 10^{-4}$ & $0.487\pm3.14\times 10^{-4}$ & $638.880\pm8.23\times 10^{-1}$ & $-8.73 \pm 0.118$ \\
+         & 200 & $4.963\pm 1.93\times 10^{-4}$ & $0.562\pm2.42\times 10^{-4}$ & $636.077\pm5.48\times 10^{-1}$ & $-9.13 \pm 0.078$ \\
+         \hline
+        800 & 50 & $1.231\pm 1.96\times 10^{-4}$ & $0.299\pm3.16\times 10^{-4}$ & $727.740\pm1.54$ & $-9.03 \pm 0.192$ \\
+        & 100 & $2.504\pm 2.16\times 10^{-4}$ & $0.428\pm2.95\times 10^{-4}$ & $730.595\pm1.01$ & $-8.68 \pm 0.126$ \\
+         & 150 & $3.728\pm 2.14\times 10^{-4}$ & $0.519\pm2.75\times 10^{-4}$ & $723.710\pm7.65\times 10^{-1}$ & $-9.54 \pm 0.096$ \\
+         & 200 & $4.951\pm 2.04\times 10^{-4}$ & $0.603\pm2.52\times 10^{-4}$ & $733.427\pm6.14\times 10^{-1}$ & $-8.32 \pm 0.077$ \\
+    \end{tabular}
+    }
+    \caption{Parameters for the DR-model resulting from the fits of the depth dose distributions with using Gaus convolutions with linear interpolation splines between the data points. The average relative deviation from the theoretical value is $10.63\%$ and the average absolute deviation is $\SI{42.695}{\micro\meter}$.}
+    \label{tab:finalparams:dr}
+\end{table}
+
+\begin{table}[hp]
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{l|l|l|l|l|l}
+        & & \multicolumn{3}{c|}{Approximated Stopping Power Ratio model} \\ % & \multicolumn{3}{c}{ASPR model} \\
+        \hline
+        $P_{\text{mod, theo.}}$ / \si{\micro\meter} & Thickness / \si{\milli\meter} & $t$ / \si{\centi\meter} & $\sigma_t$ / \si{\centi\meter} & $P_{\text{mod}} / \si{\micro\meter}$ & $\Delta \%$ \\
+        \hline
+        100 & 50 &$1.132\pm 4.18\times 10^{-5}$ & $0.101\pm1.29\times 10^{-4}$ & $90.130\pm2.30\times 10^{-1}$ & $-9.87 \pm 0.230$ \\
+         & 100 &$2.262\pm 6.69\times 10^{-5}$ & $0.143\pm1.83\times 10^{-4}$ & $89.908\pm2.31\times 10^{-1}$ & $-10.09 \pm 0.231$ \\
+         & 150 &$3.391\pm 1.22\times 10^{-4}$ & $0.179\pm2.75\times 10^{-4}$ & $94.898\pm2.91\times 10^{-1}$ & $-5.10 \pm 0.291$ \\
+         & 200 &$4.517\pm 1.75\times 10^{-4}$ & $0.212\pm3.50\times 10^{-4}$ & $99.658\pm3.28\times 10^{-1}$ & $-0.34 \pm 0.328$ \\
+         \hline
+        200 & 50 &$1.136\pm 4.56\times 10^{-5}$ & $0.145\pm1.21\times 10^{-4}$ & $185.725\pm3.10\times 10^{-1}$ & $-7.14 \pm 0.155$ \\
+        & 100 &$2.264\pm 7.02\times 10^{-5}$ & $0.213\pm1.40\times 10^{-4}$ & $199.616\pm2.63\times 10^{-1}$ & $-0.19 \pm 0.131$ \\
+         & 150 &$3.378\pm 9.23\times 10^{-5}$ & $0.257\pm1.62\times 10^{-4}$ & $195.790\pm2.47\times 10^{-1}$ & $-2.11 \pm 0.124$ \\
+         & 200 &$4.522\pm 1.44\times 10^{-4}$ & $0.303\pm2.31\times 10^{-4}$ & $203.075\pm3.09\times 10^{-1}$ & $1.54 \pm 0.155$ \\
+         \hline
+        300 & 50 &$1.127\pm 6.53\times 10^{-5}$ & $0.178\pm1.48\times 10^{-4}$ & $280.592\pm4.68\times 10^{-1}$ & $-6.47 \pm 0.156$ \\
+        & 100 &$2.249\pm 1.00\times 10^{-4}$ & $0.260\pm1.75\times 10^{-4}$ & $299.573\pm4.05\times 10^{-1}$ & $-0.14 \pm 0.135$ \\
+         & 150 &$3.393\pm 1.26\times 10^{-4}$ & $0.321\pm1.95\times 10^{-4}$ & $304.048\pm3.69\times 10^{-1}$ & $1.35 \pm 0.123$ \\
+         & 200 &$4.506\pm 1.66\times 10^{-4}$ & $0.372\pm2.40\times 10^{-4}$ & $307.904\pm3.97\times 10^{-1}$ & $2.63 \pm 0.132$ \\
+         \hline
+        400 & 50 &$1.131\pm 8.49\times 10^{-5}$ & $0.211\pm1.70\times 10^{-4}$ & $393.329\pm6.35\times 10^{-1}$ & $-1.67 \pm 0.159$ \\
+        & 100 &$2.270\pm 1.47\times 10^{-4}$ & $0.304\pm2.34\times 10^{-4}$ & $408.437\pm6.27\times 10^{-1}$ & $2.11 \pm 0.157$ \\
+         & 150 &$3.383\pm 1.55\times 10^{-4}$ & $0.369\pm2.25\times 10^{-4}$ & $403.322\pm4.91\times 10^{-1}$ & $0.83 \pm 0.123$ \\
+         & 200 &$4.520\pm 1.68\times 10^{-4}$ & $0.431\pm2.29\times 10^{-4}$ & $410.100\pm4.36\times 10^{-1}$ & $2.53 \pm 0.109$ \\
+         \hline
+        500 & 50 &$1.130\pm 1.27\times 10^{-4}$ & $0.233\pm2.37\times 10^{-4}$ & $482.549\pm9.79\times 10^{-1}$ & $-3.49 \pm 0.196$ \\
+        & 100 &$2.249\pm 1.60\times 10^{-4}$ & $0.339\pm2.42\times 10^{-4}$ & $510.329\pm7.28\times 10^{-1}$ & $2.07 \pm 0.146$ \\
+         & 150 &$3.377\pm 2.40\times 10^{-4}$ & $0.417\pm3.31\times 10^{-4}$ & $516.031\pm8.19\times 10^{-1}$ & $3.21 \pm 0.164$ \\
+         & 200 &$4.495\pm 2.17\times 10^{-4}$ & $0.480\pm2.85\times 10^{-4}$ & $513.352\pm6.08\times 10^{-1}$ & $2.67 \pm 0.122$ \\
+         \hline
+        600 & 50 &$1.137\pm 1.57\times 10^{-4}$ & $0.259\pm2.75\times 10^{-4}$ & $588.546\pm1.25$ & $-1.91 \pm 0.208$ \\
+         & 100 &$2.252\pm 1.97\times 10^{-4}$ & $0.368\pm2.87\times 10^{-4}$ & $599.885\pm9.35\times 10^{-1}$ & $-0.02 \pm 0.156$ \\
+         & 150 &$3.401\pm 2.27\times 10^{-4}$ & $0.454\pm3.03\times 10^{-4}$ & $606.685\pm8.10\times 10^{-1}$ & $1.11 \pm 0.135$ \\
+         & 200 &$4.489\pm 2.25\times 10^{-4}$ & $0.522\pm2.89\times 10^{-4}$ & $606.710\pm6.72\times 10^{-1}$ & $1.12 \pm 0.112$ \\
+         \hline
+        700 & 50 &$1.146\pm 1.96\times 10^{-4}$ & $0.285\pm3.24\times 10^{-4}$ & $708.376\pm1.61$ & $1.20 \pm 0.230$ \\
+        & 100 &$2.262\pm 1.93\times 10^{-4}$ & $0.403\pm2.70\times 10^{-4}$ & $718.353\pm9.62\times 10^{-1}$ & $2.62 \pm 0.137$ \\
+         & 150 &$3.392\pm 2.59\times 10^{-4}$ & $0.489\pm3.38\times 10^{-4}$ & $705.948\pm9.76\times 10^{-1}$ & $0.85 \pm 0.139$ \\
+         & 200 &$4.507\pm 2.53\times 10^{-4}$ & $0.568\pm3.17\times 10^{-4}$ & $716.736\pm7.99\times 10^{-1}$ & $2.39 \pm 0.114$ \\
+         \hline
+        800 & 50 &$1.129\pm 2.25\times 10^{-4}$ & $0.306\pm3.60\times 10^{-4}$ & $829.401\pm1.95$ & $3.68 \pm 0.244$ \\
+        & 100 &$2.258\pm 2.58\times 10^{-4}$ & $0.430\pm3.52\times 10^{-4}$ & $818.239\pm1.34$ & $2.28 \pm 0.167$ \\
+         & 150 &$3.375\pm 3.14\times 10^{-4}$ & $0.520\pm4.03\times 10^{-4}$ & $801.092\pm1.24$ & $0.14 \pm 0.155$ \\
+         & 200 &$4.527\pm 2.92\times 10^{-4}$ & $0.607\pm3.60\times 10^{-4}$ & $813.970\pm9.65\times 10^{-1}$ & $1.75 \pm 0.121$ \\
+    \end{tabular}
+    }
+    \caption{Parameters for the ASPR-model resulting from the fits of the depth dose distributions with using Gaus convolutions with linear interpolation splines between the data points. The average relative deviation from the theoretical value is $2.644\%$ and the average absolute deviation is $\SI{9.435}{\micro\meter}$.}
+    \label{tab:finalparams:aspr}
+\end{table}
+
+\pagebreak
+
+\section{Bibliography}
+
+[1] K.-S. Baumann et al. “An efficient method to predict and include Bragg curve degradation due to lung-equivalent materials in Monte Carlo codes by applying a density modulation”. In: Physics in Medicine \& Biology (Apr. 2017). DOI: 10.1088/1361-6560/aa641f. URL: https://dx.doi.org/10.1088/1361-6560/aa641f.
+
+[2] Stopping Powers and Ranges for Protons and Alpha Particles. Tech. rep. Report
+49. ISBN: 978-0-913394-49-2. International Commission on Radiation Units and
+Measurements (ICRU), 1993.
+
+[3] Zhang R, Newhauser WD. Calculation of water equivalent thickness of materials of arbitrary density, elemental composition and thickness in proton beam irradiation. Phys Med Biol. 2009 Mar 21;54(6):1383-95. doi: 10.1088/0031-9155/54/6/001. Epub 2009 Feb 13. PMID: 19218739; PMCID: PMC4140439.
+
+[4] P.A. Zyla et al. (Particle Data Group), Prog. Theor. Exp. Phys. 2020, 083C01 (2020)
+
+\section{Appendix}
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[t]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{fig/jlu.png}
+        \caption{Stopping Power of ICRU and Geant4 for \ce{H2O}.}
+        \label{fig:stoppcompare:1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{fig/jlu.png}
+        \caption{Stopping power ratio of ICRU and Geant4 data for \ce{H2O}, resulting in $\Delta\lesssim1.5\%$.}
+        \label{fig:stoppcompare:2}
+    \end{subfigure}
+    \caption{Comparision of ICRU and Geant4 Stopping power data for \ce{H2O}.}
+    \label{fig:stoppcompare}
+\end{figure}
+
+\end{document}

@@ -1,0 +1,133 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{datasheet:hamamatsu_R2059}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=27689ac49d3b3aad34970107c918b8a2}{%
+           family={Photonics},
+           familyi={P\bibinitperiod},
+           given={Hamamatsu},
+           giveni={H\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Hamamatsu Photonics K.K.}%
+      }
+      \strng{namehash}{27689ac49d3b3aad34970107c918b8a2}
+      \strng{fullhash}{27689ac49d3b3aad34970107c918b8a2}
+      \strng{bibnamehash}{27689ac49d3b3aad34970107c918b8a2}
+      \strng{authorbibnamehash}{27689ac49d3b3aad34970107c918b8a2}
+      \strng{authornamehash}{27689ac49d3b3aad34970107c918b8a2}
+      \strng{authorfullhash}{27689ac49d3b3aad34970107c918b8a2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2024-10-28}
+      \field{title}{R1828-01, R2059 Photomultiplier Tubes Datasheet}
+      \field{year}{2019}
+      \verb{urlraw}
+      \verb https://www.hamamatsu.com/content/dam/hamamatsu-photonics/sites/documents/99\_SALES\_LIBRARY/etd/R1828-01\_R2059\_TPMH1259E.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.hamamatsu.com/content/dam/hamamatsu-photonics/sites/documents/99%5C_SALES%5C_LIBRARY/etd/R1828-01%5C_R2059%5C_TPMH1259E.pdf
+      \endverb
+    \endentry
+    \entry{cms:tdr}{book}{}
+      \list{location}{1}{%
+        {Geneva}%
+      }
+      \list{publisher}{1}{%
+        {CERN}%
+      }
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{series}{Technical design report. CMS}
+      \field{title}{{The CMS electromagnetic calorimeter project: Technical Design Report}}
+      \field{year}{1997}
+      \verb{urlraw}
+      \verb https://cds.cern.ch/record/349375
+      \endverb
+      \verb{url}
+      \verb https://cds.cern.ch/record/349375
+      \endverb
+    \endentry
+    \entry{bayer:baysilone}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=482d311fcdf12d556e39662ce9635262}{%
+           family={{Bayer AG}},
+           familyi={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{482d311fcdf12d556e39662ce9635262}
+      \strng{fullhash}{482d311fcdf12d556e39662ce9635262}
+      \strng{bibnamehash}{482d311fcdf12d556e39662ce9635262}
+      \strng{authorbibnamehash}{482d311fcdf12d556e39662ce9635262}
+      \strng{authornamehash}{482d311fcdf12d556e39662ce9635262}
+      \strng{authorfullhash}{482d311fcdf12d556e39662ce9635262}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2024-10-30}
+      \field{title}{Baysilone\textsuperscript{®} Fluids Brochure}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://dcproducts.com.au/wp-content/uploads/2020/12/BayerBaysiloneFluidsBrochure.pdf
+      \endverb
+      \verb{url}
+      \verb https://dcproducts.com.au/wp-content/uploads/2020/12/BayerBaysiloneFluidsBrochure.pdf
+      \endverb
+    \endentry
+    \entry{Malitson:65}{article}{}
+      \name{author}{1}{}{%
+        {{hash=d716d2891fb3a2d0b755cf6045db39ec}{%
+           family={Malitson},
+           familyi={M\bibinitperiod},
+           given={I.\bibnamedelimi H.},
+           giveni={I\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Optica Publishing Group}%
+      }
+      \strng{namehash}{d716d2891fb3a2d0b755cf6045db39ec}
+      \strng{fullhash}{d716d2891fb3a2d0b755cf6045db39ec}
+      \strng{bibnamehash}{d716d2891fb3a2d0b755cf6045db39ec}
+      \strng{authorbibnamehash}{d716d2891fb3a2d0b755cf6045db39ec}
+      \strng{authornamehash}{d716d2891fb3a2d0b755cf6045db39ec}
+      \strng{authorfullhash}{d716d2891fb3a2d0b755cf6045db39ec}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{J. Opt. Soc. Am.}
+      \field{month}{10}
+      \field{title}{Interspecimen Comparison of the Refractive Index of Fused Silica}
+      \field{volume}{55}
+      \field{year}{1965}
+      \verb{doi}
+      \verb 10.1364/JOSA.55.001205
+      \endverb
+      \keyw{Chromatic aberration; Material properties; Optical materials; Optical systems; Optical testing; Refractive index}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

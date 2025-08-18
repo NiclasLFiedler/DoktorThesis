@@ -19,6 +19,27 @@
 
 \refsection{0}
   \datalist[entry]{none/global//global/global}
+    \entry{rene}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=a8feb7b76f9252c2e20abebb2bcef777}{%
+           family={R.\bibnamedelimi Schubert},
+           familyi={R\bibinitperiod\bibinitdelim S\bibinitperiod},
+           given={JLU\bibnamedelima Giessen},
+           giveni={J\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \strng{namehash}{a8feb7b76f9252c2e20abebb2bcef777}
+      \strng{fullhash}{a8feb7b76f9252c2e20abebb2bcef777}
+      \strng{bibnamehash}{a8feb7b76f9252c2e20abebb2bcef777}
+      \strng{authorbibnamehash}{a8feb7b76f9252c2e20abebb2bcef777}
+      \strng{authornamehash}{a8feb7b76f9252c2e20abebb2bcef777}
+      \strng{authorfullhash}{a8feb7b76f9252c2e20abebb2bcef777}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Personal communication}
+      \field{year}{2024}
+    \endentry
     \entry{datasheet:hamamatsu_R2059}{manual}{}
       \name{author}{1}{}{%
         {{hash=27689ac49d3b3aad34970107c918b8a2}{%
@@ -36,8 +57,8 @@
       \strng{authorbibnamehash}{27689ac49d3b3aad34970107c918b8a2}
       \strng{authornamehash}{27689ac49d3b3aad34970107c918b8a2}
       \strng{authorfullhash}{27689ac49d3b3aad34970107c918b8a2}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: 2024-10-28}
@@ -57,8 +78,8 @@
       \list{publisher}{1}{%
         {CERN}%
       }
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labeltitlesource}{title}
       \field{series}{Technical design report. CMS}
       \field{title}{{The CMS electromagnetic calorimeter project: Technical Design Report}}
@@ -82,8 +103,8 @@
       \strng{authorbibnamehash}{482d311fcdf12d556e39662ce9635262}
       \strng{authornamehash}{482d311fcdf12d556e39662ce9635262}
       \strng{authorfullhash}{482d311fcdf12d556e39662ce9635262}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: 2024-10-30}
@@ -113,8 +134,8 @@
       \strng{authorbibnamehash}{d716d2891fb3a2d0b755cf6045db39ec}
       \strng{authornamehash}{d716d2891fb3a2d0b755cf6045db39ec}
       \strng{authorfullhash}{d716d2891fb3a2d0b755cf6045db39ec}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{J. Opt. Soc. Am.}

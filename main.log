@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.19)  9 JUL 2025 12:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.19)  31 JUL 2025 15:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1434,7 +1434,7 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ))
 Package pgfplots notification 'compat/show suggested version=true': document has been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
-<fig/jlu.png, id=99, 142.25145pt x 51.43214pt>
+<fig/jlu.png, id=107, 142.25145pt x 51.43214pt>
 File: fig/jlu.png Graphic file (type png)
 <use fig/jlu.png>
 Package pdftex.def Info: fig/jlu.png  used on input line 229.
@@ -1501,142 +1501,193 @@ LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 
 
 ]
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 25.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
-File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-)
-
-LaTeX Warning: Reference `' on page 2 undefined on input line 34.
-
-
-LaTeX Warning: Reference `' on page 2 undefined on input line 38.
-
-[2]
-
-LaTeX Warning: Reference `section:lightyield' on page 3 undefined on input line 59.
-
-
-LaTeX Warning: Reference `fig:lightyield:setup' on page 3 undefined on input line 59.
-
-
-LaTeX Warning: Reference `appendix:spectral' on page 3 undefined on input line 60.
-
-[3]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mhchem@cee' on input line 62.
-
-
-LaTeX Warning: Reference `fig:detector:crystal:pwo:wrap' on page 4 undefined on input line 64.
-
-
-LaTeX Warning: Reference `fig:pwo:lightyield:open' on page 4 undefined on input line 66.
-
-<fig/lightyield/pwo/ly_pwo_flat.jpg, id=190, 3019.28pt x 4015.0pt>
-File: fig/lightyield/pwo/ly_pwo_flat.jpg Graphic file (type jpg)
-<use fig/lightyield/pwo/ly_pwo_flat.jpg>
-Package pdftex.def Info: fig/lightyield/pwo/ly_pwo_flat.jpg  used on input line 75.
-(pdftex.def)             Requested size: 192.0548pt x 255.34789pt.
-<fig/lightyield/pwo/ly_pwo_vertical.jpg, id=191, 3019.28pt x 4015.0pt>
-File: fig/lightyield/pwo/ly_pwo_vertical.jpg Graphic file (type jpg)
-<use fig/lightyield/pwo/ly_pwo_vertical.jpg>
-Package pdftex.def Info: fig/lightyield/pwo/ly_pwo_vertical.jpg  used on input line 78.
-(pdftex.def)             Requested size: 192.0548pt x 255.34789pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<fig/lightyield/pwo/bps_na_flat.pdf, id=196, 1084.05pt x 722.7pt>
-File: fig/lightyield/pwo/bps_na_flat.pdf Graphic file (type pdf)
-<use fig/lightyield/pwo/bps_na_flat.pdf>
-Package pdftex.def Info: fig/lightyield/pwo/bps_na_flat.pdf  used on input line 93.
-(pdftex.def)             Requested size: 213.39568pt x 142.25475pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<fig/lightyield/pwo/bps_na22_all.pdf, id=199, 1589.94pt x 867.24pt>
-File: fig/lightyield/pwo/bps_na22_all.pdf Graphic file (type pdf)
-<use fig/lightyield/pwo/bps_na22_all.pdf>
-Package pdftex.def Info: fig/lightyield/pwo/bps_na22_all.pdf  used on input line 99.
-(pdftex.def)             Requested size: 426.79135pt x 232.79494pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[4]
-<fig/lightyield/ej200/ly_ej200_flat.jpg, id=215, 3019.28pt x 4015.0pt>
-File: fig/lightyield/ej200/ly_ej200_flat.jpg Graphic file (type jpg)
-<use fig/lightyield/ej200/ly_ej200_flat.jpg>
-Package pdftex.def Info: fig/lightyield/ej200/ly_ej200_flat.jpg  used on input line 117.
-(pdftex.def)             Requested size: 192.0548pt x 255.34789pt.
-<fig/lightyield/ej200/ly_ej200_vertical.jpg, id=216, 3019.28pt x 4015.0pt>
-File: fig/lightyield/ej200/ly_ej200_vertical.jpg Graphic file (type jpg)
-<use fig/lightyield/ej200/ly_ej200_vertical.jpg>
-Package pdftex.def Info: fig/lightyield/ej200/ly_ej200_vertical.jpg  used on input line 120.
-(pdftex.def)             Requested size: 192.0548pt x 255.34789pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[5 <./fig/lightyield/pwo/ly_pwo_flat.jpg> <./fig/lightyield/pwo/ly_pwo_vertical.jpg>]
-<fig/lightyield/ej200/bps_ej200_flat.pdf, id=225, 1084.05pt x 722.7pt>
-File: fig/lightyield/ej200/bps_ej200_flat.pdf Graphic file (type pdf)
-<use fig/lightyield/ej200/bps_ej200_flat.pdf>
-Package pdftex.def Info: fig/lightyield/ej200/bps_ej200_flat.pdf  used on input line 135.
-(pdftex.def)             Requested size: 204.85802pt x 136.56454pt.
-<fig/lightyield/ej200/bps_ej200.pdf, id=226, 1084.05pt x 722.7pt>
-File: fig/lightyield/ej200/bps_ej200.pdf Graphic file (type pdf)
-<use fig/lightyield/ej200/bps_ej200.pdf>
-Package pdftex.def Info: fig/lightyield/ej200/bps_ej200.pdf  used on input line 139.
-(pdftex.def)             Requested size: 204.85802pt x 136.56454pt.
-<fig/lightyield/ej200/bps_ej200_side.pdf, id=227, 1084.05pt x 722.7pt>
-File: fig/lightyield/ej200/bps_ej200_side.pdf Graphic file (type pdf)
-<use fig/lightyield/ej200/bps_ej200_side.pdf>
-Package pdftex.def Info: fig/lightyield/ej200/bps_ej200_side.pdf  used on input line 144.
-(pdftex.def)             Requested size: 204.85802pt x 136.56454pt.
-<fig/lightyield/ej200/bps_ej200_window.pdf, id=228, 1084.05pt x 722.7pt>
-File: fig/lightyield/ej200/bps_ej200_window.pdf Graphic file (type pdf)
-<use fig/lightyield/ej200/bps_ej200_window.pdf>
-Package pdftex.def Info: fig/lightyield/ej200/bps_ej200_window.pdf  used on input line 153.
-(pdftex.def)             Requested size: 204.85802pt x 136.56454pt.
-<fig/lightyield/ej200/bps_ej200_window_side.pdf, id=231, 1084.05pt x 722.7pt>
-File: fig/lightyield/ej200/bps_ej200_window_side.pdf Graphic file (type pdf)
-<use fig/lightyield/ej200/bps_ej200_window_side.pdf>
-Package pdftex.def Info: fig/lightyield/ej200/bps_ej200_window_side.pdf  used on input line 158.
-(pdftex.def)             Requested size: 204.85802pt x 136.56454pt.
-
-
-LaTeX Warning: Float too large for page by 17.34299pt on input line 163.
-
-
-Overfull \hbox (9.11246pt too wide) in paragraph at lines 173--182
- [][] 
- []
-
-[6 <./fig/lightyield/pwo/bps_na_flat.pdf>]
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 190.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 190.
-LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 11.39996pt on input line 190.
-LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 9.49997pt on input line 190.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mhchem@cee' on input line 190.
-
-
-LaTeX Warning: Reference `' on page 7 undefined on input line 193.
-
-[7 <./fig/lightyield/pwo/bps_na22_all.pdf>]
-
-LaTeX Warning: Reference `' on page 8 undefined on input line 207.
-
-[8 <./fig/lightyield/ej200/ly_ej200_flat.jpg> <./fig/lightyield/ej200/ly_ej200_vertical.jpg>] [9 <./fig/lightyield/ej200/bps_ej200_flat.pdf> <./fig/lightyield/ej200/bps_ej200.pdf> <./fig/lightyield/ej200/bps_ej200_side.pdf> <./fig/lightyield/ej200/bps_ej200_window.pdf> <./fig/lightyield/ej200/bps_ej200_window_side.pdf>]) [10] [11]
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 288.
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 22.
  (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
+
+LaTeX Warning: Citation '' on page 2 undefined on input line 23.
+
+
+Overfull \hbox (103.15927pt too wide) in paragraph at lines 21--24
+\T1/ptm/m/n/12 sen with the ad-di-tion of sub-si-tut-ing \T1/cmtt/m/n/12 G4EmStandardPhysics_option3 \T1/ptm/m/n/12 with \T1/cmtt/m/n/12 G4EmStandardPhysics_option4\T1/ptm/m/n/12 .
+ []
+
+
+Overfull \hbox (76.73322pt too wide) in paragraph at lines 21--24
+\T1/ptm/m/n/12 to an en-ergy thresh-old of ap-prox-i-mately $\OT1/ztmcm/m/n/12 55$$[]$ \T1/ptm/m/n/12 for elec-trons in wa-ter [[]](baumann2017).
+ []
+
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 28.
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+)
+
+LaTeX Warning: Reference `' on page 2 undefined on input line 28.
+
+
+Overfull \hbox (2.97762pt too wide) in paragraph at lines 26--30
+\OT1/ztmcm/m/n/12 0\OML/ztmcm/m/it/12 :\OT1/ztmcm/m/n/12 25$$[]$ \T1/ptm/m/n/12 PTFE-foil and $\OT1/ztmcm/m/n/12 20$$[]$ \T1/ptm/m/n/12 alu-minum foil per side, as mea-sured in Sec-tion [](reference
+ []
+
+[2{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}]
+
+LaTeX Warning: Reference `' on page 3 undefined on input line 37.
+
+
+LaTeX Warning: Reference `' on page 3 undefined on input line 41.
+
+[3]
+
+LaTeX Warning: Reference `' on page 4 undefined on input line 62.
+
+
+LaTeX Warning: Reference `' on page 4 undefined on input line 64.
+
+
+LaTeX Warning: Reference `' on page 4 undefined on input line 65.
+
+<fig/pbwo4Detector/housingSTL.png, id=196, 1592.95125pt x 681.54625pt>
+File: fig/pbwo4Detector/housingSTL.png Graphic file (type png)
+<use fig/pbwo4Detector/housingSTL.png>
+Package pdftex.def Info: fig/pbwo4Detector/housingSTL.png  used on input line 71.
+(pdftex.def)             Requested size: 213.39568pt x 91.29759pt.
+[4 <./fig/pbwo4Detector/housingSTL.png>]
+<fig/pbwo4Detector/crystals/wrapping/crystal.jpg, id=212, 3019.28pt x 4015.0pt>
+File: fig/pbwo4Detector/crystals/wrapping/crystal.jpg Graphic file (type jpg)
+<use fig/pbwo4Detector/crystals/wrapping/crystal.jpg>
+Package pdftex.def Info: fig/pbwo4Detector/crystals/wrapping/crystal.jpg  used on input line 89.
+(pdftex.def)             Requested size: 192.0548pt x 255.34789pt.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 89.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 89.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 89.
+<fig/pbwo4Detector/crystals/wrapping/wrapped_crystal.jpg, id=213, 3019.28pt x 4015.0pt>
+File: fig/pbwo4Detector/crystals/wrapping/wrapped_crystal.jpg Graphic file (type jpg)
+<use fig/pbwo4Detector/crystals/wrapping/wrapped_crystal.jpg>
+Package pdftex.def Info: fig/pbwo4Detector/crystals/wrapping/wrapped_crystal.jpg  used on input line 92.
+(pdftex.def)             Requested size: 192.0548pt x 255.34789pt.
+
+
+LaTeX Warning: Reference `section:lightyield' on page 5 undefined on input line 96.
+
+
+LaTeX Warning: Reference `fig:lightyield:setup' on page 5 undefined on input line 96.
+
+
+LaTeX Warning: Reference `appendix:spectral' on page 5 undefined on input line 97.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mhchem@cee' on input line 99.
+
+
+LaTeX Warning: Reference `fig:detector:crystal:pwo:wrap' on page 5 undefined on input line 101.
+
+
+LaTeX Warning: Reference `fig:pwo:lightyield:open' on page 5 undefined on input line 103.
+
+[5 <./fig/pbwo4Detector/crystals/wrapping/crystal.jpg> <./fig/pbwo4Detector/crystals/wrapping/wrapped_crystal.jpg>]
+<fig/lightyield/pwo/ly_pwo_flat.jpg, id=228, 3019.28pt x 4015.0pt>
+File: fig/lightyield/pwo/ly_pwo_flat.jpg Graphic file (type jpg)
+<use fig/lightyield/pwo/ly_pwo_flat.jpg>
+Package pdftex.def Info: fig/lightyield/pwo/ly_pwo_flat.jpg  used on input line 112.
+(pdftex.def)             Requested size: 192.0548pt x 255.34789pt.
+<fig/lightyield/pwo/ly_pwo_vertical.jpg, id=229, 3019.28pt x 4015.0pt>
+File: fig/lightyield/pwo/ly_pwo_vertical.jpg Graphic file (type jpg)
+<use fig/lightyield/pwo/ly_pwo_vertical.jpg>
+Package pdftex.def Info: fig/lightyield/pwo/ly_pwo_vertical.jpg  used on input line 115.
+(pdftex.def)             Requested size: 192.0548pt x 255.34789pt.
+ [6 <./fig/lightyield/pwo/ly_pwo_flat.jpg> <./fig/lightyield/pwo/ly_pwo_vertical.jpg>]
+<fig/lightyield/pwo/bps_na_flat.pdf, id=241, 1084.05pt x 722.7pt>
+File: fig/lightyield/pwo/bps_na_flat.pdf Graphic file (type pdf)
+<use fig/lightyield/pwo/bps_na_flat.pdf>
+Package pdftex.def Info: fig/lightyield/pwo/bps_na_flat.pdf  used on input line 130.
+(pdftex.def)             Requested size: 213.39568pt x 142.25475pt.
+<fig/lightyield/pwo/bps_na22_all.pdf, id=244, 1589.94pt x 867.24pt>
+File: fig/lightyield/pwo/bps_na22_all.pdf Graphic file (type pdf)
+<use fig/lightyield/pwo/bps_na22_all.pdf>
+Package pdftex.def Info: fig/lightyield/pwo/bps_na22_all.pdf  used on input line 136.
+(pdftex.def)             Requested size: 426.79135pt x 232.79494pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[7 <./fig/lightyield/pwo/bps_na_flat.pdf>]
+<fig/lightyield/ej200/ly_ej200_flat.jpg, id=295, 3019.28pt x 4015.0pt>
+File: fig/lightyield/ej200/ly_ej200_flat.jpg Graphic file (type jpg)
+<use fig/lightyield/ej200/ly_ej200_flat.jpg>
+Package pdftex.def Info: fig/lightyield/ej200/ly_ej200_flat.jpg  used on input line 154.
+(pdftex.def)             Requested size: 192.0548pt x 255.34789pt.
+<fig/lightyield/ej200/ly_ej200_vertical.jpg, id=296, 3019.28pt x 4015.0pt>
+File: fig/lightyield/ej200/ly_ej200_vertical.jpg Graphic file (type jpg)
+<use fig/lightyield/ej200/ly_ej200_vertical.jpg>
+Package pdftex.def Info: fig/lightyield/ej200/ly_ej200_vertical.jpg  used on input line 157.
+(pdftex.def)             Requested size: 192.0548pt x 255.34789pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<fig/lightyield/ej200/bps_ej200_flat.pdf, id=300, 1084.05pt x 722.7pt>
+File: fig/lightyield/ej200/bps_ej200_flat.pdf Graphic file (type pdf)
+<use fig/lightyield/ej200/bps_ej200_flat.pdf>
+Package pdftex.def Info: fig/lightyield/ej200/bps_ej200_flat.pdf  used on input line 172.
+(pdftex.def)             Requested size: 204.85802pt x 136.56454pt.
+<fig/lightyield/ej200/bps_ej200.pdf, id=301, 1084.05pt x 722.7pt>
+File: fig/lightyield/ej200/bps_ej200.pdf Graphic file (type pdf)
+<use fig/lightyield/ej200/bps_ej200.pdf>
+Package pdftex.def Info: fig/lightyield/ej200/bps_ej200.pdf  used on input line 176.
+(pdftex.def)             Requested size: 204.85802pt x 136.56454pt.
+<fig/lightyield/ej200/bps_ej200_side.pdf, id=302, 1084.05pt x 722.7pt>
+File: fig/lightyield/ej200/bps_ej200_side.pdf Graphic file (type pdf)
+<use fig/lightyield/ej200/bps_ej200_side.pdf>
+Package pdftex.def Info: fig/lightyield/ej200/bps_ej200_side.pdf  used on input line 181.
+(pdftex.def)             Requested size: 204.85802pt x 136.56454pt.
+<fig/lightyield/ej200/bps_ej200_window.pdf, id=303, 1084.05pt x 722.7pt>
+File: fig/lightyield/ej200/bps_ej200_window.pdf Graphic file (type pdf)
+<use fig/lightyield/ej200/bps_ej200_window.pdf>
+Package pdftex.def Info: fig/lightyield/ej200/bps_ej200_window.pdf  used on input line 190.
+(pdftex.def)             Requested size: 204.85802pt x 136.56454pt.
+<fig/lightyield/ej200/bps_ej200_window_side.pdf, id=306, 1084.05pt x 722.7pt>
+File: fig/lightyield/ej200/bps_ej200_window_side.pdf Graphic file (type pdf)
+<use fig/lightyield/ej200/bps_ej200_window_side.pdf>
+Package pdftex.def Info: fig/lightyield/ej200/bps_ej200_window_side.pdf  used on input line 195.
+(pdftex.def)             Requested size: 204.85802pt x 136.56454pt.
+
+LaTeX Warning: Float too large for page by 17.34299pt on input line 200.
+
+
+Overfull \hbox (9.11246pt too wide) in paragraph at lines 210--219
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[8 <./fig/lightyield/pwo/bps_na22_all.pdf>]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 227.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 227.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 11.39996pt on input line 227.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 9.49997pt on input line 227.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mhchem@cee' on input line 227.
+
+
+LaTeX Warning: Reference `' on page 9 undefined on input line 230.
+
+[9 <./fig/lightyield/ej200/ly_ej200_flat.jpg> <./fig/lightyield/ej200/ly_ej200_vertical.jpg>] [10 <./fig/lightyield/ej200/bps_ej200_flat.pdf> <./fig/lightyield/ej200/bps_ej200.pdf> <./fig/lightyield/ej200/bps_ej200_side.pdf> <./fig/lightyield/ej200/bps_ej200_window.pdf> <./fig/lightyield/ej200/bps_ej200_window_side.pdf>]
+
+LaTeX Warning: Reference `' on page 11 undefined on input line 244.
+
+[11]) [12]
 Overfull \hbox (8.56561pt too wide) in paragraph at lines 288--288
 []\T1/ptm/m/n/12 Hamamatsu Pho-ton-ics. \T1/ptm/m/it/12 R1828-01, R2059 Pho-to-mul-ti-plier Tubes Datasheet\T1/ptm/m/n/12 . Ac-cessed:
  []
@@ -1646,7 +1697,7 @@ Overfull \hbox (8.56561pt too wide) in paragraph at lines 288--288
 
 
 
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}] (./main.lof)
+] (./main.lof)
 \tf@lof=\write10
 \openout10 = `main.lof'.
 
@@ -1658,7 +1709,7 @@ Overfull \hbox (8.56561pt too wide) in paragraph at lines 288--288
 
 
 No file main.acr.
-<Selbststaendigkeitserklaerung.pdf, id=638, 597.55246pt x 845.07718pt>
+<Selbststaendigkeitserklaerung.pdf, id=670, 597.55246pt x 845.07718pt>
 File: Selbststaendigkeitserklaerung.pdf Graphic file (type pdf)
 <use Selbststaendigkeitserklaerung.pdf>
 Package pdftex.def Info: Selbststaendigkeitserklaerung.pdf  used on input line 294.
@@ -1667,7 +1718,7 @@ File: Selbststaendigkeitserklaerung.pdf Graphic file (type pdf)
 <use Selbststaendigkeitserklaerung.pdf>
 Package pdftex.def Info: Selbststaendigkeitserklaerung.pdf  used on input line 294.
 (pdftex.def)             Requested size: 597.551pt x 845.07512pt.
-<Selbststaendigkeitserklaerung.pdf, id=641, page=1, 597.55246pt x 845.07718pt>
+<Selbststaendigkeitserklaerung.pdf, id=673, page=1, 597.55246pt x 845.07718pt>
 File: Selbststaendigkeitserklaerung.pdf Graphic file (type pdf)
 <use Selbststaendigkeitserklaerung.pdf, page 1>
 Package pdftex.def Info: Selbststaendigkeitserklaerung.pdf , page1 used on input line 294.
@@ -1703,17 +1754,17 @@ L3 programming layer <2024-01-22>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: A60E185CCDF948A822BD85FF70F35AE9;3480.
+(rerunfilecheck)             Checksum: BB3EBEA9CA19096E2ED3B088A512156D;3721.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 58137 strings out of 474222
- 1291152 string characters out of 5748733
- 2305106 words of memory out of 5000000
- 79369 multiletter control sequences out of 15000+600000
- 636237 words of font info for 142 fonts, out of 8000000 for 9000
+ 58207 strings out of 474222
+ 1293054 string characters out of 5748733
+ 2306489 words of memory out of 5000000
+ 79432 multiletter control sequences out of 15000+600000
+ 650806 words of font info for 172 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  97i,20n,98p,2571b,2743s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
@@ -1726,10 +1777,10 @@ pdfTeX warning (dest): name{glo:PMT} has been referenced but does not exist, rep
 pdfTeX warning (dest): name{glo:SiPM} has been referenced but does not exist, replaced by a fixed one
 
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1200.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (21 pages, 19436617 bytes).
+Output written on main.pdf (22 pages, 29289909 bytes).
 PDF statistics:
- 737 PDF objects out of 1000 (max. 8388607)
- 396 compressed objects within 4 object streams
- 71 named destinations out of 1000 (max. 500000)
- 277 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 771 PDF objects out of 1000 (max. 8388607)
+ 424 compressed objects within 5 object streams
+ 77 named destinations out of 1000 (max. 500000)
+ 308 words of extra memory for PDF output out of 10000 (max. 10000000)
 

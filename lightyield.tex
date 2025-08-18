@@ -14,16 +14,19 @@ The \SI{3}{\mm} thick sheets are used in the front or shallow beam depths to pro
 The second detector concept using plastic scintillators was developed to further increase the spatial resolution in the Bragg-Peak region at the cost of dynamic range in the shallow depths. 
 Plastic scintillators were chosen because they have a much lower density and thereby stopping power than \ce{PbWO4} and a high light yield also giving a better energy resolution.
 However, to achieve a high spatial resolution whilst using only 32 channels, individual channls need a low radiological thickness resulting in not fully covering the proton range.
-To still stop the proton beam, a passive absober with a known stopping power i.e. radiological thickness is incorperated between the first and second scintillator layers.
+To still stop the proton beam, a passive absober with a known stopping power i.e.~radiological thickness is incorperated between the first and second scintillator layers.
 This allows the first to work as a trigger channel which is used for the normalization in the analysis.
 
 \section{Detector Simulation}
 Geant4 simulations of both detector designs were implemented to give insights into their respective performances and to strike a good balance between active and passive volume for the plastic based detector.
+For this the reference physics list \texttt{QGSP\_BIC\_EMY} was chosen with the addition of subsituting \texttt{G4EmStandardPhysics\_option3} with \texttt{G4EmStandardPhysics\_option4}.
+The production cut was uniformly set to \SI{0.05}{\milli\meter} for all particle types, which corresponds to an energy threshold of approximately \SI{55}{\kilo\electronvolt} for electrons in water~\cite{}(baumann2017). This threshold defines the minimum range a secondary particle must have to be explicitly generated in the simulation; particles with shorter ranges deposit their energy locally without being tracked as individual secondaries.
 
 \subsection{Detector Implementation}
-The \ce{PbWO4} based detector was implemented as 32 \ce{PbWO4} sheets 
-The scintillators are wrapped in \SI{0.5}{\mm} PTFE-foil and \SI{20}{\um} aluminum foil.
-Here PTFE is modeled after its molecular formula of the repeating unit \ce{C2F4} with a density of $\rho_{\text{PFTE}}=\SI{2.2}{\gram\per\cm\cubed}$ and a mean exictiation energy of $I_{\text{PTFE}} = \SI{99.1}{\electronvolt}$  [citationneeded] and the aluminum foil (\SI{99.9}{\percent}) is approximated by aluminum. 
+The \ce{PbWO4}-based detector was implemented as 32 \ce{PbWO4} sheets with the dimensions from Section~\ref{section:detector:concept}.
+The mean exictiation energy was set to \SI{600.7}{\electronvolt}(citation needed), Birks' Coefficient to \SI{0.008694}{\mega\electronvolt\per\centi\meter}, the absorption length to \SI{100}{\centi\meter}, the lightyield to \SI{200}{ph\per\mega\electronvolt} and the refractive index to $2.2$~(citation). 
+The crystals are wrapped in \SI{0.25}{\mm} PTFE-foil and \SI{20}{\um} aluminum foil per side, as measured in Section~\ref{}(reference needed).
+Here PTFE is modeled after its molecular formula of the repeating unit \ce{C2F4} with a density of $\rho_{\text{PFTE}}=\SI{2.2}{\gram\per\cm\cubed}$ and a mean exictiation energy of $I_{\text{PTFE}} = \SI{99.1}{\electronvolt}$  [citationneeded] and the aluminum foil (\SI{99.9}{\percent}) is approximated by solid aluminum. 
 
 The plastic based detector was implemented using an active and passive material.
 The active material was modeled after a PVT-based scintillator, similar to general purpose plastic scintillators like EJ-200 or BC-408.
@@ -47,14 +50,48 @@ This is done using the total energy deposition inside the absorber by integratin
     x_{n} = \alpha_{\text{mat}} \left(\frac{z_n}{\alpha_{\ce{H2O}}}\right)^{\frac{p_{\text{mat}}}{p_{\ce{H2O}}}} \rightarrow z_{n+1} &= \alpha_{\ce{H2O}} \left(\left(\frac{z_n}{\alpha_{\ce{H2O}}}\right)^{\frac{p_{\text{mat}}}{p_{\ce{H2O}}}} + \frac{\Delta x}{\alpha_{\text{mat}}}\right)^{\frac{p_{\ce{H2O}}}{p_{\text{mat}}}}
 \end{align}
 
-The water equivalent thickness 
+using $z_0 = x_0 = 0$.
 
 \section{Readout}\label{section:readout}
 The scintillators of both designs are read out via SiPMs.
 Light yield measurements were conducted, to decide which SiPM types are suitable.
 With these the amount of incident photons can be estimated and compared with the number of pixel.
 From this, a balance can be struck between high resolution and a large enough dynamic range.
- 
+
+\section{Detector Housing}
+The scintillators are held in place by a custom 3D-printed PLA housing, as shown in Figure~\ref{}(fig needed).
+The crystals are spaced \SI{6.6}{\milli\meter} center-to-center, leaving \SI{3}{\milli\meter} of space inbetween for calibration sources.
+Small crevices on the top side allow for easy insertions of sources using the custom 3D-printed tool shown in Figure~\ref{}.
+Spring blocks 3D-printed out of flexible TPU, shown in Figure~\ref{}, are used to lighly press the scintillators onto the \glspl{SiPM}.
+The spring blocks are moved using screws and heat-set threaded inserts on the left.
+Markings indicate the correct beam alignment.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\linewidth]{fig/pbwo4Detector/housingSTL.png}
+    \caption{Caption}
+    \label{fig:enter-label}
+\end{figure}
+
+\subsection{Wrapping}
+The crystals were wrapped in a high-reflectivity PTFE membrane to increase the light yield and decrease the cross-talk probability.
+For this the crystals are first cleaned with ethanol, as shown in Figure~\ref{fig:pwo:wrapping:cleaned}.
+Then they are tightly wrapped in three layers of PTFE membrane, with an \gls{SiPM}-sized window cut-out on one side where the SiPM will be attached, as shown in Figure~\ref{fig:pwo:wrapping:cleaned}.
+The PTFE-membrane is the Tetratex\textsuperscript{{\textregistered}}~ePTFE-membrane with \SI{127}{\micro\meter} membrane thickness at a density of \SI{0.35}{\gram\per\centi\meter^3}~\cite{rene}. % check density
+It reflects the scintillation light back inside the crystal so that it can only exit the crystal on the open side where the SiPM is located.
+The wrapped crystals are additionally wrapped tightly in one layer of \SI{20}{\micro\meter}~\cite{rene} aluminum foil, fixated using reflective tape, as shown in Figure~\ref{fig:pwo:wrapping:full}.
+This protects the wrapping and ensures light-tightness from both inside and outside.
+Its reflectiveness helps redirect any remaining light that might pass through the PTFE, particularly on the edges and corners where the wrapping is thinnest.
+
+\begin{figure}[h]
+    \centering        
+    \subfloat[Cleaned \ce{PbWO4} crystal.\label{fig:pwo:wrapping:cleaned}]
+        {\includegraphics[width = 0.45\textwidth]{fig/pbwo4Detector/crystals/wrapping/crystal.jpg}}
+    \hspace{0.02\textwidth}
+    \subfloat[Fully wrapped \ce{PbWO4} crystal with window cut-out.\label{fig:pwo:wrapping:full}]
+        {\includegraphics[width = 0.45\textwidth]{fig/pbwo4Detector/crystals/wrapping/wrapped_crystal.jpg}}\\
+\end{figure}
+
 \subsection{Light Yield Measurement}
 The measurements were conducted using the process described in Section~\ref{section:lightyield} and the setup shown in Figure~\ref{fig:lightyield:setup}.
 The PMT used is an R2059 from Hamamatsu (serial number BA3200) with a quantum efficiency of \SI{23.16}{\percent}~\cite{datasheet:hamamatsu_R2059} (cf. Appendix~\ref{appendix:spectral}) at the luminescence peak of \SI{420}{\nano\meter} of \ce{PbWO4}~\cite{cms:tdr} and EJ212.
@@ -163,7 +200,7 @@ The measurements and Gaussian fits of the \SI{59.6}{\electronvolt} peak are show
 \end{figure}
 
 The light yield results are shown in Table~\ref{tab:lightyield:ej200}.
-The light yield for the flat position with is in good aggreement with the value provided by the manufacturer of \SI{10000}{ph\per\mega\electronvolt}, taking into account aging-related degradation of the PMT (from 2012), which reduce the quantum efficiency.
+The light yield for the flat position is in good aggreement with the value provided by the manufacturer of \SI{10000}{ph\per\mega\electronvolt}, taking into account aging-related degradation of the PMT (from 2012), which reduce the quantum efficiency.
 For both vertical positions, the light yield is only slightly affected by the source position.
 This is due to the high attenuation length of optical photons in the scintillator of \SI{380}{\centi\meter}.
 When photons are collected from one side, approximately \SI{30}{\percent} of the total light is lost and when using an \gls{SiPM}-sized window cut-out the light yield is reduced by \SI{70}{\percent}.
