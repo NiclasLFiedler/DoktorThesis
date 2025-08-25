@@ -4,12 +4,20 @@
 
 \section{Detector Concept \& Scintillator Selection}\label{section:detector:concept}
 Two different scintillation-based detector-concepts were developed to measure the depth dose distribution of protons in real-time.
-Both detectors consist of 32 scintillator-layers read-out via \glspl{SiPM} and two linked-together 16-channel CAEN digitizer.
+Both detectors consist of 32 scintillator-layers read-out via \glspl{SiPM} and two linked-together 16-channel CAEN digitizers.
 
 The first detector concept is \ce{PbWO4}-based, as the first prototype,  [citemaster], but improves on the layer geometry by using sheets instead of bars whilst also reducing layer thickness.
 For this two crystal sizes were chosen with $30\times30\times3~\text{mm}^3$ and $30\times30\times2~\text{mm}^3$, which were provided and cut by Crytur, allowing full coverage of the \SI{220}{\mega\electronvolt} proton range of $\approx \SI{66}{\mm}$.
-The lateral sheet sizes with \SI{30}{\mm} were the largest providable, because the sheets were cut from a single ingot and the thicknesses are the smallest resonable due to \ce{PbWO4} being very fragile.
+The lateral sheet sizes with \SI{30}{\mm} were the largest providable, as the sheets were cut from a single ingot with a fixed size.
 The \SI{3}{\mm} thick sheets are used in the front or shallow beam depths to provide more stopping power and the thinner \SI{2}{\mm} sheets are used in the Bragg-Peak region to give an optimal spatial resolution.
+
+\subsection{Housing}
+The crystals are held in place by a custom 3D-printed housing, as shown in Figure~\ref{fig:detector:housing}.
+X-shaped springs are 3D-printed out of flexible TPU, as shown in Figure~\ref{}, and used to press the scintillators into the \glspl{SiPM} for optimal optical coulping.
+Cut-outs for spings are left at the bottom of the housing with additional holes for heat-set threaded inserts.
+With these, screws can be used to move the springs to create contact and apply the pressure.
+Thin slots are left open at one side of the scintillators for  
+
 
 The second detector concept using plastic scintillators was developed to further increase the spatial resolution in the Bragg-Peak region at the cost of dynamic range in the shallow depths. 
 Plastic scintillators were chosen because they have a much lower density and thereby stopping power than \ce{PbWO4} and a high light yield also giving a better energy resolution.
@@ -27,6 +35,8 @@ The \ce{PbWO4}-based detector was implemented as 32 \ce{PbWO4} sheets with the d
 The mean exictiation energy was set to \SI{600.7}{\electronvolt}(citation needed), Birks' Coefficient to \SI{0.008694}{\mega\electronvolt\per\centi\meter}, the absorption length to \SI{100}{\centi\meter}, the lightyield to \SI{200}{ph\per\mega\electronvolt} and the refractive index to $2.2$~(citation). 
 The crystals are wrapped in \SI{0.25}{\mm} PTFE-foil and \SI{20}{\um} aluminum foil per side, as measured in Section~\ref{}(reference needed).
 Here PTFE is modeled after its molecular formula of the repeating unit \ce{C2F4} with a density of $\rho_{\text{PFTE}}=\SI{2.2}{\gram\per\cm\cubed}$ and a mean exictiation energy of $I_{\text{PTFE}} = \SI{99.1}{\electronvolt}$  [citationneeded] and the aluminum foil (\SI{99.9}{\percent}) is approximated by solid aluminum. 
+The scintillators are wrapped in \SI{0.5}{\mm} PTFE-foil and \SI{20}{\um} aluminum foil.
+Here PTFE is modeled after its molecular formula of the repeating unit \ce{C2F4} with a density of $\rho_{\text{PFTE}}=\SI{2.2}{\gram\per\cm\cubed}$ and a mean exictiation energy of $I_{\text{PTFE}} = \SI{99.1}{\electronvolt}$  [citationneeded] and the aluminum foil (\SI{99.9}{\percent}) is approximated by aluminum. 
 
 The plastic based detector was implemented using an active and passive material.
 The active material was modeled after a PVT-based scintillator, similar to general purpose plastic scintillators like EJ-200 or BC-408.
@@ -91,7 +101,7 @@ Its reflectiveness helps redirect any remaining light that might pass through th
     \subfloat[Fully wrapped \ce{PbWO4} crystal with window cut-out.\label{fig:pwo:wrapping:full}]
         {\includegraphics[width = 0.45\textwidth]{fig/pbwo4Detector/crystals/wrapping/wrapped_crystal.jpg}}\\
 \end{figure}
-
+ 
 \subsection{Light Yield Measurement}
 The measurements were conducted using the process described in Section~\ref{section:lightyield} and the setup shown in Figure~\ref{fig:lightyield:setup}.
 The PMT used is an R2059 from Hamamatsu (serial number BA3200) with a quantum efficiency of \SI{23.16}{\percent}~\cite{datasheet:hamamatsu_R2059} (cf. Appendix~\ref{appendix:spectral}) at the luminescence peak of \SI{420}{\nano\meter} of \ce{PbWO4}~\cite{cms:tdr} and EJ212.
