@@ -1,0 +1,119 @@
+\documentclass[a4paper,12pt]{report}
+%\documentclass{standalone}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{subcaption}
+
+% Mehr mathematische Symbole
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+%Braket-Notation
+\usepackage{braket}
+
+%Griechische Buchstaben, nicht kursiv
+\usepackage{upgreek}
+
+%Zeilenabstand
+\usepackage[onehalfspacing]{setspace}
+
+%Seitenränder
+\usepackage[a4paper, left=3cm, right=3cm]{geometry}
+
+%Chemie
+\usepackage[version=4]{mhchem}
+
+%Schriftarten
+\usepackage{mathptmx}
+\usepackage[T1]{fontenc}
+\usepackage[scaled]{helvet}
+
+%Keine Einzüge bei neuem Absatz
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 2pt minus 1pt}
+
+
+%Metadaten und Verlinkungen
+\usepackage{hyperref}
+\hypersetup{
+  pdftitle={PhD Thesis},
+  pdfauthor={Niclas Fiedler},
+  breaklinks=true,
+  }
+
+%URLs mit line break
+\usepackage{xurl}
+
+%Einheiten
+\usepackage[separate-uncertainty=true,per-mode=symbol]{siunitx}
+\usepackage{physics}
+\ExplSyntaxOn{}
+\msg_redirect_name:nnn { siunitx } { physics-pkg } { none }
+\ExplSyntaxOff{}
+\DeclareSIUnit{} \clight{\text{\ensuremath{c}}}
+\DeclareSIUnit{} \u{\text{u}}
+\sisetup{per-mode=fraction}
+\DeclareSIUnit\ppm{\text{ppm}}
+\DeclareSIUnit\clight{\text{c}}
+\DeclareSIUnit\lsb{\text{LSB}}
+\DeclareSIUnit\pe{\text{PE}}
+\DeclareSIUnit\bins{\text{bins}}
+\DeclareSIUnit[]\voltpp{\text{\ensuremath{V_{\textup{pp}}}}}
+\DeclareSIUnit\atomicmassunit{u}
+\DeclareSIUnit\barn{b}
+
+
+%Float barrier
+\usepackage{placeins}
+
+% Multipage Tables
+\usepackage{longtable}
+
+% Zeilenumbruch in Tabelle
+\usepackage{makecell}
+
+% Dynamic width tables
+\usepackage{ltxtable}
+
+%Mehrere Rows in Tabelle
+\usepackage{multirow}
+
+% %Deutsche Sprache
+\usepackage[ngerman, english]{babel}
+
+% %Bibliography mit Babel
+\usepackage{csquotes}
+
+% \begin{align}
+%     \label{eq:detector:absorber:thickness}
+%     \Delta E_{\ce{H2O}} &= \Delta E_{mat} \\
+%     \int_{z_n}^{z_{n+1}} S_{\ce{H2O}}\text{d}z &= \int_{x_n}^{x_{n+1}} S_\text{mat}\text{d}x \\
+%     E(z_{n+1})_{\ce{H2O}}-E(z_n)_{\ce{H2O}}&= E(x_{n+1})_{\text{mat}}-E(x_n)_{\text{mat}}\\
+%     E(z_n)_{\ce{H2O}} = E(x_n)_{\text{mat}} \rightarrow E(z_{n+1})_{\ce{H2O}} &= E(x_{n+1})_{\text{mat}} \\
+%     x_{n+1} = x_n + \Delta x \rightarrow \left(\frac{z_{n+1}}{\alpha_{\ce{H2O}}}\right)^{\frac{1}{p_{\ce{H2O}}}} &= \left(\frac{x_{n}+\Delta x}{\alpha_{\text{mat}}}\right)^{\frac{1}{p_{\text{mat}}}} \\
+%     x_{n} = \alpha_{\text{mat}} \left(\frac{z_n}{\alpha_{\ce{H2O}}}\right)^{\frac{p_{\text{mat}}}{p_{\ce{H2O}}}} \rightarrow z_{n+1} &= \alpha_{\ce{H2O}} \left(\left(\frac{z_n}{\alpha_{\ce{H2O}}}\right)^{\frac{p_{\text{mat}}}{p_{\ce{H2O}}}} + \frac{\Delta x}{\alpha_{\text{mat}}}\right)^{\frac{p_{\ce{H2O}}}{p_{\text{mat}}}}
+% \end{align}
+
+
+\begin{document}
+%$z_{n+1} = \alpha_{\ce{H2O}} \left(\left(\frac{z_n}{\alpha_{\ce{H2O}}}\right)^{\frac{p_{\text{mat}}}{p_{\ce{H2O}}}} + \frac{\Delta x}{\alpha_{\text{mat}}}\right)^{\frac{p_{\ce{H2O}}}{p_{\text{mat}}}},~z_0 = 0$
+
+%$R_0 -z = \alpha E(z)^p$
+
+%$D(z) = \Phi_0 \frac{e^{-\zeta^2/4}\sigma^{1/p}\Gamma(1/p)}{\sqrt{2\pi}\rho p \alpha^{1/p}(1+\beta R_0)}\cdot \left[\frac{1}{\sigma}\mathcal{D}_{-1/p}(-\zeta)+\left(\frac{\beta}{p}+\gamma\beta+\frac{\epsilon}{R_0}\right)\mathcal{D}_{-1/p-1}(-\zeta) \right]$
+
+\begin{tabular}{c|c|S|c|S}
+    Messung & Parameter & {Wert} & Abw. von Ref. & {Referenz} \\
+    \hline
+    \hline
+    Ohne Target & $R_0$ & \SI{30.565}{\centi\meter} & 0.38\% &  \SI{30.45}{\centi\meter}\\
+    \hline
+    PMMA & $t_{homo.}$ & \SI{6.425}{\centi\meter} & 7.08\% &  \SI{6}{\centi\meter}\\
+    \hline
+    LN300 & $t_{hetero.}$ & \SI{6.061}{\centi\meter} & 1.02\% &  \SI{6}{\centi\meter}\\
+     & $\sigma_t$ & \SI{0.407}{\centi\meter} & 14.66\% & \SI{0.354}{\centi\meter} \\
+     & $P_{\text{mod}}$ & \SI{272.693}{\micro\meter} & 29.85\% & \SI{210}{\micro\meter} \\
+\end{tabular}
+
+\end{document}
