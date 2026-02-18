@@ -3,4 +3,7 @@
 \babel@toc {ngerman}{}\relax 
 \babel@toc {english}{}\relax 
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {1.1}{\ignorespaces Light yield measurement results of the $50 \times 50 \times 10 \si {\milli \meter \cubed }$ EJ-200 scintillator sample.\relax }}{8}{table.caption.11}%
+\contentsline {table}{\numberline {1.1}{\ignorespaces Light yield measurement results of the $50 \times 50 \times 10 \si {\milli \meter \cubed }$ EJ-200 scintillator sample.}}{8}{table.caption.11}%
+\contentsline {table}{\numberline {1.2}{\ignorespaces Fitted material parameters $\alpha $ and $p$ using the range-energy relation~{bortfeld} and the range-energy data from~{ICRU49} and a Geant4 simulation.}}{17}{table.caption.14}%
+\contentsline {table}{\numberline {1.3}{\ignorespaces Measured proton CSDA range~{ICRU49} and simulated range in \ce {H2O}, \ce {PbWO4}, PTFE and aluminum for various energies. The deviation between measured and simulated range in \ce {H2O} is also given.}}{18}{table.caption.15}%
+\contentsline {table}{\numberline {1.4}{\ignorespaces Fit results obtained from depth--dose distributions measured without a phantom and with the heterogeneous LN300 phantoms. From left to right: the range of the distal fall-off $R_0$, the width of the Bragg peak or range and energy straggling $\sigma $, the reconstructed WET of the LN300 phantom from range difference to the measurement without a target~$t$, the modulation Power $P_{\mathrm {mod}}$, the nominal $P_{\mathrm {mod, nom.}}$, the absolute deviation $\Delta P = P_{\mathrm {mod}} - P_{\mathrm {mod, nom.}}$ and the relative deviation $\Delta P_{\%}$. The deviations are given with respect to the nominal modulation power $P_{\mathrm {mod, nom.}}$, measured using a PTW peakfinder.}}{21}{table.caption.18}%

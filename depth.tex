@@ -1,0 +1,212 @@
+\subsubsection{Depth Calculation}
+In particle therapy, the measurement depth $z$ in a detector is conventionally expressed as the water-equivalent thickness~(WET).
+The WET $t$ of a material layer is the thickness of water that causes the same energy loss for a proton beam.
+For this, the physical depth of the detector must be converted to a WET, allowing for direct comparisons.
+
+The conversion is calculated by approximating the stopping power ratio of \ce{PbWO4} and \ce{H2O}, through the energy-range relation~\citep{bortfeld} at the nominal beam energy of \SI{221.6}{\mega\electronvolt}.
+\begin{equation}
+  t = \frac{S_{\ce{PbWO4}}}{S_{\ce{H2O}}}\cdot x = \frac{\frac{\mathrm{d}E_{\ce{PbWO4}}}{\mathrm{d}x}}{\frac{\mathrm{d}E_{\ce{H2O}}}{\mathrm{d}x}} \cdot x = \frac{\frac{1}{\alpha_{\ce{PbWO4}}\cdot p_{\ce{PbWO4}}}E^{1-p_{\ce{PbWO4}}}}{\frac{1}{\alpha_{\ce{H2O}}\cdot p_{\ce{H2O}}}E^{1-p_{\ce{H2O}}}}\cdot x= \frac{\alpha_{\ce{H2O}}\cdot p_{\ce{H2O}}E^{1-p_{\ce{PbWO4}}}}{\alpha_{\ce{PbWO4}}\cdot p_{\ce{PbWO4}} E^{1-p_{\ce{H2O}}}}\cdot x
+\end{equation}
+
+
+\#\#\#\#\# Anfang alternativerer komplexerer Gleichung (braucht vielleicht noch Simulationsvalidierung, vielleicht was für ein anderes Paper)
+
+The conversion is calculated iteratively for each material layer of the detector (e.g. wrapping, crystal), starting from the beam entrance.
+By definition, a proton's energy after traversing a depth $t$ in water is identical to its energy after traversing a depth $x$ in another material, where $t$ is the WET corresponding to $x$.
+Using the empirical range-energy relationship for protons in matter~\citep{bortfeld}, the conversion of a materials depth $x$ to WET $t$ can be expressed as
+
+\begin{align}
+    E(t)_{\ce{H2O}} &= E(x)_{\text{mat}} \\
+    \left(\frac{t}{\alpha_{\ce{H2O}}}\right)^{\frac{1}{p_{\ce{H2O}}}} &= \left(\frac{x}{\alpha_{\text{mat}}}\right)^{\frac{1}{p_{\text{mat}}}} \\
+    t&= \alpha_{\ce{H2O}}\left(\frac{x}{\alpha_{\text{mat}}}\right)^{\frac{p_{\ce{H2O}}}{p_{\text{mat}}}}, \label{eq:wet:conversion:single}
+\end{align}
+where $\alpha$ and $p$ are the material-dependent parameters of the range--energy relation.
+In this formulation, $p$ is assumed to be largely energy independent.
+
+To extend this formalism to a detector consisting of multiple layers of different materials, an iterative approach is used.
+The cumulative WET after $n$ layers, $t_n$, is calculated from the WET after $n-1$ layers, $t_{n-1}$, and the physical thickness of the current layer $\Delta x$.
+The corresponding physical depth after $n$ layers is given by
+\begin{equation}
+  \label{eq:wet:conversion:physical}
+    x_n = x_{n-1} + \Delta x .
+\end{equation}
+By inserting $x_{n}$ into $t_{n}$ of Equation~\ref{eq:wet:conversion:physical}, and expressing $x_{n-1}$ in terms of $t_{n-1}$, the WET can be calculated iteratively as
+
+\begin{align}
+  t_n &= \alpha_{\ce{H2O}}\left(\frac{x_{n-1}+\Delta x}{\alpha_{\text{mat}}}\right)^{\frac{p_{\ce{H2O}}}{p_{\text{mat}}}} \\
+  t_n &= \alpha_{\ce{H2O}} \left[ \left( \frac{t_{n-1}}{\alpha_{\ce{H2O}}} \right)^{\frac{p_{\text{mat}}}{p_{\ce{H2O}}}} + \frac{\Delta x}{\alpha_{\text{mat}}} \right]^{\frac{p_{\ce{H2O}}}{p_{\text{mat}}}},\label{eq:wet:conversion:multi}
+\end{align}
+
+with the boundary conditions $t_0 = 0$ and $x_0 = 0$ at the detector entrance.
+
+\#\#\#\#\# Ende von iterativer Gleichung
+
+Assuming a homogeneous interaction probability inside each scintillator layer, the effective measurement depth $z_n$ of layer $n$ is taken as the midpoint of the WET interval,
+
+\begin{equation}
+ z_n = \frac{t_{n-1}+t_n}{2}.
+\end{equation}
+
+Under the same assumption of a uniform distribution, the uncertainty of the measurement depth is given by
+\begin{equation}
+    \sigma_{z_n}^2 =
+    \frac{1}{12}\left(t_n - t_{n-1}\right)^2.
+\end{equation}  
+
+\paragraph{Material Parameters Determination}
+
+\#\#\# Note: Falls einfachere WET Berechnung, hier nur Werte für PbWO4 herleiten
+
+The material-specific parameters $\alpha$ and $p$ for water and the detector components (\ce{PbWO4}, PTFE and aluminum) are used in the conversion of the detector depth to WET.
+They can be determined empirically by performing an exponential fit to proton range-energy data~\citep{bortfeld}.
+For liquid water and aluminum, the range-energy reference data were obtained directly from~\citet{ICRU49}.
+Measured range-energy data for \ce{PbWO4} and PTFE were not available.
+Instead, the corresponding range-energy tables were generated using a Geant4 (11.2.1) simulation.
+For that the \texttt{QGSP\_BIC\_EMY} physics list was used with the electromagnetic physics constructor substituted by \texttt{G4EmStandardPhysics\_option4}.
+The PTFE membrane is approximated by its core chemical composition of \ce{C2F4} chains with a density of \SI{0.35}{\g\per\cm\cubed} as provided by the vendor.
+The inbuilt \texttt{G4\_PbWO4} was used for the \ce{PbWO4} material definition with a density of \SI{8.28}{\g\per\cm\cubed}.
+The accuracy of the simulation was validated by comparing the calculated proton ranges for liquid water against the reference data from~\citet{ICRU49}.
+
+The simulated ranges deviated about \SI{1}{\percent} for small energies with the deviation decreasing for increasing energies to about \SI{0.5}{\percent}, indicating a good accuracy of the simulation.
+The resulting range-energy data for \ce{PbWO4} and PTFE were subsequently fitted and their respective $\alpha$ and $p$ extracted.
+The final parameters of all used materials are shown in Table~\ref{tab:rangeenergy:fit} with the corresponding fits illustrated in Figure~\ref{fig:rangeenergy:fit}.
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=0.5\textwidth]{figs/rangeenergy.pdf}
+  \caption{Exponential fits using the range-energy relation~\citep{bortfeld} to range-energy data for protons in liquid \ce{H2O} and solid \ce{Al} from the~\citet{ICRU49} and for \ce{PbWO4} and PTFE from a Geant4 simulation.}
+  \label{fig:rangeenergy:fit}  
+\end{figure}
+
+\begin{table}[b]
+    \centering
+    \captionof{table}{Fitted material parameters $\alpha$ and $p$ using the range-energy relation~\citep{bortfeld} and the range-energy data from~\citet{ICRU49} and a Geant4 simulation.}\label{tab:rangeenergy:fit}
+    \begin{tabular}{lccc}
+    \toprule
+    Material & $\alpha$ / $\frac{\text{mm}}{\text{MeV}^p}$& $p$ & $\mathrm{Cov}(\alpha, p)$\\
+    \midrule
+    \ce{PbWO4} & $7.275\times 10^{-3}\pm 1.497\times 10^{-4}$ & $1.69\pm 3.865\times 10^{-3}$ & $-5.781\times 10^{-7}$\\
+    PTFE & $9.158\times 10^{-2}\pm 2.387\times 10^{-3}$ & $1.734\pm 4.890\times 10^{-3}$ & $-1.166\times 10^{-5}$\\
+    Water & $2.585\times 10^{-2}\pm 6.826\times 10^{-4}$ & $1.738\pm 4.953\times 10^{-3}$ & $-3.377\times 10^{-6}$\\
+    Aluminum & $1.319\times 10^{-2}\pm 3.224\times 10^{-4}$ & $1.725\pm 4.588\times 10^{-3}$ & $-1.477\times 10^{-6}$\\
+    \bottomrule
+    \end{tabular}
+\end{table}
+
+
+\section{Range-Energy Simulation Validation}\label{appendix:rangeenergyvalidation}
+
+\begin{table}[htbp]
+    \centering
+    \caption{Measured proton CSDA range~\citet{ICRU49} and simulated range in \ce{H2O}, \ce{PbWO4}, PTFE and aluminum for various energies. The deviation between measured and simulated range in \ce{H2O} is also given.}
+    \def\arraystretch{1.1}
+    \begin{tabular}{c|c|c|c||c|c|c}
+      \makecell{Energy \\\relax [\si{\mega\electronvolt}]} & \makecell{ICRU range \\\relax in \ce{H2O} [\si{\milli\meter}]} & \makecell{Simulated range \\\relax in \ce{H2O} [\si{\milli\meter}]} & \makecell{Deviation \\\relax [\si{\percent}]} & \makecell{ICRU range \\\relax in \ce{Al} [\si{\milli\meter}]} & \makecell{Simulated range \\\relax in \ce{PbWO4} [\si{\milli\meter}]} & \makecell{Simulated range \\\relax in \ce{PTFE} [\si{\milli\meter}]} \\
+      \hline
+        $3$ & \makecell{$\num{1.50e-01} \pm $\\$ \num{2.25e-03}$} & \makecell{$\num{1.51e-01} \pm $\\$ \num{2.28e-03}$} & $0.589$ & \makecell{$\num{8.13e-02} \pm $\\$ \num{1.22e-03}$} & \makecell{$\num{5.08e-02} \pm $\\$ \num{1.05e-03}$} & \makecell{$\num{8.78e-02} \pm $\\$ \num{2.49e-04}$} \\
+        \hline
+        $5$ & \makecell{$\num{3.62e-01} \pm $\\$ \num{5.43e-03}$} & \makecell{$\num{3.65e-01} \pm $\\$ \num{4.64e-03}$} & $0.636$ & \makecell{$\num{1.91e-01} \pm $\\$ \num{2.87e-03}$} & \makecell{$\num{1.13e-01} \pm $\\$ \num{1.16e-03}$} & \makecell{$\num{2.09e-01} \pm $\\$ \num{1.93e-03}$} \\
+        \hline
+        $10$ & \makecell{$\num{1.23e+00} \pm $\\$ \num{1.84e-02}$} & \makecell{$\num{1.24e+00} \pm $\\$ \num{1.61e-02}$} & $0.714$ & \makecell{$\num{6.29e-01} \pm $\\$ \num{9.43e-03}$} & \makecell{$\num{3.42e-01} \pm $\\$ \num{4.92e-03}$} & \makecell{$\num{6.98e-01} \pm $\\$ \num{8.07e-03}$} \\
+        \hline
+        $15$ & \makecell{$\num{2.54e+00} \pm $\\$ \num{3.81e-02}$} & \makecell{$\num{2.56e+00} \pm $\\$ \num{3.27e-02}$} & $0.750$ & \makecell{$\num{1.28e+00} \pm $\\$ \num{1.92e-02}$} & \makecell{$\num{6.68e-01} \pm $\\$ \num{9.74e-03}$} & \makecell{$\num{1.43e+00} \pm $\\$ \num{1.70e-02}$} \\
+        \hline
+        $20$ & \makecell{$\num{4.26e+00} \pm $\\$ \num{6.39e-02}$} & \makecell{$\num{4.30e+00} \pm $\\$ \num{5.28e-02}$} & $1.027$ & \makecell{$\num{2.12e+00} \pm $\\$ \num{3.18e-02}$} & \makecell{$\num{1.09e+00} \pm $\\$ \num{1.57e-02}$} & \makecell{$\num{2.39e+00} \pm $\\$ \num{2.86e-02}$} \\
+        \hline
+        $30$ & \makecell{$\num{8.85e+00} \pm $\\$ \num{1.33e-01}$} & \makecell{$\num{8.95e+00} \pm $\\$ \num{1.05e-01}$} & $1.047$ & \makecell{$\num{4.35e+00} \pm $\\$ \num{6.53e-02}$} & \makecell{$\num{2.17e+00} \pm $\\$ \num{3.08e-02}$} & \makecell{$\num{4.94e+00} \pm $\\$ \num{5.85e-02}$} \\
+        \hline
+        $40$ & \makecell{$\num{1.49e+01} \pm $\\$ \num{2.23e-01}$} & \makecell{$\num{1.50e+01} \pm $\\$ \num{1.74e-01}$} & $0.877$ & \makecell{$\num{7.27e+00} \pm $\\$ \num{1.09e-01}$} & \makecell{$\num{3.56e+00} \pm $\\$ \num{4.68e-02}$} & \makecell{$\num{8.27e+00} \pm $\\$ \num{9.71e-02}$} \\
+        \hline
+        $50$ & \makecell{$\num{2.23e+01} \pm $\\$ \num{3.34e-01}$} & \makecell{$\num{2.24e+01} \pm $\\$ \num{2.52e-01}$} & $0.806$ & \makecell{$\num{1.08e+01} \pm $\\$ \num{1.62e-01}$} & \makecell{$\num{5.26e+00} \pm $\\$ \num{6.51e-02}$} & \makecell{$\num{1.24e+01} \pm $\\$ \num{1.44e-01}$} \\
+        \hline
+        $60$ & \makecell{$\num{3.09e+01} \pm $\\$ \num{4.64e-01}$} & \makecell{$\num{3.12e+01} \pm $\\$ \num{3.50e-01}$} & $0.727$ & \makecell{$\num{1.50e+01} \pm $\\$ \num{2.24e-01}$} & \makecell{$\num{7.21e+00} \pm $\\$ \num{8.62e-02}$} & \makecell{$\num{1.71e+01} \pm $\\$ \num{1.97e-01}$} \\
+        \hline
+        $70$ & \makecell{$\num{4.08e+01} \pm $\\$ \num{6.12e-01}$} & \makecell{$\num{4.11e+01} \pm $\\$ \num{4.61e-01}$} & $0.671$ & \makecell{$\num{1.97e+01} \pm $\\$ \num{2.95e-01}$} & \makecell{$\num{9.42e+00} \pm $\\$ \num{1.10e-01}$} & \makecell{$\num{2.26e+01} \pm $\\$ \num{2.58e-01}$} \\
+        \hline
+        $80$ & \makecell{$\num{5.18e+01} \pm $\\$ \num{7.78e-01}$} & \makecell{$\num{5.22e+01} \pm $\\$ \num{5.79e-01}$} & $0.627$ & \makecell{$\num{2.49e+01} \pm $\\$ \num{3.74e-01}$} & \makecell{$\num{1.19e+01} \pm $\\$ \num{1.36e-01}$} & \makecell{$\num{2.86e+01} \pm $\\$ \num{3.24e-01}$} \\
+        \hline
+        $90$ & \makecell{$\num{6.40e+01} \pm $\\$ \num{9.60e-01}$} & \makecell{$\num{6.44e+01} \pm $\\$ \num{7.10e-01}$} & $0.600$ & \makecell{$\num{3.07e+01} \pm $\\$ \num{4.60e-01}$} & \makecell{$\num{1.45e+01} \pm $\\$ \num{1.65e-01}$} & \makecell{$\num{3.53e+01} \pm $\\$ \num{3.96e-01}$} \\
+        \hline
+        $100$ & \makecell{$\num{7.72e+01} \pm $\\$ \num{1.16e+00}$} & \makecell{$\num{7.76e+01} \pm $\\$ \num{8.57e-01}$} & $0.580$ & \makecell{$\num{3.70e+01} \pm $\\$ \num{5.54e-01}$} & \makecell{$\num{1.74e+01} \pm $\\$ \num{1.95e-01}$} & \makecell{$\num{4.26e+01} \pm $\\$ \num{4.72e-01}$} \\
+        \hline
+        $125$ & \makecell{$\num{1.15e+02} \pm $\\$ \num{1.72e+00}$} & \makecell{$\num{1.15e+02} \pm $\\$ \num{1.26e+00}$} & $0.536$ & \makecell{$\num{5.47e+01} \pm $\\$ \num{8.20e-01}$} & \makecell{$\num{2.56e+01} \pm $\\$ \num{2.81e-01}$} & \makecell{$\num{6.31e+01} \pm $\\$ \num{6.90e-01}$} \\
+        \hline
+        $150$ & \makecell{$\num{1.58e+02} \pm $\\$ \num{2.37e+00}$} & \makecell{$\num{1.59e+02} \pm $\\$ \num{1.69e+00}$} & $0.607$ & \makecell{$\num{7.51e+01} \pm $\\$ \num{1.13e+00}$} & \makecell{$\num{3.49e+01} \pm $\\$ \num{3.79e-01}$} & \makecell{$\num{8.68e+01} \pm $\\$ \num{9.35e-01}$} \\
+        \hline
+        $175$ & \makecell{$\num{2.06e+02} \pm $\\$ \num{3.09e+00}$} & \makecell{$\num{2.07e+02} \pm $\\$ \num{2.20e+00}$} & $0.569$ & \makecell{$\num{9.80e+01} \pm $\\$ \num{1.47e+00}$} & \makecell{$\num{4.52e+01} \pm $\\$ \num{4.87e-01}$} & \makecell{$\num{1.13e+02} \pm $\\$ \num{1.20e+00}$} \\
+        \hline
+        $200$ & \makecell{$\num{2.60e+02} \pm $\\$ \num{3.89e+00}$} & \makecell{$\num{2.61e+02} \pm $\\$ \num{2.74e+00}$} & $0.501$ & \makecell{$\num{1.23e+02} \pm $\\$ \num{1.85e+00}$} & \makecell{$\num{5.66e+01} \pm $\\$ \num{6.08e-01}$} & \makecell{$\num{1.43e+02} \pm $\\$ \num{1.51e+00}$} \\
+        \hline
+        $225$ & \makecell{$\num{3.17e+02} \pm $\\$ \num{4.76e+00}$} & \makecell{$\num{3.19e+02} \pm $\\$ \num{3.33e+00}$} & $0.500$ & \makecell{$\num{1.50e+02} \pm $\\$ \num{2.25e+00}$} & \makecell{$\num{6.89e+01} \pm $\\$ \num{7.37e-01}$} & \makecell{$\num{1.74e+02} \pm $\\$ \num{1.87e+00}$} \\
+        \hline
+        $250$ & \makecell{$\num{3.79e+02} \pm $\\$ \num{5.69e+00}$} & \makecell{$\num{3.81e+02} \pm $\\$ \num{3.98e+00}$} & $0.490$ & \makecell{$\num{1.79e+02} \pm $\\$ \num{2.69e+00}$} & \makecell{$\num{8.20e+01} \pm $\\$ \num{8.68e-01}$} & \makecell{$\num{2.08e+02} \pm $\\$ \num{2.29e+00}$} \\
+    \end{tabular}\label{tab:wet:measurements}
+\end{table}
+
+
+\section{Medical Paper/Heterogeneous Phantom}
+Lastly, a measurement with a heterogeneous LN300 Gammex phantom was done, shown in Figure~\ref{fig:detector:measurement:hetero}.
+The phantom has a thickness of \SI{200}{\mm}, a physical density of \SI{0.30}{\gram\per\centi\meter^3} and an electron density relative to water of $0.290$~\citep{gammexphantom}.
+The LN300 phantom has a modulation power of \SI{210}{\micro\meter}, which was measured using a PTW PeakFinder.
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=.5\textwidth]{figs/heterogeneousMeasure.jpg}
+    \caption{Heterogeneous phantom setup: \SI{200}{\mm} Gammex LN300 lung equivalent phantom.}\label{fig:detector:measurement:hetero}
+\end{figure}
+
+Two approaches are presented to analyze the depth dose spectra and extract the modulation power.
+The first is the standard convolution of a linear interpolated reference curve and fitting the result to the depth dose spectra of the heterogeneous phantom~\citep{Baumann_2017}.
+The second approach uses the analytical approximation of the depth dose curve from~\citet{bortfeld}, given in Equation~\ref{eq:depthdose}.
+For this we will shown that the modulation powers parameters are indirectly accessible by Equation~\ref{eq:depthdose} without having to do an extra convolution.
+
+\begin{align}
+  %   \hat{D}(z) &=
+  % \begin{cases}
+  %     \Phi_0 \frac{(R_0-z)^{1/p-1}+(\beta+\gamma\beta p)(R_0-z)^{1/p}}{\rho p \alpha^{1/p} (1+\beta R_0)}, & \text{if } z < R_0 \\
+  %     0, & \text{if } z>R_0
+  % \end{cases} \\ \label{eq:depthdose:nostraggling}
+  D(z) &= (\hat{D} \ast \mathcal{N})(z) = \frac{1}{\sqrt{2\pi}\sigma}\int^{R_0}_{-\infty} \hat{D}(\overline{z}) e^{-\frac{(z-\overline{z})^2}{2\sigma^2}}d\overline{z}\label{eq:depthdose:straggling} \\ 
+  &= \Phi_0 \frac{e^{-\zeta^2/4}\sigma^{1/p}\Gamma(1/p)}{\sqrt{2\pi}\rho p \alpha^{1/p}(1+\beta R_0)}\cdot \left[\frac{1}{\sigma}\mathcal{D}_{-1/p}(-\zeta)+\left(\frac{\beta}{p}+\gamma\beta+\frac{\epsilon}{R_0}\right)\mathcal{D}_{-1/p-1}(-\zeta) \right],~\zeta=\frac{R_0-z}{\sigma} \label{eq:depthdose:hetero}
+\end{align}
+
+We start from the pre-convolved depth dose distribution, shown in Equation~\ref{eq:depthdose:straggling}, which is given as the depth dose distribution without range straggling $\hat{D}$ convolution with a range staggling normal distribution $\mathcal{N}$.
+The depth dose distribution after passing a heterogeneous phantom $D_h(z; t, \sigma_t)$ is calculated by performing an second convolution with a normal distribution $\mathcal{N}_t$, where the displacement $t$ and broadening $\sigma_t$ are the parameters of the modulation power.
+Using the associativity of convolutions, we first convolve the two normal distributions, giving a single normal distribution $\mathcal{N}_h$ with standard deviation $\sigma_h=\sqrt{\sigma^2+\sigma_t^2}$ and mean $\mu_h=z-t$.
+From there, we shift the integral limit by $t$ and change the fluence normalization to account for the changed range $R_t=R_0-t$ by defining $\Phi_0'$ as the fluence after the heterogeneous target with $\frac{1+\beta (R_0-t)}{1+\beta R_0}$ being the fluence reduction factor.
+This results in the final depth dose distribution for the heterogeneous phantom shown in Equation~\ref{eq:depthdose:heterogeneous}, which has the same form as the depth dose distribution without a target except that the range $R_0$ is reduced by the displacement $t$, the width $\sigma$ is broadened according to the quadrature sum of the two individual widths and the fluence $\Phi_0$ is adjusted by the lost particles in the phantom to $\Phi_0'$.
+
+\begin{align}  
+  D_h(z; t, \sigma_t) &= (\hat{D} \ast \mathcal{N} \ast \mathcal{N}_t)(z) = (\hat{D} \ast \mathcal{N}_h)(z)\\
+  &= \frac{1}{\sqrt{2\pi}\sigma_h}\int^{R_0}_{-\infty} \hat{D}(\overline{z}) e^{-\frac{(z-t-\overline{z})^2}{2\sigma_h^2}}d\overline{z}\\
+  &= \frac{1}{\sqrt{2\pi}\sigma_h}\int^{R_0-t}_{-\infty} \hat{D}(\tilde{z}-t) e^{-\frac{(z-\tilde{z})^2}{2\sigma_h^2}}d\tilde{z}\\
+  &= \Phi_0' \frac{e^{-\zeta'^2/4}\sigma_h^{1/p}\Gamma(1/p)}{\sqrt{2\pi}\rho p \alpha^{1/p}(1+\beta R_t)}\cdot \left[\frac{1}{\sigma_h}\mathcal{D}_{-1/p}(-\zeta')+\left(\frac{\beta}{p}+\gamma\beta+\frac{\epsilon}{R_t}\right)\mathcal{D}_{-1/p-1}(-\zeta') \right],~\zeta'=\frac{R_t-z}{\sigma_h}\\
+  &= D \Big(z; R_t = R_0 - t, \sigma_h = \sqrt{\sigma^2+\sigma_t^2}, \Phi_0' = \Phi_0\frac{1+\beta (R_0-t)}{1+\beta R_0}\Big)\label{eq:depthdose:heterogeneous}
+\end{align}
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=0.6\textwidth]{figs/braggfitHetero.pdf}
+  \caption{Depth--dose measurements and fits of measurements without a phantom and with a heterogeneous LN300 phantom.}\label{fig:ddd:fitted:hetero}
+\end{figure}
+
+
+The mean nominal LN300 phantom thickness $t_{\mathrm{nominal}}$ can be calculated from the electron density ratio to water of $0.28$ to \SI{5.8}{\cm}.
+The measured value of $5.836\pm 0.018\,\si{\cm}$ agrees with this within \SI{0.56}{\percent}, corresponding to an absolute deviation of \SI{360}{\micro\meter}.
+The measured modulation power agrees with the nominal value within \SI{2.64}{\percent}, corresponding to an absolute deviation of \SI{5.541}{\micro\meter}.
+
+\begin{table}[htb]
+    \centering
+    \captionof{table}{Fit results obtained from depth--dose distributions measured without a phantom and with the heterogeneous LN300 phantoms. From left to right: the range of the distal fall-off $R_0$, the width of the Bragg peak or range and energy straggling $\sigma$, the reconstructed WET of the LN300 phantom from range difference to the measurement without a target~$t$, the modulation Power $P_{\mathrm{mod}}$, the nominal $P_{\mathrm{mod, nom.}}$, the absolute deviation $\Delta P = P_{\mathrm{mod}} - P_{\mathrm{mod, nom.}}$ and the relative deviation $\Delta P_{\%}$. The deviations are given with respect to the nominal modulation power $P_{\mathrm{mod, nom.}}$, measured using a PTW peakfinder.}\label{tab:ddd:fitted:hetero}
+    \sisetup{
+      separate-uncertainty,
+      table-number-alignment = center
+    }
+    \begin{tabular}{lcccccccc}
+    \toprule
+    Phantom & $R_0$ / cm  & $\sigma$ / cm & $t$ / cm & $P_{\mathrm{mod}}$ / \si{\micro\meter} & $P_{\mathrm{mod, nom.}}$ / \si{\micro\meter}  &$\Delta t$ / \si{\micro\meter} & $\Delta t_{\%}$ / \% \\
+    \midrule
+    None & $30.991 \pm 0.002$ & $0.489 \pm 0.004$ & - & - & - & - & - \\
+    LN300 & $25.156 \pm 0.018$ & $0.604\pm 0.028$ & $5.836\pm 0.018$ &  $215.541 \pm 9.886$ & $210$ & 5.541 & $2.64$ \\
+    \bottomrule
+    \end{tabular}
+\end{table}
